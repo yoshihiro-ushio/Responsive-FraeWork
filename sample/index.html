@@ -1,0 +1,1991 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, minimum-scale=1.0, maximum-scale=1.0, initial-scale=1.0, user-scalable=no, minimal-ui"/>
+<title>レスポンシブフレームワーク【RFW】のサンプルページ</title>
+<link rel="stylesheet" type="text/css" href="../src/css/slider-pro.min.css">
+<link rel="stylesheet" type="text/css" href="../src/css/style.css?20200520">
+	<style type="text/css">
+		.fixed_safearea {
+			position: fixed;
+			z-index: 3;
+			bottom: 0;
+			width: 33.3333%;
+			padding: 10px;
+			text-align: center;
+		}
+		.fixed_safearea:nth-of-type(1) {
+			left: 0;
+		}
+		.fixed_safearea:nth-of-type(2) {
+			left: 33.3333%;
+		}
+		.fixed_safearea:nth-of-type(3) {
+			right: 0;
+		}
+	</style>
+</head>
+
+<body>
+
+<!-- 〓〓〓〓〓 ヘッダー 〓〓〓〓〓 -->
+	<header class="head_main clearfix">
+		<div class="container">
+			<div class="head_main_logo">
+				<p class="head_logo">
+					<a href="index.html">
+						<img src="http://placehold.it/200x70/666/fff">
+					</a>
+				</p>
+				<div class="head_tel">
+					<a href="tel:0120-000-000" class="font_small">
+						<p>
+							<span class="label label-info">通話無料</span>
+							<i class="material-icons">&#xE0CD;</i>
+							<span>0120-000-000</span>
+						</p>
+						受付時間 10:00～19:00 （水曜日休診）
+					</a>
+				</div>
+			</div>
+			<div class="head_main_navi">
+				<a href="javascript:void(0)" class="head_btn_menu" data-js-menu="close"><span>MENU</span></a>
+				<ul class="head_menu head_menu_main">
+					<li class="head_sp">
+						<a href="tel:0120-000-000">
+							<i class="material-icons v_align_middle">&#xE0CD;</i>
+							<span class="label label-info">通話無料</span>
+							<span class="v_align_middle">0120-000-000</span>
+						</a>
+					</li>
+					<li class="head_sp">
+						<a href="form.html" class="btn_counseling">
+							<i class="material-icons v_align_middle">&#xE0E1;</i>
+							カウンセリング予約
+						</a>
+					</li>
+					<li class="head_sp">
+						<a href="form.html" class="btn_mail">
+							<i class="material-icons v_align_middle">&#xE0E1;</i>
+							無料メール相談
+						</a>
+					</li>
+					<li>
+						<a href="btn.html">ボタンサンプル</a>
+					</li>
+					<li>
+						<a href="material_icons.html">マテリアルアイコン一覧</a>
+					</li>
+					<li>
+						<a href="video.html">ビデオ直接埋め込み</a>
+					</li>
+					<li>
+						<a href="" class="menu_accordion" data-js-menu-sub="close">
+							メニュー3
+							<i class="material-icons head_menu_icon_close">&#xE145;</i>
+							<i class="material-icons head_menu_icon_open">&#xE5CD;</i>
+						</a>
+						<ul class="head_menu_sub">
+							<li>
+								<a href="">
+									サブメニュー3-1
+									<i class="material-icons">&#xE315;</i>
+								</a>
+							</li>
+							<li>
+								<a href="">
+									サブメニュー3-2
+									<i class="material-icons">&#xE315;</i>
+								</a>
+							</li>
+						</ul>
+					</li>
+					<li>
+						<a href="">メニュー5</a>
+					</li>
+					<li class="head_counseling">
+						<a href="form.html">無料カウンセリング予約</a>
+					</li>
+					<li class="head_mail">
+						<a href="form.html">無料メール相談</a>
+					</li>
+				</ul>
+			</div>
+			<a href="form.html" class="head_sp_counseling">
+				<i class="material-icons">&#xE0E1;</i><br>
+				カウンセリング予約
+			</a>
+		</div>
+	</header>
+	<div class="visible-xs">
+		<div class="fixed_safearea margin_safearea_small font_small bg_color_main_clear">margin_safearea_small</div>
+		<div class="fixed_safearea font_small bg_color_accent_clear">
+			<p class="padding_safearea_medium">padding_safearea_medium</p>
+		</div>
+		<div class="fixed_safearea margin_safearea_large font_small bg_color_mono_clear">margin_safearea_large</div>
+	</div>
+
+<!-- 〓〓〓〓〓 MV 〓〓〓〓〓 -->
+	<div class="mv_container">
+		<div class="slider-pro clearfix" data-js-slider-pro>
+			<div class="sp-slides">
+				<div class="sp-slide">
+					<a href="https://www.qwintet.co.jp/" target="_blank">
+						<img src="http://placehold.it/750x500/fcc?text=1" class="visible-xs">
+						<img src="http://placehold.it/1140x480/fcc?text=1" class="hidden-xs">
+					</a>
+				</div>
+				<div class="sp-slide">
+					<img src="http://placehold.it/750x500/ffc?text=2" class="visible-xs">
+					<img src="http://placehold.it/1140x480/ffc?text=2" class="hidden-xs">
+				</div>
+				<div class="sp-slide">
+					<img src="http://placehold.it/750x500/ccf?text=3" class="visible-xs">
+					<img src="http://placehold.it/1140x480/ccf?text=3" class="hidden-xs">
+				</div>
+			</div>
+			<div class="sp-thumbnails">
+				<p class="sp-thumbnail">
+					<img src="http://placehold.it/250x120/fcc?text=1">
+				</p>
+				<img class="sp-thumbnail" src="http://placehold.it/250x120/ffc?text=2">
+				<img class="sp-thumbnail" src="http://placehold.it/250x120/ccf?text=3">
+			</div>
+		</div>
+	</div>
+
+<!-- 〓〓〓〓〓 パンくずリスト 〓〓〓〓〓 -->
+	<nav class="container breadcrumbs">
+		<ul class="">
+			<li><a href="index.html">HOME</a></li>
+			<li>RFWのサンプルTOPページです</li>
+		</ul>
+	</nav>
+
+	<div class="bg_color_main_light padding_v_xlarge">
+		<div class="container">
+			<h2 class="headline">バージョンアップメモ</h2>
+			<ul class="list_dotted padding_medium border_main_1 bg_color_mono_light">
+				<li>【helpers/_functions.scss】「ビューポートサイズ自動計算」の記述方法を変更</li>
+				<li>【helpers/_variables.scss】フォントサイズ変数の記述方法を変更</li>
+				<li>【module/_grid_flexbox.scss】クラスとIE対応を追加＆各種調整</li>
+				<li>【base/_typography.scss】クラスを追加</li>
+				<li>【pages/_main.scss】コーディング上の注意事項を記載</li>
+				<li>【pages/_main.scss】カード系クラスを刷新</li>
+				<li>【jquery.common.js】アコーディオンを閉じたときにコンテンツ上部に戻る機能を追加</li>
+			</ul>
+		</div>
+	</div>
+
+	<hr class="border_none border_main_b_1 margin_t_none margin_b_xlarge">
+
+<!-- 〓〓〓〓〓 ≪RFW独自≫目次 〓〓〓〓〓 -->
+	<div class="container" id="">
+		<section class="margin_b_xlarge" id="box_">
+			<h2 class="headline">≪RFW独自≫目次</h2>
+			<div class="list_index accordion_parent accordion_close" data-js-accordion-parent>
+				<p class="index_list_title">
+					目次
+					<span class="accordion_trigger" data-js-accordion-trigger>
+						[
+						<a href="javascript:void(0)" class="accordion_toggle_hide">非表示にする</a>
+						<a href="javascript:void(0)" class="accordion_toggle_show">表示する</a>
+						]
+					</span>
+				</p>
+				<ul class="list_index_body accordion_body" data-js-accordion-body>
+					<li><a href="#color">カラー設定</a></li>
+					<li><a href="#font">文字設定</a></li>
+					<li><a href="#font_feature">字詰め設定</a></li>
+					<li><a href="#spacer">余白設定</a></li>
+					<li><a href="#RFW_safearea">セーフエリア対応</a></li>
+					<li>
+						<a href="#RFW_flexbox">≪RFW独自≫RFW flexboxグリッドシステム</a>
+						<ol>
+							<li><a href="#RFW_flexbox_default">基本設定</a></li>
+							<li><a href="#flex-direction">flex-direction（子要素の並ぶ向き）</a></li>
+							<li>
+								<a href="#flex-wrap">flex-wrap（子要素の折返し）</a>
+								<ol>
+									<li><a href="#accordion_01">アコーディオン01</a></li>
+									<li><a href="#accordion_02">アコーディオン02</a></li>
+									<li><a href="#accordion_03">アコーディオン03</a></li>
+								</ol>
+							</li>
+							<li><a href="#justify-content">justify-content（水平方向の揃え）</a></li>
+							<li><a href="#align-items">align-items（垂直方向の揃え）</a></li>
+						</ol>
+					</li>
+					<li><a href="#BootstrapExpansion">≪RFW独自≫Bootstrap拡張クラス</a></li>
+					<li><a href="#rfw_week">≪RFW独自≫RFWウィーク</a></li>
+					<li><a href="#accordion">≪RFW独自≫アコーディオン</a></li>
+					<li><a href="#card_thumb">≪RFW独自≫カード型リンク（サムネ付き）</a></li>
+					<li><a href="#card_link">≪RFW独自≫カード型リンク（サムネなし）</a></li>
+					<li><a href="#list_setting">≪RFW独自≫アイコン付きリスト</a></li>
+					<li><a href="#box_qa">≪RFW独自≫よくある質問ボックス</a></li>
+					<li><a href="#box_flow">≪RFW独自≫流れボックス</a></li>
+					<li><a href="#matchHeight">≪JSプラグイン≫matchHeightの使用例</a></li>
+					<li><a href="#embed-responsive">≪Bootstrap≫iframeの縦横比を固定した表示（16：9）</a></li>
+					<li><a href="#table-responsive">≪Bootstrap≫SPサイズでは横スクロールするテーブル</a></li>
+					<li>
+						<a href="#accordion">リンクありパターン</a>
+						<ol>
+							<li><a href="#accordion_01">アコーディオン01</a></li>
+							<li><a href="#accordion_02">アコーディオン02</a></li>
+							<li><a href="#accordion_03">アコーディオン03</a></li>
+						</ol>
+					</li>
+					<li>
+						<span>リンクなしパターン</span>
+						<ol>
+							<li><a href="#accordion_01">アコーディオン01</a></li>
+							<li><a href="#accordion_02">アコーディオン02</a></li>
+						</ol>
+					</li>
+				</ul>
+			</div>
+		</section>
+	</div>
+
+<!-- 〓〓〓〓〓 ≪RFW独自≫カラー設定 〓〓〓〓〓 -->
+	<div class="bg_stripe_light padding_v_medium">
+		<div class="container" id="color">
+			<h2 class="headline">カラー設定</h2>
+			<div class="row text-center">
+				<div class="col-xs-12 col-sm-6">
+					<p class="bg_color_mono_dark padding_small">bg_color_mono_dark</p>
+					<p class="bg_color_mono_deep padding_small">bg_color_mono_deep</p>
+					<p class="bg_color_mono_pale padding_small">bg_color_mono_pale</p>
+					<p class="bg_color_mono_clear padding_small">bg_color_mono_clear</p>
+					<p class="bg_color_mono_light padding_small">bg_color_mono_light</p>
+					<p class="bg_color_main_dark padding_small">bg_color_main_dark</p>
+					<p class="bg_color_main_deep padding_small">bg_color_main_deep</p>
+					<p class="bg_color_main padding_small">bg_color_main</p>
+					<p class="bg_color_main_pale padding_small">bg_color_main_pale</p>
+					<p class="bg_color_main_clear padding_small">bg_color_main_clear</p>
+					<p class="bg_color_main_light padding_small">bg_color_main_light</p>
+					<p class="bg_color_accent_dark padding_small">bg_color_accent_dark</p>
+					<p class="bg_color_accent_deep padding_small">bg_color_accent_deep</p>
+					<p class="bg_color_accent padding_small">bg_color_accent</p>
+					<p class="bg_color_accent_pale padding_small">bg_color_accent_pale</p>
+					<p class="bg_color_accent_clear padding_small">bg_color_accent_clear</p>
+					<p class="bg_color_accent_light padding_small">bg_color_accent_light</p>
+				</div>
+				<div class="col-xs-12 col-sm-6">
+					<p class="font_color_mono_dark padding_small">font_color_mono_dark</p>
+					<p class="font_color_mono_deep padding_small">font_color_mono_deep</p>
+					<p class="font_color_mono_pale padding_small">font_color_mono_pale</p>
+					<p class="font_color_mono_clear padding_small">font_color_mono_clear</p>
+					<p class="font_color_mono_light padding_small">font_color_mono_light</p>
+					<p class="font_color_main_dark padding_small">font_color_main_dark</p>
+					<p class="font_color_main_deep padding_small">font_color_main_deep</p>
+					<p class="font_color_main padding_small">font_color_main</p>
+					<p class="font_color_main_pale padding_small">font_color_main_pale</p>
+					<p class="font_color_main_clear padding_small">font_color_main_clear</p>
+					<p class="font_color_main_light padding_small">font_color_main_light</p>
+					<p class="font_color_accent_dark padding_small">font_color_accent_dark</p>
+					<p class="font_color_accent_deep padding_small">font_color_accent_deep</p>
+					<p class="font_color_accent padding_small">font_color_accent</p>
+					<p class="font_color_accent_pale padding_small">font_color_accent_pale</p>
+					<p class="font_color_accent_clear padding_small">font_color_accent_clear</p>
+					<p class="font_color_accent_light padding_small">font_color_accent_light</p>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<hr class="border_none border_main_b_1 margin_t_none margin_b_xlarge">
+
+<!-- 〓〓〓〓〓 ≪RFW独自≫文字設定 〓〓〓〓〓 -->
+	<div class="container" id="font">
+		<h2 class="headline">文字設定</h2>
+		<p class="margin_b_xsmall bg_color_main_light font_ularge">font_ularge　吾輩わがはいは猫である。名前はまだ無い。</p>
+		<p class="margin_b_xsmall bg_color_main_light font_xlarge">font_xlarge　吾輩わがはいは猫である。名前はまだ無い。</p>
+		<p class="margin_b_xsmall bg_color_main_light font_large">font_large　吾輩わがはいは猫である。名前はまだ無い。</p>
+		<p class="margin_b_xsmall bg_color_main_light font_medium">font_medium　吾輩わがはいは猫である。名前はまだ無い。</p>
+		<p class="margin_b_xsmall bg_color_main_light font_base">font_base　吾輩わがはいは猫である。名前はまだ無い。</p>
+		<p class="margin_b_xsmall bg_color_main_light font_small">font_small　吾輩わがはいは猫である。名前はまだ無い。</p>
+		<p class="margin_b_xsmall bg_color_main_light font_notice">font_notice　吾輩わがはいは猫である。名前はまだ無い。</p>
+
+		<hr class="border_none margin_v_small">
+
+		<h3 class="headline">フォントウェイト設定</h3>
+		<p class="margin_b_xsmall">font_weight_bold　吾輩わがはいは<span class="font_weight_bold">猫である</span>。名前はまだ無い。</p>
+		<p class="margin_b_xsmall"><strong>font_weight_normal　吾輩わがはいは<span class="font_weight_normal">猫である</span>。名前はまだ無い。</strong></p>
+
+		<hr class="border_none margin_v_small">
+
+		<h3 class="headline">マーカー設定</h3>
+		<p class="margin_b_xsmall">marker_main　吾輩わがはいは<span class="marker_main">猫である</span>。名前はまだ無い。</p>
+		<p class="margin_b_xsmall">marker_accent　吾輩わがはいは<span class="marker_accent">猫である</span>。名前はまだ無い。</p>
+
+		<hr class="border_none margin_v_small">
+
+		<h3 class="headline">親の文字サイズを継承した文字サイズ変更</h3>
+		<p class="margin_b_xsmall">font_scale_large　吾輩わがはいは<span class="font_scale_large">猫である</span>。名前はまだ無い。</p>
+		<p class="margin_b_xsmall">font_scale_medium　吾輩わがはいは<span class="font_scale_medium">猫である</span>。名前はまだ無い。</p>
+		<p class="margin_b_xsmall">font_scale_small　吾輩わがはいは<span class="font_scale_small">猫である</span>。名前はまだ無い。</p>
+		<p class="margin_b_xsmall">font_scale_xsmall　吾輩わがはいは<span class="font_scale_xsmall">猫である</span>。名前はまだ無い。</p>
+
+		<hr class="border_none margin_v_small">
+
+		<h3 class="headline">ルビ設定【.ruby &gt; .ruby_kana】</h3>
+		<p class="margin_b_xsmall">
+			※ruby要素を使うとブラウザごとに挙動が変わるので、span要素にクラスを付与することを推奨します。<br>
+			牛尾 <span class="ruby">好宏<span class="ruby_kana">よしひろ</span></span>
+		</p>
+
+		<hr class="border_none margin_v_small">
+
+		<h3 class="headline">その他の設定</h3>
+		<p class="margin_b_xsmall">
+			文字設定はかなりいろいろなクラスがあるので、それ以外に関しては【base/_skin.scss】をご参照ください。
+		</p>
+	</div>
+
+	<hr class="border_none border_main_b_1 margin_v_xlarge">
+
+<!-- 〓〓〓〓〓 ≪RFW独自≫字詰め設定 〓〓〓〓〓 -->
+	<div class="container" id="font_feature">
+		<h2 class="headline">字詰め設定</h2>
+		<h3 class="headline">font-feature-settings: "palt";（プロポーショナルメトリクス）【.font_feature_palt】</h3>
+		<p class="font_feature_palt margin_b_xsmall bg_color_main_light">「美しいフォントの字詰めとは」。吾輩わがはいは猫である。名前はまだ無い。<br class="visible-xs">ABCDEFＡＢＣＤＥＦ<br class="visible-xs">1234567890１２３４５６７８９０<br class="visible-xs">あいうえおかきくけこぁぃぅぇぉ<br>「」【】（）＜＞</p>
+		<p class="font_feature_palt margin_b_small bg_color_main_light font_family_min">「美しいフォントの字詰めとは」。吾輩わがはいは猫である。名前はまだ無い。<br class="visible-xs">ABCDEFＡＢＣＤＥＦ<br class="visible-xs">1234567890１２３４５６７８９０<br class="visible-xs">あいうえおかきくけこぁぃぅぇぉ<br>「」【】（）＜＞</p>
+		<h3 class="headline">font-feature-settings: "pkna";（プロポーショナルかな）【.font_feature_pkna】</h3>
+		<p class="font_feature_pkna margin_b_xsmall bg_color_main_light">「美しいフォントの字詰めとは」。吾輩わがはいは猫である。名前はまだ無い。<br class="visible-xs">ABCDEFＡＢＣＤＥＦ<br class="visible-xs">1234567890１２３４５６７８９０<br class="visible-xs">あいうえおかきくけこぁぃぅぇぉ<br>「」【】（）＜＞</p>
+		<p class="font_feature_pkna margin_b_small bg_color_main_light font_family_min">「美しいフォントの字詰めとは」。吾輩わがはいは猫である。名前はまだ無い。<br class="visible-xs">ABCDEFＡＢＣＤＥＦ<br class="visible-xs">1234567890１２３４５６７８９０<br class="visible-xs">あいうえおかきくけこぁぃぅぇぉ<br>「」【】（）＜＞</p>
+		<h3 class="headline">font-feature-settings: "pwid";（プロポーショナル字形）【.font_feature_pwid】</h3>
+		<p class="font_feature_pwid margin_b_xsmall bg_color_main_light">「美しいフォントの字詰めとは」。吾輩わがはいは猫である。名前はまだ無い。<br class="visible-xs">ABCDEFＡＢＣＤＥＦ<br class="visible-xs">1234567890１２３４５６７８９０<br class="visible-xs">あいうえおかきくけこぁぃぅぇぉ<br>「」【】（）＜＞</p>
+		<p class="font_feature_pwid margin_b_small bg_color_main_light font_family_min">「美しいフォントの字詰めとは」。吾輩わがはいは猫である。名前はまだ無い。<br class="visible-xs">ABCDEFＡＢＣＤＥＦ<br class="visible-xs">1234567890１２３４５６７８９０<br class="visible-xs">あいうえおかきくけこぁぃぅぇぉ<br>「」【】（）＜＞</p>
+		<h3 class="headline">字詰めなし</h3>
+		<p class="margin_b_xsmall bg_color_main_light">「美しいフォントの字詰めとは」。吾輩わがはいは猫である。名前はまだ無い。<br class="visible-xs">ABCDEFＡＢＣＤＥＦ<br class="visible-xs">1234567890１２３４５６７８９０<br class="visible-xs">あいうえおかきくけこぁぃぅぇぉ<br>「」【】（）＜＞</p>
+		<p class="bg_color_main_light font_family_min">「美しいフォントの字詰めとは」。吾輩わがはいは猫である。名前はまだ無い。<br class="visible-xs">ABCDEFＡＢＣＤＥＦ<br class="visible-xs">1234567890１２３４５６７８９０<br class="visible-xs">あいうえおかきくけこぁぃぅぇぉ<br>「」【】（）＜＞</p>
+	</div>
+
+	<hr class="border_none border_main_b_1 margin_v_xlarge">
+
+<!-- 〓〓〓〓〓 ≪RFW独自≫余白設定 〓〓〓〓〓 -->
+	<div class="container" id="spacer">
+		<h2 class="headline">余白設定</h2>
+		<div class="bg_color_mono_clear text-center">
+			<div class="padding_xlarge bg_stripe_main border_main_clear_1 margin_b_xlarge">
+				<p class="bg_color_mono_light">xlarge</p>
+			</div>
+			<div class="padding_large bg_stripe_main border_main_clear_1 margin_b_large">
+				<p class="bg_color_mono_light">large</p>
+			</div>
+			<div class="padding_medium bg_stripe_main border_main_clear_1 margin_b_medium">
+				<p class="bg_color_mono_light">medium</p>
+			</div>
+			<div class="padding_small bg_stripe_main border_main_clear_1 margin_b_small">
+				<p class="bg_color_mono_light">small</p>
+			</div>
+			<div class="padding_xsmall bg_stripe_main border_main_clear_1 margin_b_xsmall">
+				<p class="bg_color_mono_light">xsmall</p>
+			</div>
+			<hr class="border_main_clear_1 margin_none">
+		</div>
+	</div>
+
+	<hr class="border_none border_main_b_1 margin_v_xlarge">
+
+<!-- 〓〓〓〓〓 ≪RFW独自≫セーフエリア 〓〓〓〓〓 -->
+	<div class="container" id="RFW_safearea">
+		<h2 class="headline">≪RFW独自≫セーフエリア</h2>
+		<p class="margin_b_small">
+			セーフエリアとは、iPhoneX系の物理ホームボタンのないiPhoneで「ブラウザ下部のタップが効かなくなる領域」のことで、この領域内をタップするには2回タップしなければならず、ユーザービリティが低下します。<br>
+			それを回避するには、マージンやパッディングに「constant(safe-area-inset-bottom)」という値を指定する必要があります。
+		</p>
+		<p class="margin_b_small">
+			この値は、通常のブラウザでは「0」として扱われますが、iPhoneX系ではセーフエリア分の値に変化します。<br>
+			マージンやパッディングにその「constant(safe-area-inset-bottom)」を付与することで要素を押し上げることが出来ます。<br>
+			が、普通にこの値を指定してもセーフエリアにかぶっているので、RFWでは1,25倍、1.75倍、2.5倍の3種を用意しています。
+		</p>
+		<p class="margin_b_small">
+			RFWのセーフエリア対応用のクラスは上記3種をそれぞれマージンとパッディング合わせて、計6種あります。<br>
+			margin_safearea_small、margin_safearea_medium、margin_safearea_large<br>
+			padding_safearea_small、padding_safearea_medium、padding_safearea_large
+		</p>
+		<p class="margin_b_small">
+			マージン系は、そのクラスを付けるとiPhoneX系でのみ、Fixedした要素にセーフエリア分のマージンが付きます。<br>
+			パッディング系は、要素の下部にパッディングが付きますが、iPhoneX系以外では0になるので注意。
+			パディングが0になるのを嫌う場合、CSSで計算式を使える「calc」を使用して基のパッディング値を足す必要があります。
+		</p>
+		<p>
+			※セーフエリアはiPhoneX系の物理ホームボタンのないiPhoneのみ（デベロッパーツールでは状態を確認できません）<br>
+			サンプルは実機かMACのXCodeなどのエミュレータを使ってください。
+		</p>
+	</div>
+
+	<hr class="border_none border_main_b_1 margin_v_xlarge">
+
+<!-- 〓〓〓〓〓 ≪RFW独自≫RFW flexboxグリッドシステム 〓〓〓〓〓 -->
+	<div class="container" id="RFW_flexbox">
+		<h2 class="headline">≪RFW独自≫RFW flexboxグリッドシステム</h2>
+		<p>
+			レスポンシブフレームワーク専用のFlexboxを用いたグリッドシステムです。<br>
+			基本的には【.row_grid &gt; grid_XX_XX】という組み合わせで使用します。<br>
+			親となる【.row_grid】にはデフォルトで「flex-wrap: wrap;」が付与されており、子要素のカラムが親要素よりも多くなる場合は、カラム落ち（改行）します。
+		</p>
+
+		<div class="margin_t_small padding_small bg_color_mono_clear">
+			<h3 class="headline" id="RFW_flexbox_default">グリッドの設定</h3>
+			<p class="margin_b_small">
+				クラスの命名規則とクラス名によるグリッド数の計算方法は基本的に分数の足し算です。【grid_】以降の1番目が分子、2番目が分母を示していると思ってください。<br>
+				純粋に分数の足し算で成立しますので、1行の中で分子の合計が分母と等しくなるようにクラスを付与すればどのパターンでも大きさは合うようになってます。<br>
+				合計値がオーバーした場合は下に落ち（flex-wrap）、足りない場合は空きが出ます。<br>
+				また、【grid_XXX_1_12】の「XXX」にサイズ因子を入れることで、デバイス毎でのサイズ指定が可能です。（xs＝SPのみ、sm＝タブレット以上、md＝PC小以上、lg＝PC大以上）<br>
+				なお、デフォルトが1カラムなので、SPサイズで1カラムにしたいときはクラス指定しなくてもOKです。
+			</p>
+			<div class="border_main_1 bg_color_mono_light">
+				<div class="row_grid margin_t_xsmall text-center">
+					<div class="grid_1_6">
+						<p class="bg_color_main_clear">grid_1_6</p>
+					</div>
+					<div class="grid_1_6">
+						<p class="bg_color_accent_clear">grid_1_6</p>
+					</div>
+					<div class="grid_1_6">
+						<p class="bg_color_main_clear">grid_1_6</p>
+					</div>
+					<div class="grid_1_6">
+						<p class="bg_color_accent_clear">grid_1_6</p>
+					</div>
+					<div class="grid_1_6">
+						<p class="bg_color_main_clear">grid_1_6</p>
+					</div>
+					<div class="grid_1_6">
+						<p class="bg_color_accent_clear">grid_1_6</p>
+					</div>
+				</div>
+				<div class="row_grid margin_t_xsmall text-center">
+					<div class="grid_1_5">
+						<p class="bg_color_accent_clear">grid_1_5</p>
+					</div>
+					<div class="grid_1_5">
+						<p class="bg_color_main_clear">grid_1_5</p>
+					</div>
+					<div class="grid_1_5">
+						<p class="bg_color_accent_clear">grid_1_5</p>
+					</div>
+					<div class="grid_1_5">
+						<p class="bg_color_main_clear">grid_1_5</p>
+					</div>
+					<div class="grid_1_5">
+						<p class="bg_color_accent_clear">grid_1_5</p>
+					</div>
+				</div>
+				<div class="row_grid margin_t_xsmall text-center">
+					<div class="grid_1_3">
+						<p class="bg_color_accent_clear">grid_1_3</p>
+					</div>
+					<div class="grid_1_6">
+						<p class="bg_color_main_clear">grid_1_6</p>
+					</div>
+					<div class="grid_1_6">
+						<p class="bg_color_accent_clear">grid_1_6</p>
+					</div>
+					<div class="grid_1_3">
+						<p class="bg_color_main_clear">grid_1_3</p>
+					</div>
+				</div>
+				<div class="row_grid margin_t_xsmall text-center">
+					<div class="grid_1_2">
+						<p class="bg_color_accent_clear">grid_1_2</p>
+					</div>
+					<div class="grid_1_4">
+						<p class="bg_color_main_clear">grid_1_4</p>
+					</div>
+					<div class="grid_1_4">
+						<p class="bg_color_accent_clear">grid_1_4</p>
+					</div>
+				</div>
+				<div class="row_grid margin_t_xsmall text-center">
+					<div class="grid_1_1">
+						<p class="bg_color_main_clear">grid_1_1</p>
+					</div>
+				</div>
+				<div class="row_grid margin_t_xsmall text-center">
+					<div class="grid_1_4">
+						<p class="bg_color_main_clear">grid_1_4</p>
+					</div>
+					<div class="grid_3_4">
+						<p class="bg_color_accent_clear">grid_3_4</p>
+					</div>
+				</div>
+				<div class="row_grid margin_t_xsmall text-center">
+					<div class="grid_3_8">
+						<p class="bg_color_main_clear">grid_3_8</p>
+					</div>
+					<div class="grid_5_8">
+						<p class="bg_color_accent_clear">grid_5_8</p>
+					</div>
+				</div>
+				<div class="row_grid margin_t_xsmall text-center">
+					<div class="grid_1_12">
+						<p class="bg_color_main_clear">grid_1_12</p>
+					</div>
+					<div class="grid_1_12">
+						<p class="bg_color_accent_clear">grid_1_12</p>
+					</div>
+					<div class="grid_1_12">
+						<p class="bg_color_main_clear">grid_1_12</p>
+					</div>
+					<div class="grid_3_12">
+						<p class="bg_color_accent_clear">grid_3_12</p>
+					</div>
+					<div class="grid_1_12">
+						<p class="bg_color_main_clear">grid_1_12</p>
+					</div>
+					<div class="grid_1_12">
+						<p class="bg_color_accent_clear">grid_1_12</p>
+					</div>
+					<div class="grid_1_12">
+						<p class="bg_color_main_clear">grid_1_12</p>
+					</div>
+					<div class="grid_1_12">
+						<p class="bg_color_accent_clear">grid_1_12</p>
+					</div>
+					<div class="grid_1_6">
+						<p class="bg_color_main_clear">grid_1_6</p>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<div class="margin_t_small padding_small bg_color_mono_clear">
+			<h3 class="headline">親要素の設定</h3>
+			<p class="margin_b_medium">
+				子要素（グリッド）を制御するためのクラス群は【.row_grid】に併記すれば上書きされます。
+			</p>
+
+			<h4 class="headline" id="flex-direction">flex-direction（子要素の並ぶ向き）</h4>
+			<div class="row_grid text-center">
+				<div class="grid_md_1_4">
+					<h5 class="margin_b_xsmall">.flex_row（初期値）</h5>
+					<div class="border_main_1 bg_color_mono_light">
+						<div class="row_grid">
+							<div class="grid_1_4">
+								<p class="bg_color_main_clear padding_v_xsmall">1</p>
+							</div>
+							<div class="grid_1_4">
+								<p class="bg_color_accent_clear padding_v_xsmall">2</p>
+							</div>
+							<div class="grid_1_4">
+								<p class="bg_color_main_clear padding_v_xsmall">3</p>
+							</div>
+							<div class="grid_1_4">
+								<p class="bg_color_accent_clear padding_v_xsmall">4</p>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="grid_md_1_4">
+					<h5 class="margin_b_xsmall">.flex_reverse（横並び逆順）</h5>
+					<div class="border_main_1 bg_color_mono_light">
+						<div class="row_grid flex_reverse">
+							<div class="grid_1_4">
+								<p class="bg_color_main_clear padding_v_xsmall">1</p>
+							</div>
+							<div class="grid_1_4">
+								<p class="bg_color_accent_clear padding_v_xsmall">2</p>
+							</div>
+							<div class="grid_1_4">
+								<p class="bg_color_main_clear padding_v_xsmall">3</p>
+							</div>
+							<div class="grid_1_4">
+								<p class="bg_color_accent_clear padding_v_xsmall">4</p>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="grid_md_1_4">
+					<h5 class="margin_b_xsmall">.flex_column（縦並び）</h5>
+					<div class="border_main_1 bg_color_mono_light">
+						<div class="row_grid flex_column">
+							<div class="grid_1_4">
+								<p class="bg_color_main_clear padding_v_xsmall">1</p>
+							</div>
+							<div class="grid_1_4">
+								<p class="bg_color_accent_clear padding_v_xsmall">2</p>
+							</div>
+							<div class="grid_1_4">
+								<p class="bg_color_main_clear padding_v_xsmall">3</p>
+							</div>
+							<div class="grid_1_4">
+								<p class="bg_color_accent_clear padding_v_xsmall">4</p>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="grid_md_1_4">
+					<h5 class="margin_b_xsmall">.flex_column_reverse（縦並び逆順）</h5>
+					<div class="border_main_1 bg_color_mono_light">
+						<div class="row_grid flex_column_reverse">
+							<div class="grid_1_4">
+								<p class="bg_color_main_clear padding_v_xsmall">1</p>
+							</div>
+							<div class="grid_1_4">
+								<p class="bg_color_accent_clear padding_v_xsmall">2</p>
+							</div>
+							<div class="grid_1_4">
+								<p class="bg_color_main_clear padding_v_xsmall">3</p>
+							</div>
+							<div class="grid_1_4">
+								<p class="bg_color_accent_clear padding_v_xsmall">4</p>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+
+			<hr class="border_none margin_v_small">
+
+			<h4 class="headline" id="flex-wrap">.flex_wrap（子要素の折返し）</h4>
+			<h5 class="margin_b_xsmall">nowrap（折返し禁止）</h5>
+			<div class="border_main_1 margin_b_xsmall text-center bg_color_mono_light">
+				<div class="row_grid flex_nowrap">
+					<div class="grid_1_6">
+						<p class="bg_color_main_clear">1</p>
+					</div>
+					<div class="grid_1_6">
+						<p class="bg_color_accent_clear">2</p>
+					</div>
+					<div class="grid_1_6">
+						<p class="bg_color_main_clear">3</p>
+					</div>
+					<div class="grid_1_6">
+						<p class="bg_color_accent_clear">4</p>
+					</div>
+					<div class="grid_1_6">
+						<p class="bg_color_main_clear">5</p>
+					</div>
+					<div class="grid_1_6">
+						<p class="bg_color_accent_clear">6</p>
+					</div>
+					<div class="grid_1_6">
+						<p class="bg_color_main_clear">7</p>
+					</div>
+					<div class="grid_1_6">
+						<p class="bg_color_accent_clear">8</p>
+					</div>
+				</div>
+			</div>
+
+			<h5 class="margin_b_xsmall">.flex_nowrap（折返しあり）</h5>
+			<div class="border_main_1 margin_b_xsmall text-center bg_color_mono_light">
+				<div class="row_grid flex_wrap">
+					<div class="grid_1_6">
+						<p class="bg_color_main_clear">1</p>
+					</div>
+					<div class="grid_1_6">
+						<p class="bg_color_accent_clear">2</p>
+					</div>
+					<div class="grid_1_6">
+						<p class="bg_color_main_clear">3</p>
+					</div>
+					<div class="grid_1_6">
+						<p class="bg_color_accent_clear">4</p>
+					</div>
+					<div class="grid_1_6">
+						<p class="bg_color_main_clear">5</p>
+					</div>
+					<div class="grid_1_6">
+						<p class="bg_color_accent_clear">6</p>
+					</div>
+					<div class="grid_1_6">
+						<p class="bg_color_main_clear">7</p>
+					</div>
+					<div class="grid_1_6">
+						<p class="bg_color_accent_clear">8</p>
+					</div>
+				</div>
+			</div>
+
+			<hr class="border_none margin_v_small">
+
+			<h4 class="headline" id="justify-content">justify-content（水平方向の揃え）</h4>
+			<div class="row_grid text-center">
+				<div class="grid_md_1_5">
+					<h5 class="margin_b_xsmall">.justify_start（初期値）</h5>
+					<div class="display_flex border_main_1 bg_color_mono_light">
+						<div class="grid_1_6 bg_color_main_light">
+							1
+						</div>
+						<div class="grid_1_6 bg_color_accent_clear">
+							2
+						</div>
+						<div class="grid_1_6 bg_color_main_light">
+							3
+						</div>
+					</div>
+				</div>
+				<div class="grid_md_1_5">
+					<h5 class="margin_b_xsmall">.justify_end</h5>
+					<div class="display_flex justify_end border_main_1 bg_color_mono_light">
+						<div class="grid_1_6 bg_color_main_light">
+							1
+						</div>
+						<div class="grid_1_6 bg_color_accent_clear">
+							2
+						</div>
+						<div class="grid_1_6 bg_color_main_light">
+							3
+						</div>
+					</div>
+				</div>
+				<div class="grid_md_1_5">
+					<h5 class="margin_b_xsmall">.justify_center</h5>
+					<div class="display_flex justify_center border_main_1 bg_color_mono_light">
+						<div class="grid_1_6 bg_color_main_light">
+							1
+						</div>
+						<div class="grid_1_6 bg_color_accent_clear">
+							2
+						</div>
+						<div class="grid_1_6 bg_color_main_light">
+							3
+						</div>
+					</div>
+				</div>
+				<div class="grid_md_1_5">
+					<h5 class="margin_b_xsmall">.justify_between</h5>
+					<div class="display_flex justify_between border_main_1 bg_color_mono_light">
+						<div class="grid_1_6 bg_color_main_light">
+							1
+						</div>
+						<div class="grid_1_6 bg_color_accent_clear">
+							2
+						</div>
+						<div class="grid_1_6 bg_color_main_light">
+							3
+						</div>
+					</div>
+				</div>
+				<div class="grid_md_1_5">
+					<h5 class="margin_b_xsmall">.justify_around</h5>
+					<div class="display_flex justify_around border_main_1 bg_color_mono_light">
+						<div class="grid_1_6 bg_color_main_light">
+							1
+						</div>
+						<div class="grid_1_6 bg_color_accent_clear">
+							2
+						</div>
+						<div class="grid_1_6 bg_color_main_light">
+							3
+						</div>
+					</div>
+				</div>
+			</div>
+
+			<hr class="border_none margin_v_small">
+
+			<h4 class="headline" id="align-items">align-items（垂直方向の揃え）</h4>
+			<div class="row_grid text-center">
+				<div class="grid_md_1_5">
+					<h5 class="margin_b_xsmall">.item_stretch（初期値）</h5>
+					<div class="display_flex border_main_1 bg_color_mono_light" style="height: 100px;">
+						<div class="grid_1_3 bg_color_main_light">
+							1
+						</div>
+						<div class="grid_1_3 bg_color_accent_clear">
+							2
+						</div>
+						<div class="grid_1_3 bg_color_main_light">
+							3
+						</div>
+					</div>
+				</div>
+				<div class="grid_md_1_5">
+					<h5 class="margin_b_xsmall">.item_center（上下中央）</h5>
+					<div class="display_flex item_center border_main_1 bg_color_mono_light" style="height: 100px;">
+						<div class="grid_1_3 bg_color_main_light">
+							1
+						</div>
+						<div class="grid_1_3 bg_color_accent_clear">
+							2
+						</div>
+						<div class="grid_1_3 bg_color_main_light">
+							3
+						</div>
+					</div>
+				</div>
+				<div class="grid_md_1_5">
+					<h5 class="margin_b_xsmall">.item_start（上揃え）</h5>
+					<div class="display_flex item_start border_main_1 bg_color_mono_light" style="height: 100px;">
+						<div class="grid_1_3 bg_color_main_light">
+							1
+						</div>
+						<div class="grid_1_3 bg_color_accent_clear">
+							2
+						</div>
+						<div class="grid_1_3 bg_color_main_light">
+							3
+						</div>
+					</div>
+				</div>
+				<div class="grid_md_1_5">
+					<h5 class="margin_b_xsmall">.item_end（下揃え）</h5>
+					<div class="display_flex item_end border_main_1 bg_color_mono_light" style="height: 100px;">
+						<div class="grid_1_3 bg_color_main_light">
+							1
+						</div>
+						<div class="grid_1_3 bg_color_accent_clear">
+							2
+						</div>
+						<div class="grid_1_3 bg_color_main_light">
+							3
+						</div>
+					</div>
+				</div>
+				<div class="grid_md_1_5">
+					<h5 class="margin_b_xsmall">.item_baseline（ベースライン）</h5>
+					<div class="display_flex item_baseline border_main_1 bg_color_mono_light" style="height: 100px;">
+						<div class="grid_1_3 bg_color_main_light">
+							1
+						</div>
+						<div class="grid_1_3 bg_color_accent_clear">
+							2
+						</div>
+						<div class="grid_1_3 bg_color_main_light">
+							3
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<hr class="border_none margin_v_medium">
+
+		<h2 class="headline">flexboxグリッドシステムの活用</h2>
+		<h3 class="headline">写真がPC時に右で、SP時に左になる配置</h3>
+		<div class="row_grid flex_reverse">
+			<figure class="grid_sm_3_12">
+				<img src="http://placehold.it/600x300">
+			</figure>
+			<div class="grid_sm_9_12">
+				.row_grid.flex_reverse > grid_sm_X_XX > img + .grid_sm_X_XX<br>
+				SP時基準でHTMLをマークアップし、【.flex_reverse】でPC時の順序を逆転（flex-directionプロパティは横並び方向の逆転なので縦並びには無効という点を利用）。<br>
+				テキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキスト
+			</div>
+		</div>
+
+		<hr class="border_none margin_v_small">
+
+		<h3 class="headline">PCで並び順を変える</h3>
+		<p class="margin_b_medium">
+			タブレットサイズ以上で反応する【.flex_order_1】〜【.flex_order_12】までがあり、数字が大きいほど後ろに並びます。<br>
+			基本的な使い方としては、SPとPCで順序を変えたい場合、SP時で正しく並ぶようにHTMLを記述し、PC時の並びを【.flex_order_XX】で指定します。
+		</p>
+		<div class="row_grid">
+			<figure class="grid_sm_3_12 margin_b_small flex_order_2">
+				<img src="http://placehold.jp/40/ccffff/000/600x300.png?text=1番目の画像【.flex_order_2】">
+			</figure>
+			<figure class="grid_sm_3_12 margin_b_small flex_order_3">
+				<img src="http://placehold.jp/40/ffccff/000/600x300.png?text=2番目の画像【.flex_order_3】">
+			</figure>
+			<figure class="grid_sm_3_12 margin_b_small flex_order_5">
+				<img src="http://placehold.jp/40/ffffcc/000/600x300.png?text=3番目の画像【.flex_order_5】">
+			</figure>
+			<div class="grid_sm_9_12 margin_b_small flex_order_1">
+				【.flex_order_1】1番目のテキスト群。1番目のテキスト群。1番目のテキスト群。1番目のテキスト群。1番目のテキスト群。1番目のテキスト群。1番目のテキスト群。1番目のテキスト群。<br>
+			</div>
+			<div class="grid_sm_6_12 margin_b_small flex_order_4">
+				【.flex_order_4】2番目のテキスト群。2番目のテキスト群。2番目のテキスト群。2番目のテキスト群。2番目のテキスト群。2番目のテキスト群。
+			</div>
+		</div>
+
+		<hr class="border_none margin_v_small">
+
+		<h3 class="headline">複数行で高さを揃える</h3>
+		<p class="margin_b_small">
+			RFWグリッドシステムに設定してあるクラスを複数組み合わせると、こういう事もできます↓<br>
+			右カラムの高さに合わせて、全く構造の異なる要素の高さを揃えているように見せています（当然JSは未使用）
+		</p>
+		<div class="row_grid">
+			<div class="grid_xs_1_1 grid_sm_4_12 grid_md_3_12 display_flex">
+				<div class="padding_small border_main_1 display_flex flex_column">
+					<p class="padding_b_xsmall font_small">右のカラムに高さを揃えるために【.display_flex】【.flex_column】を記述</p>
+					<div class="display_flex item_center justify_center flex_basis_full bg_color_main_light">
+						<p class="font_small">
+							【.display_flex】【.item_center】【.justify_center】【.flex_basis_full】を親要素に記述して、高さを右カラムに合わせたうえで、上下左右中央に配置。
+						</p>
+					</div>
+				</div>
+			</div>
+			<div class="grid_xs_1_1 grid_sm_8_12 grid_md_9_12">
+				<div class="padding_small border_main_1">
+					<p class="padding_b_xsmall">右カラムには特に特殊なコードはありません</p>
+					<p class="padding_xsmall bg_color_main_light">
+						<strong class="font_color_accent">
+							左カラムの最大のポイントは、高さを揃えたい要素の親要素に対して【.flex_column】を指定することで、フレックスボックスの揃え方向の上下と左右反転させ、かつ、子要素に【.flex_basis_full（flex-basis: 100%;）】を指定してカラムを伸ばして見かけ上、高さを揃えさせている点です。
+						</strong>
+					</p>
+					<div class="row_grid">
+						<div class="grid_sm_1_2 margin_t_small">
+							<div class="border_main_1 padding_xsmall">
+								<p class="padding_b_xsmall">ここはただのRFWグリッドなのでお気になさらず</p>
+								<p class="padding_xsmall bg_color_main_light">
+									<strong class="font_large font_color_main_deep">1,000,000</strong>円
+								</p>
+							</div>
+						</div>
+						<div class="grid_sm_1_2 margin_t_small">
+							<div class="border_main_1 padding_xsmall">
+								<p class="padding_b_xsmall">ここはただのRFWグリッドなのでお気になさらず</p>
+								<p class="padding_xsmall bg_color_main_light">
+									月額　<strong class="font_large font_color_main_deep">34,100</strong>円～
+								</p>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<hr class="border_none border_main_b_1 margin_v_xlarge">
+
+<!-- 〓〓〓〓〓 ≪RFW独自≫Bootstrap拡張クラス 〓〓〓〓〓 -->
+	<div class="container" id="BootstrapExpansion">
+		<h2 class="headline">≪RFW独自≫Bootstrap拡張</h2>
+		<div>
+			<h3 class="headline">
+				SP時のGutter（余白）設定の変更
+			</h3>
+			<p class="margin_b_medium">
+				Bootstrap3のGutter（余白）の設定は基本、デバイスサイズに関わらず「30px」ですが、RFW（v1.5.0以上）では、SP時のサイズを変更できるようにしました。<br>
+				デフォルトは「$spaceSmall」が設定されています（詳細は「helpers/_variables.scss」を参照のこと）<br>
+				下のサンプルをデバイスサイズを変えてみてみてください。
+			</p>
+			<div class="bg_stripe_light">
+				<div class="row">
+					<div class="col-xs-6 col-sm-4 col-md-3 margin_v_xsmall">
+						<p class="bg_color_main font_color_mono_light">
+							col-xs-6 col-sm-4 col-md-3
+						</p>
+					</div>
+					<div class="col-xs-6 col-sm-4 col-md-3 margin_v_xsmall">
+						<p class="bg_color_accent font_color_mono_light">
+							col-xs-6 col-sm-4 col-md-3
+						</p>
+					</div>
+					<div class="col-xs-6 col-sm-4 col-md-3 margin_v_xsmall">
+						<p class="bg_color_main font_color_mono_light">
+							col-xs-6 col-sm-4 col-md-3
+						</p>
+					</div>
+					<div class="col-xs-6 col-sm-4 col-md-3 margin_v_xsmall">
+						<p class="bg_color_accent font_color_mono_light">
+							col-xs-6 col-sm-4 col-md-3
+						</p>
+					</div>
+					<div class="col-xs-6 col-sm-4 col-md-3 margin_v_xsmall">
+						<p class="bg_color_main font_color_mono_light">
+							col-xs-6 col-sm-4 col-md-3
+						</p>
+					</div>
+					<div class="col-xs-6 col-sm-4 col-md-3 margin_v_xsmall">
+						<p class="bg_color_accent font_color_mono_light">
+							col-xs-6 col-sm-4 col-md-3
+						</p>
+					</div>
+				</div>
+			</div>
+		</div>
+		<hr class="margin_v_medium border_none border_main_b_1">
+		<div>
+			<h3 class="headline">
+				テキスト回り込み【.col】
+			</h3>
+			<p class="margin_b_medium">
+				BootstrapのCol系を使いながら文字を画像の下にも回り込ませるためのクラス。<br>
+				画像の親要素に対してCol系クラスを使い、文字に対して【.col】を使うと、Col系のガターを合わせた上で文字が回り込む。
+			</p>
+			<div class="row">
+				<figure class="col-xs-6 col-sm-4">
+					<img src="http://placehold.it/600x300">
+				</figure>
+				<div class="col">
+					回り込む文字回り込む文字回り込む文字回り込む文字回り込む文字回り込む文字回り込む文字回り込む文字回り込む文字回り込む文字回り込む文字回り込む文字回り込む文字回り込む文字回り込む文字回り込む文字回り込む文字回り込む文字回り込む文字回り込む文字回り込む文字回り込む文字回り込む文字回り込む文字回り込む文字回り込む文字回り込む文字回り込む文字回り込む文字回り込む文字回り込む文字回り込む文字回り込む文字回り込む文字回り込む文字回り込む文字回り込む文字回り込む文字回り込む文字回り込む文字回り込む文字回り込む文字回り込む文字回り込む文字回り込む文字回り込む文字回り込む文字回り込む文字回り込む文字回り込む文字回り込む文字回り込む文字回り込む文字回り込む文字回り込む文字回り込む文字回り込む文字回り込む文字回り込む文字回り込む文字回り込む文字回り込む文字回り込む文字回り込む文字回り込む文字回り込む文字回り込む文字回り込む文字回り込む文字回り込む文字回り込む文字回り込む文字回り込む文字回り込む文字回り込む文字回り込む文字回り込む文字回り込む文字回り込む文字回り込む文字
+				</div>
+			</div>
+		</div>
+		<hr class="margin_v_medium border_none border_main_b_1">
+		<div>
+			<h3 class="headline">
+				テキスト回り込み時の画像側クラス【.col_left】【.col_right】<br>
+				Bootstrapガター（余白）だけを付与する【.col_XX_gutter】
+			</h3>
+			<p class="margin_b_medium">
+				上記【.col】だけだと、文字と画像の間がBootstrapガター（余白）の半分になってしまうので、そうしたくない場合には画像側の親に対して【.col_left（画像が左の時）】【.col_right（画像が右の時）】を付与すると同じ余白になります。<br>
+				【.col_left】【.col_right】には、各種サイズ（.col_xs_left、など）もあるので、【.col_XX_12】などを使う場合は、そのサイズと同じ【.col_XX_gutter】を併記すると、どのサイズでも正しいガターになります。
+			</p>
+			<div class="row">
+				<figure class="col-xs-6 col-sm-4 col_left">
+					<img src="http://placehold.it/600x300">
+				</figure>
+				<div class="col">
+					回り込む文字回り込む文字回り込む文字回り込む文字回り込む文字回り込む文字回り込む文字回り込む文字回り込む文字回り込む文字回り込む文字回り込む文字回り込む文字回り込む文字回り込む文字回り込む文字回り込む文字回り込む文字回り込む文字回り込む文字回り込む文字回り込む文字回り込む文字回り込む文字回り込む文字回り込む文字回り込む文字回り込む文字回り込む文字回り込む文字回り込む文字回り込む文字回り込む文字回り込む文字回り込む文字回り込む文字回り込む文字回り込む文字回り込む文字回り込む文字回り込む文字回り込む文字回り込む文字回り込む文字回り込む文字回り込む文字回り込む文字回り込む文字回り込む文字回り込む文字回り込む文字回り込む文字回り込む文字回り込む文字回り込む文字回り込む文字回り込む文字回り込む文字回り込む文字回り込む文字回り込む文字回り込む文字回り込む文字回り込む文字回り込む文字回り込む文字回り込む文字回り込む文字回り込む文字回り込む文字回り込む文字回り込む文字回り込む文字回り込む文字回り込む文字回り込む文字回り込む文字回り込む文字回り込む文字回り込む文字
+				</div>
+			</div>
+			<div class="row">
+				<figure class="col-xs-12 col-sm-4 col_left col_xs_gutter">
+					<img src="http://placehold.it/600x300">
+				</figure>
+				<div class="col">
+					画像側は【.col-xs-12.col-sm-4.col_left.col_xs_gutter】<br>
+					SP時は画像が100％になり、それに合わせてガターも整うようになっています。
+				</div>
+			</div>
+		</div>
+		<hr class="margin_v_medium border_none border_main_b_1">
+		<div>
+			<h3 class="headline">
+				コンテナの余白リセット【.container_reset】
+			</h3>
+			<p class="margin_b_medium">
+				【.container】には左右にパッディングが付いていますが、このパディングを無くすためのクラス。<br>
+				全デバイスで打ち消す【.container_reset】のほか、デバイスサイズごとに【.container_reset_xs】【.container_reset_sm】【.container_reset_md】【.container_reset_lg】を用意。他のBootstrapクラスと同じく、そのサイズのみで有効になります。<br>
+				例えば、SP時だけ背景を横幅いっぱいにしたい、などに使えます（以下はその例）。
+			</p>
+			<div class="container_reset_xs padding_small bg_color_accent_pale">
+				SPのときだけ、背景色が横幅いっぱいになります。<br>
+				SPのときだけ、背景色が横幅いっぱいになります。<br>
+				SPのときだけ、背景色が横幅いっぱいになります。<br>
+				SPのときだけ、背景色が横幅いっぱいになります。<br>
+				ぶっちゃけ、_xs以外、利用シーンないと思いますが、いちおう設定してあります・・・。
+			</div>
+		</div>
+		<hr class="margin_v_medium border_none border_main_b_1">
+	</div>
+	<div>
+		<div class="container">
+			<h3 class="headline">コンテナ系【.container】と【.container_min】</h3>
+		</div>
+		<div class="container margin_b_medium">
+			<p class="bg_stripe_light">
+				通常のコンテナはBootstrapの【.container】するが、下層ページの中で長めのテキストで構成されているようば部分については、PCでの横幅を位置段階小さくした【.container_min】の仕様を推奨します。<br>
+				このサイズは通常の【.container】。
+			</p>
+		</div>
+		<div class="container_min">
+			<p class="bg_stripe_light">
+				このサイズが【.container_min（max-width: 970px;）】（標準的なRFWでは、【.container】が@extendされています）。<br>
+				少なくともフォームのようにPCで横長になりすぎて見栄えや操作感が悪いコンテンツにはこのクラスを使用。
+			</p>
+		</div>
+	</div>
+
+	<hr class="border_none border_main_b_1 margin_v_xlarge">
+
+<!-- 〓〓〓〓〓 ≪RFW独自≫RFWウィーク 〓〓〓〓〓 -->
+	<div class="container" id="rfw_week">
+		<h2 class="headline">≪RFW独自≫RFWウィーク</h2>
+		<p class="margin_b_small">
+			Flexboxを使用した週間予定表です。<br>
+			CSSのみで可変し、SP時には縦長、PC時には横長になります。<br>
+			CSSのみでの実装を目指したため、SP/PC時共に、セルの横幅は全て同一の固定幅になります（文字が多い場合は自動折返し）。<br>
+			<span class="font_color_accent_deep">※最大の弱点は、行と列の数が完全に固定になること。行や列の数を変えたものを同時に使いたい場合は、その分だけクラスを作る必要があります。</span>
+		</p>
+		<div class="rfw_week text-center">
+			<div class="rfw_week_order_1">
+				<p>診療時間</p>
+			</div>
+			<div class="rfw_week_order_2 bg_color_main_light">
+				<p>09:30～12:30</p>
+			</div>
+			<div class="rfw_week_order_3 bg_color_main_light">
+				<p>15:00～19:00</p>
+			</div>
+
+			<div class="rfw_week_order_1">
+				<p>日</p>
+			</div>
+			<div class="rfw_week_order_2">
+				<p>×</p>
+			</div>
+			<div class="rfw_week_order_3">
+				<p>×</p>
+			</div>
+
+			<div class="rfw_week_order_1">
+				<p>月</p>
+			</div>
+			<div class="rfw_week_order_2">
+				<p>〇</p>
+			</div>
+			<div class="rfw_week_order_3">
+				<p>〇</p>
+			</div>
+
+			<div class="rfw_week_order_1">
+				<p>火</p>
+			</div>
+			<div class="rfw_week_order_2">
+				<p>〇</p>
+			</div>
+			<div class="rfw_week_order_3">
+				<p>〇</p>
+			</div>
+
+			<div class="rfw_week_order_1">
+				<p>水</p>
+			</div>
+			<div class="rfw_week_order_2">
+				<p>〇<br><span class="font_small">15:00まで</span></p>
+			</div>
+			<div class="rfw_week_order_3">
+				<p>×</p>
+			</div>
+
+			<div class="rfw_week_order_1">
+				<p>木</p>
+			</div>
+			<div class="rfw_week_order_2">
+				<p>〇</p>
+			</div>
+			<div class="rfw_week_order_3">
+				<p>〇</p>
+			</div>
+
+			<div class="rfw_week_order_1">
+				<p>金</p>
+			</div>
+			<div class="rfw_week_order_2">
+				<p>〇</p>
+			</div>
+			<div class="rfw_week_order_3">
+				<p>〇</p>
+			</div>
+
+			<div class="rfw_week_order_1">
+				<p>土</p>
+			</div>
+			<div class="rfw_week_order_2">
+				<p>〇</p>
+			</div>
+			<div class="rfw_week_order_3">
+				<p>△<br><span class="font_small">17:00まで</span></p>
+			</div>
+		</div>
+	</div>
+
+	<hr class="border_none border_main_b_1 margin_v_xlarge">
+
+<!-- 〓〓〓〓〓 ≪RFW独自≫リスト系 〓〓〓〓〓 -->
+	<div class="container">
+		<h2 class="headline">リスト系</h2>
+		<p class="margin_b_medium">
+			リスト系はli要素のデフォルトで【.margin_b_xsmall】がextendされています。<br>
+			また、親はrog_gridと同じ性質を持っているので、liに対して【グリット系クラス】を使ったレイアウト変更が可能です。<br>
+			ul要素、ないし、li要素のフォントサイズを継承してアイコンサイズが設定されているので、ul要素にフォント系クラスを使うとリスト全体が、li要素にフォント系クラスを使うとそのリストのみ、文字サイズとアイコンが指定サイズに応じて変化します。<br>
+			リスト系クラスに【.list_ladies】を併記すると、アイコンが女性用になります（マテリアルアイコン系のみ）。<br>
+			フォントカラー系クラスを親、もしくは子要素に付与すると、アイコンと文字色がそのカラーに上書きされます。
+		</p>
+		<ul class="list_check">
+			<li class="font_ularge">
+				ほげほげほげほげほげほげほげほげほげほげほげほげほげほげほげほげほげほげほげほげ
+			</li>
+			<li class="grid_1_2">
+				<a href="">テキストリンク</a>
+			</li>
+			<li class="grid_1_2">
+				ほげほげほげほげほげほげほげ<a href="">テキストリンクの位置は自由</a>ほげほげほげほげほげほげほげほげほげほげほげほげほげ
+			</li>
+			<li class="font_color_accent_dark">
+				li要素に【.font_color_accent_dark】を付与
+			</li>
+		</ul>
+		<hr class="border_none margin_v_small">
+		<ul class="list_check list_ladies">
+			<li>
+				【.list_ladies】を併記
+			</li>
+		</ul>
+		<ul class="list_check font_color_accent_dark">
+			<li>
+				【.font_color_accent_dark】を併記
+			</li>
+		</ul>
+
+		<hr class="border_none margin_v_small">
+
+		<div class="row_grid">
+			<div class="grid_sm_1_2 margin_b_medium">
+				<ul class="list_check padding_small bg_color_mono_clear">
+					<li>
+						スキン系クラスで装飾したい場合は、ul要素にパッディングや背景色のスキンを適応して下さい。
+					</li>
+					<li>
+						hogehoge
+					</li>
+					<li>
+						hogehoge
+					</li>
+				</ul>
+			</div>
+			<div class="grid_sm_1_2 margin_b_medium">
+				<ul class="list_check frame_border_shadow padding_small bg_color_mono_clear">
+					<li>
+						スキン系クラスで装飾したい場合は、ul要素にパッディングや背景色のスキンを適応して下さい。
+					</li>
+					<li>
+						hogehoge
+					</li>
+					<li>
+						hogehoge
+					</li>
+				</ul>
+			</div>
+		</div>
+
+		<hr class="border_none margin_v_small">
+
+		<div class="row_grid">
+			<div class="grid_sm_1_2	 margin_b_medium">
+				<h3 class="headline">リンクアイコン【.list_link】</h3>
+				<ul class="list_link">
+					<li>ほげほげほげほげほげほげほげほげ</li>
+					<li>ほげほげほげほげほげほげほげほげ</li>
+					<li class="grid_1_2">【.grid_1_2】を併用した例</li>
+					<li class="grid_1_2">【.grid_1_2】を併用した例</li>
+				</ul>
+			</div>
+			<div class="grid_sm_1_2	 margin_b_medium">
+				<h3 class="headline">チェックマーク【.list_check】</h3>
+				<ul class="list_check">
+					<li>ほげほげほげほげほげほげほげほげ</li>
+					<li>ほげほげほげほげほげほげほげほげ</li>
+					<li class="grid_1_2">【.grid_1_2】を併用した例</li>
+					<li class="grid_1_2">【.grid_1_2】を併用した例</li>
+				</ul>
+			</div>
+			<div class="grid_sm_1_2	 margin_b_medium">
+				<h3 class="headline">チェックマーク（丸）【.list_check_circle】</h3>
+				<ul class="list_check_circle">
+					<li>ほげほげほげほげほげほげほげほげ</li>
+					<li>ほげほげほげほげほげほげほげほげ</li>
+					<li class="grid_1_2">【.grid_1_2】を併用した例</li>
+					<li class="grid_1_2">【.grid_1_2】を併用した例</li>
+				</ul>
+			</div>
+			<div class="grid_sm_1_2	 margin_b_medium">
+				<h3 class="headline">アスタリスク（※）【.list_comment】</h3>
+				<ul class="list_comment">
+					<li>ほげほげほげほげほげほげほげほげ</li>
+					<li>ほげほげほげほげほげほげほげほげ</li>
+					<li class="grid_1_2">【.grid_1_2】を併用した例</li>
+					<li class="grid_1_2">【.grid_1_2】を併用した例</li>
+				</ul>
+			</div>
+			<div class="grid_sm_1_2	 margin_b_medium">
+				<h3 class="headline">中点（・）【.list_dotted】</h3>
+				<ul class="list_dotted">
+					<li>ほげほげほげほげほげほげほげほげ</li>
+					<li>ほげほげほげほげほげほげほげほげ</li>
+					<li class="grid_1_2">【.grid_1_2】を併用した例</li>
+					<li class="grid_1_2">【.grid_1_2】を併用した例</li>
+				</ul>
+			</div>
+			<div class="grid_sm_1_2	 margin_b_medium">
+				<h3 class="headline">数字【ol要素】</h3>
+				<ol>
+					<li>数字を使いたい場合は、意味的にもol要素を使って下さい（クラス不要）</li>
+					<li>ほげほげほげほげほげほげほげほげほげほげほげほげほげほげほげほげほげほげほげほげほげほげほげほげ</li>
+					<li class="grid_1_2">【.grid_1_2】を併用した例</li>
+					<li class="grid_1_2">【.grid_1_2】を併用した例</li>
+				</ol>
+			</div>
+		</div>
+	</div>
+
+	<hr class="border_none border_main_b_1 margin_v_xlarge">
+
+<!-- 〓〓〓〓〓 ≪RFW独自≫アコーディオン 〓〓〓〓〓 -->
+	<section class="container" id="accordion">
+		<h2 class="headline">≪RFW独自≫アコーディオン</h2>
+		<div class="row" id="accordion_01">
+			<div class="col-sm-6 margin_b_medium">
+				<dl class="border_main_1 accordion_parent" data-js-accordion-parent>
+					<dt class="bg_color_main_clear accordion_trigger accordion_trigger_arrow" data-js-accordion-trigger>
+						<a href="javascript:void(0)" class="padding_small display_block text-center">デフォルトで開いているアコーディオン</a>
+					</dt>
+					<dd class="padding_small accordion_body" data-js-accordion-body data-match-height>
+						「matchHeight-min.js」を利用して隣と高さを揃えています。<br>
+						開閉するコンテンツ開閉するコンテンツ開閉するコンテンツ開閉するコンテンツ開閉するコンテンツ開閉するコンテンツ開閉するコンテンツ開閉するコンテンツ開閉するコンテンツ開閉するコンテンツ
+					</dd>
+				</dl>
+			</div>
+			<div class="col-sm-6 margin_b_medium">
+				<dl class="border_main_1 accordion_parent accordion_close" data-js-accordion-parent>
+					<dt class="bg_color_main_clear accordion_trigger accordion_trigger_arrow" data-js-accordion-trigger>
+						<a href="javascript:void(0)" class="padding_small display_block text-center">デフォルトで閉じているアコーディオン</a>
+					</dt>
+					<dd class="padding_small accordion_body" data-js-accordion-body data-match-height>
+						「matchHeight-min.js」を利用して隣と高さを揃えています。<br>
+						開閉するコンテンツ開閉するコンテンツ開閉するコンテンツ開閉するコンテンツ開閉するコンテンツ開閉するコンテンツ開閉するコンテンツ開閉するコンテンツ
+					</dd>
+				</dl>
+			</div>
+		</div>
+
+		<div class="row" id="accordion_02">
+			<div class="col-sm-6 margin_b_medium">
+				<div class="padding_small border_main_1 accordion_parent" data-js-accordion-parent>
+					<h3 class="headline">開閉トリガーが下で最初から開いてる</h3>
+					<div class="margin_b_small accordion_body" data-js-accordion-body data-match-height>
+						開閉するコンテンツ開閉するコンテンツ開閉するコンテンツ開閉するコンテンツ開閉するコンテンツ開閉するコンテンツ開閉するコンテンツ開閉するコンテンツ開閉するコンテンツ開閉するコンテンツ
+					</div>
+					<p class="bg_color_main_clear accordion_trigger" data-js-accordion-trigger>
+						<a href="javascript:void(0)" class="padding_small display_block text-center">
+							<span class="accordion_toggle_hide">もっと見る</span>
+							<span class="accordion_toggle_show">閉じる</span>
+						</a>
+					</p>
+				</div>
+			</div>
+			<div class="col-sm-6 margin_b_medium">
+				<div class="padding_small border_main_1 accordion_parent accordion_close" data-js-accordion-parent>
+					<h3 class="headline">開閉トリガーが下で最初から閉じている</h3>
+					<div class="margin_b_small accordion_body" data-js-accordion-body data-match-height>
+						開閉するコンテンツ開閉するコンテンツ開閉するコンテンツ開閉するコンテンツ開閉するコンテンツ開閉するコンテンツ開閉するコンテンツ開閉するコンテンツ
+					</div>
+					<p class="bg_color_main_clear accordion_trigger" data-js-accordion-trigger>
+						<a href="javascript:void(0)" class="padding_small display_block text-center">
+							<span class="accordion_toggle_show">もっと見る</span>
+							<span class="accordion_toggle_hide">閉じる</span>
+						</a>
+					</p>
+				</div>
+			</div>
+		</div>
+
+		<div class="row" id="accordion_03">
+			<div class="col-sm-6 margin_b_medium">
+				<dl class="border_main_1 accordion_parent accordion_close_xs" data-js-accordion-parent>
+					<dt class="bg_color_main_clear accordion_trigger accordion_trigger_arrow" data-js-accordion-trigger>
+						<a href="javascript:void(0)" class="padding_small display_block text-center">SPサイズ時のみ最初から閉じている状態</a>
+					</dt>
+					<dd class="padding_small accordion_body" data-js-accordion-body data-match-height>
+						「accordion_parent」に「accordion_close_xs」を併記すればOK<br>
+						開閉するコンテンツ開閉するコンテンツ開閉するコンテンツ開閉するコンテンツ開閉するコンテンツ開閉するコンテンツ開閉するコンテンツ開閉するコンテンツ開閉するコンテンツ開閉するコンテンツ
+					</dd>
+				</dl>
+			</div>
+			<div class="col-sm-6 margin_b_medium">
+				<dl class="border_main_1 accordion_parent accordion_close_md accordion_close_lg" data-js-accordion-parent>
+					<dt class="bg_color_main_clear accordion_trigger accordion_trigger_arrow" data-js-accordion-trigger>
+						<a href="javascript:void(0)" class="padding_small display_block text-center">PCサイズ時のみ最初から閉じている状態</a>
+					</dt>
+					<dd class="padding_small accordion_body" data-js-accordion-body data-match-height>
+						「accordion_parent」に「accordion_close_md」「accordion_close_lg」を併記すればOK<br>
+						開閉するコンテンツ開閉するコンテンツ開閉するコンテンツ開閉するコンテンツ開閉するコンテンツ開閉するコンテンツ開閉するコンテンツ開閉するコンテンツ開閉するコンテンツ開閉するコンテンツ
+					</dd>
+				</dl>
+			</div>
+		</div>
+
+		<div class="row margin_b_xlarge" id="accordion_04">
+			<div class="col-sm-6 margin_b_medium">
+				<div class="padding_small border_main_1 accordion_parent" data-js-accordion-parent>
+					<h3 class="headline">開閉時に最上部にスクロールする</h3>
+					<div class="margin_b_small accordion_body" data-js-accordion-body data-match-height>
+						【data-js-accordion-trigger】に「jump」という値を付与すると、そのアコーディオンの親の位置にスクロールするようになる。<br>
+						アコーディオン内のコンテンツが長く閉じたときに違和感を感じるときや、そのコンテンツにフォーカスさせたい時などに使います。
+					</div>
+					<p class="bg_color_main_clear accordion_trigger" data-js-accordion-trigger="jump">
+						<a href="javascript:void(0)" class="padding_small display_block text-center">
+							<span class="accordion_toggle_hide">もっと見る</span>
+							<span class="accordion_toggle_show">閉じる</span>
+						</a>
+					</p>
+				</div>
+			</div>
+			<div class="col-sm-6 margin_b_medium">
+				<dl class="border_main_1 accordion_parent" data-js-accordion-parent>
+					<dt class="bg_color_main_clear accordion_trigger accordion_trigger_arrow" data-js-accordion-trigger="jump">
+						<a href="javascript:void(0)" class="padding_small display_block text-center">開閉時に最上部にスクロールする</a>
+					</dt>
+					<dd class="padding_small accordion_body" data-js-accordion-body data-match-height>
+						【data-js-accordion-trigger】に「jump」という値を付与すると、そのアコーディオンの親の位置にスクロールするようになる。<br>
+						アコーディオン内のコンテンツが長く閉じたときに違和感を感じるときや、そのコンテンツにフォーカスさせたい時などに使います。
+					</dd>
+				</dl>
+			</div>
+		</div>
+	</section>
+
+	<hr class="border_none border_main_b_1 margin_v_xlarge">
+
+<!-- 〓〓〓〓〓 ≪RFW独自≫カードリンク 〓〓〓〓〓 -->
+	<div class="container" id="RFW_card">
+		<h2 class="headline">≪RFW独自≫カード型リンク</h2>
+		<p class="margin_b_medium">
+			href属性の先頭が#（＝ページ内アンカーリンク）だった場合、矢印が下向きになります。<br>
+			target属性が「_blank」（＝別窓）だった場合、別窓アイコンになります。<br>
+			li要素の上下左右には、デフォルトでRFWグリッドと同じ余白が設定されています（CSSで変更可能）。<br>
+			li要素は「RFW Flexbox」のクラスを利用して個別にサイズ指定が可能（デバイスサイズごとのサイズ指定も自由）。
+		</p>
+		<h3 class="headline">≪RFW独自≫カード型リンクリスト・テキストのみ【.card_link】</h3>
+		<ul class="card_link">
+			<li class="grid_1_2 grid_md_1_4">
+				<a href="index.html">
+					ページ遷移（通常）
+				</a>
+			</li>
+			<li class="grid_1_2 grid_md_1_4">
+				<a href="#">
+					アンカーリンク
+				</a>
+			</li>
+			<li class="grid_1_1 grid_md_1_4">
+				<a href="https://pando.life/" target="_blank">
+					外部リンク
+				</a>
+			</li>
+			<li class="grid_1_1 grid_md_1_4">
+				<p>
+					リンクなし
+				</p>
+			</li>
+			<li class="grid_1_1 grid_sm_1_3 grid_md_1_4">
+				<a href="">
+					SP1カラム、TB3カラム、PC4カラム
+				</a>
+			</li>
+			<li class="grid_1_1 grid_sm_1_3 grid_md_1_4">
+				<a href="">
+					SP1カラム、TB3カラム、PC4カラム
+				</a>
+			</li>
+			<li class="grid_1_1 grid_sm_1_3 grid_md_1_4">
+				<a href="">
+					SP1カラム、TB3カラム、PC4カラム
+				</a>
+			</li>
+		</ul>
+
+		<hr class="border_none margin_v_medium">
+
+		<h3 class="headline">≪RFW独自≫カード型リンクリスト・サムネ＋テキスト【.card_thumb】</h3>
+		<ul class="card_thumb">
+			<li class="grid_sm_1_2">
+				<a href="">
+					<figure class="card_link_image grid_xs_4_12 grid_sm_3_12">
+						<img src="http://placehold.it/400x400">
+					</figure>
+					<div class="card_link_text">
+						<h3 class="margin_b_xsmall">見出し見出し見出し見出し</h3>
+						<p class="font_notice">テキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキスト</p>
+					</div>
+				</a>
+			</li>
+			<li class="grid_sm_1_2">
+				<a href="" class="card_tri">
+					<figure class="card_link_image grid_xs_4_12 grid_sm_3_12">
+						<img src="http://placehold.it/400x400">
+					</figure>
+					<div class="card_link_text">
+						<h3 class="margin_b_xsmall">見出し見出し見出し見出し</h3>
+						<p class="font_notice">テキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキスト</p>
+					</div>
+				</a>
+			</li>
+			<li class="grid_sm_1_2">
+				<a href="#">
+					<figure class="card_link_image grid_xs_4_12 grid_sm_3_12">
+						<img src="http://placehold.it/400x400">
+					</figure>
+					<div class="card_link_text">
+						<h3 class="margin_b_xsmall">見出し見出し見出し見出し</h3>
+						<p class="font_notice">テキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキスト</p>
+					</div>
+				</a>
+			</li>
+			<li class="grid_sm_1_2">
+				<a href="https://pando.life/" target="_blank">
+					<figure class="card_link_image grid_xs_4_12 grid_sm_3_12">
+						<img src="http://placehold.it/400x400">
+					</figure>
+					<div class="card_link_text">
+						<p class="font_notice">テキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキスト</p>
+					</div>
+				</a>
+			</li>
+			<li class="grid_sm_1_2">
+				<div>
+					<figure class="card_link_image grid_xs_4_12 grid_sm_3_12">
+						<img src="http://placehold.it/400x400">
+					</figure>
+					<span class="card_link_text">ページ内リンク</span>
+				</div>
+			</li>
+		</ul>
+
+		<hr class="border_none margin_v_medium">
+
+		<h3 class="headline">≪RFW独自≫カード型リンクリスト・内容自由【.card_box】</h3>
+		<ul class="card_box">
+			<li class="grid_sm_1_2 item_center">
+				<a href="">
+					<div class="row_grid flex_nowrap item_center">
+						<time class="grid_auto text_nowrap">2020/02/02</time>
+						<p class="grid_auto flex_basis_full">sss</p>
+					</div>
+				</a>
+			</li>
+			<li class="grid_sm_1_2 item_center">
+				<a href="" class="card_tri">
+					<div class="row_grid flex_nowrap item_center">
+						<time class="grid_auto text_nowrap">2020/02/02</time>
+						<p class="grid_auto flex_basis_full">
+							テキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキスト
+						</p>
+					</div>
+				</a>
+			</li>
+			<li class="grid_sm_1_2 item_center">
+				<a href="#">
+					<div class="row_grid flex_nowrap item_center">
+						<time class="grid_auto text_nowrap">2020/02/02</time>
+						<p class="grid_auto flex_basis_full">
+							テキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキスト
+						</p>
+					</div>
+				</a>
+			</li>
+			<li class="grid_sm_1_2">
+				<a href="https://pando.life/" target="_blank">
+					<h4 class="headline_medium">見出し見出し見出し見出し見出し</h4>
+					<div class="row">
+						<figure class="col-xs-5 col-sm-3">
+							<img src="http://placehold.it/400x400">
+						</figure>
+						<p class="col">
+							サムネを使う場合は、「row＋col」の組み合わせで。<br>
+							テキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキスト
+						</p>
+					</div>
+				</a>
+			</li>
+			<li class="grid_sm_1_2 card_box_ladies">
+				<div>
+					<h4 class="headline_medium headline_ladies">見出し見出し見出し見出し見出し</h4>
+					<div class="row">
+						<figure class="col-xs-5 col-sm-3">
+							<img src="http://placehold.it/400x400">
+						</figure>
+						<p class="col">
+							女性用の色はli要素に【.card_box_ladies】を付与。（見出しを併用している場合はh系要素に【.headline_ladies】を付与）
+						</p>
+					</div>
+				</div>
+			</li>
+		</ul>
+	</div>
+
+	<hr class="border_none border_main_b_1 margin_v_xlarge">
+
+<!-- 〓〓〓〓〓 ≪RFW独自≫よくある質問ボックス 〓〓〓〓〓 -->
+	<section class="container" id="box_qa">
+		<h2 class="headline">≪RFW独自≫よくある質問ボックス</h2>
+		<div class="box_qa margin_b_medium">
+			<dl>
+				<dt class="box_qa_q">
+					<p class="box_qa_icon"><span>Q</span></p>
+					<p class="box_qa_body">エステの脱毛とクリニックの脱毛は違うんですか？</p>
+				</dt>
+				<dd class="box_qa_a">
+					<p class="box_qa_icon"><span>A</span></p>
+					<div class="box_qa_body">
+						<p class="margin_v_xsmall font_medium">
+							全くもって別物です。
+						</p>
+						<p>
+							エステで主に行っているのは光脱毛（フラッシュ脱毛）。効果が弱く、一時的な減毛効果しかありません。<br>
+							クリニックでは、毛根の細胞を破壊して二度と生えてこないようにする「永久脱毛」を実現するレーザー脱毛の施術を行うことができます。医師が常駐している医療機関だからこそ可能になった、高い脱毛効果を出せる施術です。
+						</p>
+					</div>
+				</dd>
+			</dl>
+			<dl class="accordion_open" data-js-accordion-parent>
+				<dt class="box_qa_q accordion_trigger accordion_trigger_arrow" data-js-accordion-trigger>
+					<p class="box_qa_icon"><span>Q</span></p>
+					<p class="box_qa_body">アコーディオンとの併用は可能ですか？</p>
+				</dt>
+				<dd class="box_qa_a" data-js-accordion-body>
+					<p class="box_qa_icon"><span>A</span></p>
+					<div class="box_qa_body">
+						<p class="margin_v_xsmall font_medium">
+							もちろん可能です！
+						</p>
+						<p>
+							「.box_qa」に【data-js-accordion-parent】、「.box_qa_q」に【data-js-accordion-trigger】、「.box_qa_a」に【data-js-accordion-body】をそれぞれ指定してください。<br>
+							「.box_qa_q」に「.accordion_trigger_arrow」を併記すれば開閉アイコンも表示されます。
+						</p>
+					</div>
+				</dd>
+			</dl>
+			<dl class="accordion_close" data-js-accordion-parent>
+				<dt class="box_qa_q accordion_trigger accordion_trigger_arrow" data-js-accordion-trigger>
+					<p class="box_qa_icon"><span>Q</span></p>
+					<p class="box_qa_body">最初から閉じたアコーディオンにできますか？</p>
+				</dt>
+				<dd class="box_qa_a accordion_body" data-js-accordion-body>
+					<p class="box_qa_icon"><span>A</span></p>
+					<div class="box_qa_body">
+						<p class="margin_v_xsmall font_medium">
+							もちろん可能です！
+						</p>
+						<p>
+							「.box_qa_a」に「.accordion_hidden」を併記すれば最初から閉じた状態になります。
+						</p>
+					</div>
+				</dd>
+			</dl>
+			<dl class="accordion_open" data-js-accordion-parent>
+				<dt class="box_qa_q">
+					<p class="box_qa_icon"><span>Q</span></p>
+					<p class="box_qa_body">開閉ボタンを見出しではなく下に付けることもできますか？</p>
+				</dt>
+				<dd class="box_qa_a">
+					<div class="margin_b_small accordion_body" data-js-accordion-body>
+						<p class="box_qa_icon"><span>A</span></p>
+						<div class="box_qa_body">
+							<p class="margin_v_xsmall font_medium">
+								もちろん可能です！
+							</p>
+							<p>
+								詳しいマークアップはこの箇所のコードを見てみてください。
+							</p>
+						</div>
+					</div>
+					<p class="text-center">
+						<a href="javascript:void(0)" class="padding_small inline_block bg_color_main_clear accordion_trigger" data-js-accordion-trigger>
+							<span class="accordion_toggle_show">続きを読む</span>
+							<span class="accordion_toggle_hide">閉じる</span>
+						</a>
+					</p>
+				</dd>
+			</dl>
+			<dl class="accordion_parent accordion_close" data-js-accordion-parent>
+				<dt class="box_qa_q">
+					<p class="box_qa_icon"><span>Q</span></p>
+					<p class="box_qa_body">一部分だけ開閉させることも可能ですか？</p>
+				</dt>
+				<dd class="box_qa_a">
+					<div class="margin_b_small">
+						<p class="box_qa_icon"><span>A</span></p>
+						<div class="box_qa_body">
+							<p class="margin_v_xsmall font_medium">
+								もちろん可能です！
+							</p>
+							<p class="accordion_body" data-js-accordion-body>
+								【data-js-accordion-body】を開閉させたい箇所に指定するだけで実現可能です。【data-js-accordion-body】を開閉させたい箇所に指定するだけで実現可能です。<br>
+								【data-js-accordion-body】を開閉させたい箇所に指定するだけで実現可能です。<br>
+								【data-js-accordion-body】を開閉させたい箇所に指定するだけで実現可能です。
+							</p>
+						</div>
+					</div>
+					<p class="text-center">
+						<a href="javascript:void(0)" class="padding_small inline_block bg_color_main_clear accordion_trigger" data-js-accordion-trigger>
+							<span class="accordion_toggle_show">続きを読む</span>
+							<span class="accordion_toggle_hide">閉じる</span>
+						</a>
+					</p>
+				</dd>
+			</dl>
+			<dl class="accordion_open" data-js-accordion-parent>
+				<dt class="box_qa_q">
+					<p class="box_qa_icon"><span>Q</span></p>
+					<p class="box_qa_body">Aのテキストのみ左側に余白があるのが気になるんですが・・・</p>
+				</dt>
+				<dd class="box_qa_a">
+					<div class="margin_b_xsmall">
+						<p class="box_qa_icon"><span>A</span></p>
+						<div class="box_qa_body">
+							<p class="margin_v_xsmall font_medium">
+								もちろん対処可能です！
+							</p>
+						</div>
+					</div>
+					<p class="margin_b_small accordion_body" data-js-accordion-body>
+						「.box_qa_icon」と「.box_qa_body」を何かしらの要素で括り、その外にテキストを括った要素を配置すればOKです。<br>
+						その要素に【data-js-accordion-body】を指定し、更にその要素に開閉トリガーを並列で置けば、アコーディオンも可能です。
+					</p>
+					<p class="text-center">
+						<a href="javascript:void(0)" class="padding_small inline_block bg_color_main_clear accordion_trigger" data-js-accordion-trigger>
+							<span class="accordion_toggle_hide">続きを読む</span>
+							<span class="accordion_toggle_show">閉じる</span>
+						</a>
+					</p>
+				</dd>
+			</dl>
+		</div>
+	</section>
+
+	<hr class="border_none border_main_b_1 margin_v_xlarge">
+
+<!-- 〓〓〓〓〓 ≪RFW独自≫流れボックス 〓〓〓〓〓 -->
+	<section class="container" id="box_flow">
+		<h2 class="headline">≪RFW独自≫流れボックス</h2>
+		<div class="box_flow">
+			<div class="box_flow_inner">
+				<h3 class="headline">
+					Step01　お問い合わせ・ご予約
+				</h3>
+				<div class="row">
+					<div class="col-sm-8 col-md-9">
+						<p class="margin_b_small">
+							当院は予約制です。まずはホームページまたはお電話にてご相談・ご予約ください。<br>
+							メール相談・カウンセリングは無料です。<br>
+							お急ぎの場合はお電話をご利用ください。
+						</p>
+						<p class="margin_b_small">
+							通話無料 <a href="tel:03-0000-0000">03-0000-0000</a><br>
+							電話受付時間 10:00～19:00（水曜休診）<br>
+							※2回目以降のご予約はお電話にてお願いいたします。
+						</p>
+					</div>
+					<div class="col-sm-4 col-md-3 text-center ">
+						<img src="http://placehold.it/600x400">
+					</div>
+				</div>
+			</div>
+
+			<div class="box_flow_inner accordion_open" data-js-accordion-parent>
+				<h3 class="headline accordion_trigger_arrow" data-js-accordion-trigger>
+					Step02　アコーディオンとの併用
+				</h3>
+				<div class="row" data-js-accordion-body>
+					<div class="col-sm-8 col-md-9">
+						<p class="margin_b_small">
+							ご予約時にご希望いただければ、カウンセリング当日のレーザー照射も可能です。目を保護した後、うち漏れがないようマーキングしてから照射いたします。
+						</p>
+						<p class="margin_b_small">
+							当院では、冷却機能付きのレーザー機器を使用し、レーザーによる火傷・痛みに最大限配慮しておりますが、痛みや不安を感じられた場合はお気軽にお声がけください。部位にもよりますが、平均10～30分程度で施術は終了します。
+						</p>
+					</div>
+					<div class="col-sm-4 col-md-3 text-center ">
+						<img src="http://placehold.it/600x400">
+					</div>
+				</div>
+			</div>
+
+			<div class="box_flow_inner accordion_close" data-js-accordion-parent>
+				<h3 class="headline accordion_trigger_arrow" data-js-accordion-trigger>
+					Step03　アコーディオンとの併用（はじめから閉じている）
+				</h3>
+				<div class="row" data-js-accordion-body>
+					<div class="col-sm-8 col-md-9">
+						<p class="margin_b_small">
+							ご予約時にご希望いただければ、カウンセリング当日のレーザー照射も可能です。目を保護した後、うち漏れがないようマーキングしてから照射いたします。
+						</p>
+						<p class="margin_b_small">
+							当院では、冷却機能付きのレーザー機器を使用し、レーザーによる火傷・痛みに最大限配慮しておりますが、痛みや不安を感じられた場合はお気軽にお声がけください。部位にもよりますが、平均10～30分程度で施術は終了します。
+						</p>
+					</div>
+					<div class="col-sm-4 col-md-3 text-center ">
+						<img src="http://placehold.it/600x400">
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+
+	<hr class="border_none border_main_b_1 margin_v_xlarge">
+
+<!-- 〓〓〓〓〓 ≪RFW独自≫症例ボックス 〓〓〓〓〓 -->
+	<div class="container">
+		<h2 class="headline">症例ボックス</h2>
+		<h3 class="headline">症例ボックス・横並び【.box_ba_horizon】</h3>
+		<p>
+			【.box_ba_horizon】はどの画面サイズでも横並びのままです。
+		</p>
+		<div class="box_ba_horizon">
+			<div class="box_ba_inner">
+				<img src="http://placehold.it/600x400">
+			</div>
+			<div class="box_ba_inner">
+				<img src="http://placehold.it/1200x800">
+			</div>
+		</div>
+
+		<hr class="border_none margin_v_small">
+
+		<h3 class="headline">症例ボックス・縦⇔横並び【.box_ba_vertical】</h3>
+		<p>
+			【.box_ba_vertical】はSPでは縦並び、タブレット以上で横並びになります。
+		</p>
+		<div class="box_ba_vertical">
+			<div class="box_ba_inner">
+				<img src="http://placehold.it/600x200">
+			</div>
+			<div class="box_ba_inner">
+				<img src="http://placehold.it/600x200">
+			</div>
+		</div>
+	</div>
+
+	<hr class="border_none border_main_b_1 margin_v_xlarge">
+
+<!-- 〓〓〓〓〓 ≪JSプラグイン≫matchHeight 〓〓〓〓〓 -->
+	<section class="container" id="matchHeight">
+		<h2 class="headline">≪JSプラグイン≫matchHeightの使用例</h2>
+		<div class="row">
+			<div class="col-xs-4" style="padding: 15px; background-color: #fee;">
+				<h3 class="headline">見出し</h3>
+				<p class="margin_b_small" style="background-color: #ddd;" data-mh="p01">
+					ここの高さを揃えたい<br>ここの高さを揃えたい<br>ここの高さを揃えたい<br>ここの高さを揃えたい<br>ここの高さを揃えたい
+				</p>
+				<p style="background-color: #fff;" data-mh="p02">
+					ここの高さを揃えたい<br>ここの高さを揃えたい<br>
+				</p>
+			</div>
+			<div class="col-xs-4" style="padding: 15px; background-color: #ffe;">
+				<h3 class="headline">見出し</h3>
+				<p class="margin_b_small" style="background-color: #ddd;" data-mh="p01">
+					ここの高さを揃えたい<br>ここの高さを揃えたい<br>ここの高さを揃えたい
+				</p>
+				<p style="background-color: #fff;" data-mh="p02">
+					ここの高さを揃えたい<br>ここの高さを揃えたい<br>ここの高さを揃えたい<br>ここの高さを揃えたい<br>
+				</p>
+			</div>
+			<div class="col-xs-4" style="padding: 15px; background-color: #eef;">
+				<h3 class="headline">見出し</h3>
+				<p class="margin_b_small" style="background-color: #ddd;" data-mh="p01">
+					ここの高さを揃えたい<br>ここの高さを揃えたい
+				</p>
+				<p style="background-color: #fff;" data-mh="p02">
+					ここの高さを揃えたい<br>ここの高さを揃えたい<br>ここの高さを揃えたい
+				</p>
+			</div>
+		</div>
+	</section>
+
+	<hr class="border_none border_main_b_1 margin_v_xlarge">
+
+	<section class="container">
+		<h2 class="headline">≪Bootstrap≫グリッドシステム</h2>
+		<div class="row">
+			<div class="col-xs-12 col-sm-6 col-md-4"><img src="http://placehold.it/720x300/666/fff">col-xs-12 + col-sm-6 + col-md-4</div>
+			<div class="col-xs-12 col-sm-6 col-md-4"><img src="http://placehold.it/720x300/666/fff">col-xs-12 + col-sm-6 + col-md-4</div>
+			<div class="col-xs-12 col-sm-6 col-md-4"><img src="http://placehold.it/720x300/666/fff">col-xs-12 + col-sm-6 + col-md-4</div>
+		</div>
+	</section>
+
+	<hr class="border_none border_main_b_1 margin_v_xlarge">
+
+	<section class="container" id="embed-responsive">
+		<h2 class="headline">≪Bootstrap≫iframeの縦横比を固定した表示（16：9）</h2>
+		<div class="embed-responsive embed-responsive-16by9">
+			<iframe class="embed-responsive-item" src="https://www.youtube-nocookie.com/embed/RGmoeELDtqk?rel=0"></iframe>
+		</div>
+	</section>
+
+	<hr class="border_none border_main_b_1 margin_v_xlarge">
+
+	<section class="container" id="table-responsive">
+		<h2 class="headline">≪Bootstrap≫SPサイズでは横スクロールするテーブル</h2>
+		<div class="table-responsive">
+			<table class="table">
+				<tbody>
+					<tr>
+						<th>
+							<a href="/genesis/#price">ジェネシス　お試し1回</a>
+						</th>
+						<td>小じわ、赤ら顔、ニキビ跡、毛穴の開き、キメ乱れ、青クマ、うぶ毛除去、傷跡</td>
+						<td><strong class="font_color_yellow">9,900円</strong></td>
+					</tr>
+					<tr>
+						<th>
+							<a href="/lime/#price">ライムライト　お試し1回</a>
+						</th>
+						<td>シミ、そばかす、赤ら顔、ニキビ跡、毛穴の開き、小じわ</td>
+						<td><strong class="font_color_yellow">9,900円</strong></td>
+					</tr>
+					<tr>
+						<th>
+							<a href="/peeling/#price">サリチル酸ピーリング　お試し1回</a>
+						</th>
+						<td>ニキビ、ニキビ跡、シミ、小じわ、美白</td>
+						<td><strong class="font_color_yellow">6,700円</strong></td>
+					</tr>
+					<tr>
+						<th>
+							<a href="/peeling/#price">乳酸ピーリング　お試し1回</a>
+						</th>
+						<td>ニキビ、ニキビ跡、シミ、小じわ、美白</td>
+						<td><strong class="font_color_yellow">9,800円</strong></td>
+					</tr>
+					<tr>
+						<th>
+							<a href="/ion/#price">イオン導入（ビタミンC＋E）　お試し1回</a>
+						</th>
+						<td>美白、アンチエイジング、保湿、ニキビ、ニキビ跡、小じわ</td>
+						<td><strong class="font_color_yellow">3,600円</strong></td>
+					</tr>
+					<tr>
+						<th>
+							<a href="/peeling/#plan">サリチル酸ピーリング＋イオン導入（ビタミンC＋E）<br>お試し1回</a>
+						</th>
+						<td>ニキビ、ニキビ跡、シミ、小じわ、美白</td>
+						<td><strong class="font_color_yellow">8,300円</strong></td>
+					</tr>
+					<tr>
+						<th>
+							<a href="/ion/#price">超音波導入　お試し1回</a>
+						</th>
+						<td>リフトアップ、ハリ・弾力、むくみ・たるみ</td>
+						<td><strong class="font_color_yellow">8,300円</strong></td>
+					</tr>
+				</tbody>
+			</table>
+		</div>
+	</section>
+
+	<hr class="border_none border_main_b_1 margin_v_xlarge">
+
+	<div class="container">
+		<p>TELリンク（SP時のみTELリンクが有効に）：<a href="tel:0120-000-000">0120-000-000</a></p>
+		<p><a href="#con_responsive_table_block" class="btn btn-default">アンカーリンク</a></p>
+		<p class="margin_b_small"><a href="#" class="btn btn-default" data-js-gotop>ページの先頭へ</a></p>
+	</div>
+
+	<script type="text/javascript" src="../src/js/jquery-3.1.1.min.js"></script>
+	<script type="text/javascript" src="../src/js/jquery.sliderPro.min.js"></script>
+	<script type="text/javascript">
+		$( document ).ready(function( $ ) {
+			$('[data-js-slider-pro]').sliderPro({
+				width: 1140,
+				autoHeight: true,
+				slideDistance: 0,
+				heightAnimationDuration: false,
+				arrows: true,
+				fadeArrows: false,
+				buttons: true,
+				autoplayDelay: 5000,
+				fadeDuration: 1000,
+				touchSwipe: true,
+				thumbnailsPosition: 'right',
+				thumbnailHeight: 120,
+				thumbnailWidth: 250,
+				breakpoints: {
+					768: {
+						thumbnailHeight: 60,
+						thumbnailWidth: 125,
+					},
+					480: {
+						thumbnailHeight: 30,
+						thumbnailWidth: 62.5,
+					}
+				}
+			});
+		});
+	</script>
+	<script type="text/javascript" src="../src/js/jquery.matchHeight-min.js"></script>
+	<script type="text/javascript" src="../src/js/jquery.common.js?20200520"></script>
+</body>
+</html>

@@ -1,0 +1,439 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, minimum-scale=1.0, maximum-scale=1.0, initial-scale=1.0, user-scalable=no, minimal-ui"/>
+<title>レスポンシブフレームワーク【RFW】のサンプルフォーム</title>
+<link rel="stylesheet" type="text/css" href="../src/css/style.css?20181105">
+</head>
+
+<body>
+
+	<header class="head_main clearfix">
+		<div class="container">
+			<div class="head_main_logo">
+				<p class="head_logo">
+					<a href="index.html">
+						<img src="http://placehold.it/200x70/666/fff">
+					</a>
+				</p>
+				<div class="head_tel">
+					<a href="tel:0120-000-000" class="font_small">
+						<p>
+							<span class="label label-info">通話無料</span>
+							<i class="material-icons">&#xE0CD;</i>
+							<span>0120-000-000</span>
+						</p>
+						受付時間 10:00～19:00 （水曜日休診）
+					</a>
+				</div>
+			</div>
+			<div class="head_main_navi">
+				<a href="javascript:void(0)" class="head_btn_menu" data-js-menu="close"><span>MENU</span></a>
+				<ul class="head_menu head_menu_main">
+					<li class="head_sp">
+						<a href="tel:0120-000-000">
+							<i class="material-icons v_align_middle">&#xE0CD;</i>
+							<span class="label label-info">通話無料</span>
+							<span class="v_align_middle">0120-000-000</span>
+						</a>
+					</li>
+					<li class="head_sp">
+						<a href="form.html" class="btn_counseling">
+							<i class="material-icons v_align_middle">&#xE0E1;</i>
+							カウンセリング予約
+						</a>
+					</li>
+					<li class="head_sp">
+						<a href="form.html" class="btn_mail">
+							<i class="material-icons v_align_middle">&#xE0E1;</i>
+							無料メール相談
+						</a>
+					</li>
+					<li>
+						<a href="btn.html">ボタンサンプル</a>
+					</li>
+					<li>
+						<a href="material_icons.html">マテリアルアイコン一覧</a>
+					</li>
+					<li>
+						<a href="video.html">ビデオ直接埋め込み</a>
+					</li>
+					<li>
+						<a href="material_icons.html" class="menu_accordion" data-js-menu-sub="close">
+							メニュー3
+							<i class="material-icons head_menu_icon_close">&#xE145;</i>
+							<i class="material-icons head_menu_icon_open">&#xE5CD;</i>
+						</a>
+						<ul class="head_menu_sub">
+							<li>
+								<a href="">
+									サブメニュー3-1
+									<i class="material-icons">&#xE315;</i>
+								</a>
+							</li>
+							<li>
+								<a href="">
+									サブメニュー3-2
+									<i class="material-icons">&#xE315;</i>
+								</a>
+							</li>
+						</ul>
+					</li>
+					<li>
+						<a href="">メニュー5</a>
+					</li>
+					<li class="head_counseling">
+						<a href="form.html">無料カウンセリング予約</a>
+					</li>
+					<li class="head_mail">
+						<a href="form.html">無料メール相談</a>
+					</li>
+				</ul>
+			</div>
+			<a href="form.html" class="head_sp_counseling">
+				<i class="material-icons">&#xE0E1;</i><br>
+				カウンセリング予約
+			</a>
+		</div>
+	</header>
+
+	<nav class="container form_container breadcrumbs">
+		<ul class="">
+			<li><a href="index.html">HOME</a></li>
+			<li>RFWのサンプルフォームページです</li>
+		</ul>
+	</nav>
+
+	<div class="container form_container margin_v_medium">
+		<form>
+			<table class="responsive_table_block form_table">
+				<tr>
+					<th class="responsive_table_block_cell">
+						お名前
+						<span class="icon_required">必須</span>
+					</th>
+					<td class="responsive_table_block_cell form-group">
+						<input name="data[name]" id="name" placeholder="例）銀座花子" class="form-control" type="text">
+	
+					</td>
+				</tr>
+				<tr>
+					<th class="responsive_table_block_cell">
+						電話番号
+						<span class="icon_required">必須</span>
+					</th>
+					<td class="responsive_table_block_cell form-group">
+						<input name="data[telephone]" id="telephone" type="tel" class="form-control" placeholder="例）03-6680-8386" size="20">
+					</td>
+				</tr>
+				<tr>
+					<th class="responsive_table_block_cell">
+						メールアドレス
+						<span class="icon_required">必須</span>
+					</th>
+					<td class="responsive_table_block_cell form-group">
+						<input name="data[email]" id="email" type="email" class="form-control" placeholder="例）xxx@xxx.ne.jp">
+					</td>
+				</tr>
+				<tr>
+					<th class="responsive_table_block_cell">
+						生年月日（form_birth）
+						<span class="icon_required">必須</span>
+					</th>
+					<td class="responsive_table_block_cell form-group">
+						<p class="inline_block margin_r_small">
+							<select name="BirthdayYear" class="form-control form_birth" id="BirthdayYear">
+								<option value=""></option>
+								<option value="2016">2016</option>
+								<option value="2015">2015</option>
+								<option value="2014">2014</option>
+								<option value="2013">2013</option>
+								<option value="2012">2012</option>
+								<option value="2011">2011</option>
+								<option value="2010">2010</option>
+								<option value="2009">2009</option>
+								<option value="2008">2008</option>
+								<option value="2007">2007</option>
+								<option value="2006">2006</option>
+								<option value="2005">2005</option>
+								<option value="2004">2004</option>
+								<option value="2003">2003</option>
+								<option value="2002">2002</option>
+								<option value="2001">2001</option>
+								<option value="2000">2000</option>
+								<option value="1999">1999</option>
+								<option value="1998">1998</option>
+								<option value="1997">1997</option>
+								<option value="1996">1996</option>
+								<option value="1995">1995</option>
+								<option value="1994">1994</option>
+								<option value="1993">1993</option>
+								<option value="1992">1992</option>
+								<option value="1991">1991</option>
+								<option value="1990">1990</option>
+								<option value="1989">1989</option>
+								<option value="1988">1988</option>
+								<option value="1987">1987</option>
+								<option value="1986">1986</option>
+								<option value="1985">1985</option>
+								<option value="1984">1984</option>
+								<option value="1983">1983</option>
+								<option value="1982">1982</option>
+								<option value="1981">1981</option>
+								<option value="1980">1980</option>
+								<option value="1979">1979</option>
+								<option value="1978">1978</option>
+								<option value="1977">1977</option>
+								<option value="1976">1976</option>
+								<option value="1975">1975</option>
+								<option value="1974">1974</option>
+								<option value="1973">1973</option>
+								<option value="1972">1972</option>
+								<option value="1971">1971</option>
+								<option value="1970">1970</option>
+							</select>
+							<label>年</label>
+						</p>
+						<br class="visible-xs">
+						<p class="inline_block margin_r_small">
+							<select name="BirthdayMonth" class="form-control form_birth" id="BirthdayMonth">
+								<option value=""></option>
+								<option value="1">1</option>
+								<option value="2">2</option>
+								<option value="3">3</option>
+								<option value="4">4</option>
+								<option value="5">5</option>
+								<option value="6">6</option>
+								<option value="7">7</option>
+								<option value="8">8</option>
+								<option value="9">9</option>
+								<option value="10">10</option>
+								<option value="11">11</option>
+								<option value="12">12</option>
+							</select>
+							<label>月</label>
+						</p>
+						<p class="inline_block">
+							<select name="BirthdayDay" class="form-control form_birth" id="BirthdayDay">
+								<option value=""></option>
+								<option value="1">1</option>
+								<option value="2">2</option>
+								<option value="3">3</option>
+								<option value="4">4</option>
+								<option value="5">5</option>
+								<option value="6">6</option>
+								<option value="7">7</option>
+								<option value="8">8</option>
+								<option value="9">9</option>
+								<option value="10">10</option>
+								<option value="11">11</option>
+								<option value="12">12</option>
+								<option value="13">13</option>
+								<option value="14">14</option>
+								<option value="15">15</option>
+								<option value="16">16</option>
+								<option value="17">17</option>
+								<option value="18">18</option>
+								<option value="19">19</option>
+								<option value="20">20</option>
+								<option value="21">21</option>
+								<option value="22">22</option>
+								<option value="23">23</option>
+								<option value="24">24</option>
+								<option value="25">25</option>
+								<option value="26">26</option>
+								<option value="27">27</option>
+								<option value="28">28</option>
+								<option value="29">29</option>
+								<option value="30">30</option>
+								<option value="31">31</option>
+							</select>
+							<label>日</label>
+						</p>
+					</td>
+				</tr>
+				<tr>
+					<th class="responsive_table_block_cell">
+						電話番号（form_tel）
+						<span class="icon_required">必須</span>
+					</th>
+					<td class="responsive_table_block_cell form-group form_tel">
+						<input name="form_tel" id="form_tel01" class="form-control" type="tel">
+						-
+						<input name="form_tel" id="form_tel02" class="form-control" type="tel">
+						-
+						<input name="form_tel" id="form_tel03" class="form-control" type="tel">
+					</td>
+				</tr>
+				<tr>
+					<th class="responsive_table_block_cell">
+						カウンセリング希望日時
+						<span class="icon_required">必須</span><br>
+						<span class="font_color_accent font_small">（予約確定ではありません）</span>
+					</th>
+					<td class="responsive_table_block_cell form-group">
+						<div class="row clearfix">
+							<p class="col-md-6">
+								第一希望日
+								<input name="data[date1]" id="month_1" class="datepicker hasDatepicker form-control" type="text">
+							</p>
+							<p class="col-md-6">
+								時間帯
+								<select name="data[time1]" id="time1" class="form-control">
+									<option value="">------</option>
+									<option value="11:00～12:00">11:00～12:00</option>
+									<option value="12:00～13:00">12:00～13:00</option>
+									<option value="14:30～15:30">14:30～15:30</option>
+									<option value="15:30～16:30">15:30～16:30</option>
+									<option value="16:30～17:30">16:30～17:30</option>
+									<option value="17:30～18:30">17:30～18:30</option>
+									<option value="18:30～19:30">18:30～19:30</option>
+								</select>
+							</p>
+						</div>
+						<hr class="margin_v_small border_spacer">
+						<div class="row clearfix">
+							<p class="col-md-6">
+								第二希望日
+								<input name="data[date2]" id="month_2" class="datepicker hasDatepicker form-control" type="text">
+							</p>
+							<p class="col-md-6">
+								時間帯
+								<select name="data[time2]" id="time2" class="form-control">
+									<option value="">------</option>
+									<option value="11:00～12:00">11:00～12:00</option>
+									<option value="12:00～13:00">12:00～13:00</option>
+									<option value="14:30～15:30">14:30～15:30</option>
+									<option value="15:30～16:30">15:30～16:30</option>
+									<option value="16:30～17:30">16:30～17:30</option>
+									<option value="17:30～18:30">17:30～18:30</option>
+									<option value="18:30～19:30">18:30～19:30</option>
+								</select>
+							</p>
+						</div>
+					</td>
+				</tr>
+				<tr>
+					<th class="responsive_table_block_cell">
+						チェックボックス（block）
+						<span class="icon_required">必須</span><br>
+						※複数選択可
+					</th>
+					<td class="responsive_table_block_cell form-group">
+						<p class="remedyCheckbox padding_b_small">
+							<input type="checkbox" name="data[remedy][]" id="医療レーザー脱毛" value="医療レーザー脱毛">
+							<label for="医療レーザー脱毛">医療レーザー脱毛</label>
+						</p>
+						<p class="remedyCheckbox padding_b_small">
+							<input type="checkbox" name="data[remedy][]" id="シミ・くすみなど美白治療" value="シミ・くすみなど美白治療">
+							<label for="シミ・くすみなど美白治療">シミ・くすみなど美白治療</label>
+						</p>
+						<p class="remedyCheckbox padding_b_small">
+							<input type="checkbox" name="data[remedy][]" id="しわ・毛穴などたるみ治療" value="しわ・毛穴などたるみ治療">
+							<label for="しわ・毛穴などたるみ治療">しわ・毛穴などたるみ治療</label>
+						</p>
+						<p class="remedyCheckbox padding_b_small">
+							<input type="checkbox" name="data[remedy][]" id="ボトックス注入・ヒアルロン酸注入" value="ボトックス注入・ヒアルロン酸注入">
+							<label for="ボトックス注入・ヒアルロン酸注入">ボトックス注入・ヒアルロン酸注入</label>
+						</p>
+						<p class="remedyCheckbox padding_b_small">
+							<input type="checkbox" name="data[remedy][]" id="美容点滴・美容注射" value="美容点滴・美容注射">
+							<label for="美容点滴・美容注射">美容点滴・美容注射</label>
+						</p>
+						<p class="remedyCheckbox padding_b_small">
+							<input type="checkbox" name="data[remedy][]" id="美容皮膚科診察" value="美容皮膚科診察">
+							<label for="美容皮膚科診察">美容皮膚科診察</label>
+						</p>
+					</td>
+				</tr>
+				<tr>
+					<th class="responsive_table_block_cell">
+						チェックボックス（inline-block）
+						<span class="icon_option">任意</span><br>
+						※複数選択可
+					</th>
+					<td class="responsive_table_block_cell form-group">
+						<p class="inline_block padding_b_small padding_r_small">
+							<input type="checkbox" name="checkbox_inline" id="checkbox_inline_01" value="チェック1">
+							<label for="checkbox_inline_01">チェック1</label>
+						</p>
+						<p class="inline_block padding_b_small padding_r_small">
+							<input type="checkbox" name="checkbox_inline" id="checkbox_inline_02" value="チェック2">
+							<label for="checkbox_inline_02">チェック2</label>
+						</p>
+						<p class="inline_block padding_b_small padding_r_small">
+							<input type="checkbox" name="checkbox_inline" id="checkbox_inline_03" value="チェック3">
+							<label for="checkbox_inline_03">チェック3</label>
+						</p>
+						<p class="inline_block padding_b_small padding_r_small">
+							<input type="checkbox" name="checkbox_inline" id="checkbox_inline_04" value="チェック4">
+							<label for="checkbox_inline_04">チェック4</label>
+						</p>
+					</td>
+				</tr>
+				<tr>
+					<th class="responsive_table_block_cell">
+						ラジオボタン（inline-block）
+						<span class="icon_option">任意</span><br>
+						※複数選択可
+					</th>
+					<td class="responsive_table_block_cell form-group">
+						<p class="inline_block padding_b_small padding_r_small">
+							<input type="radio" name="radio_inline" id="radio_inline_01" value="ラジオボタン1">
+							<label for="radio_inline_01">ラジオボタン1</label>
+						</p>
+						<p class="inline_block padding_b_small padding_r_small">
+							<input type="radio" name="radio_inline" id="radio_inline_02" value="ラジオボタン2">
+							<label for="radio_inline_02">ラジオボタン2</label>
+						</p>
+						<p class="inline_block padding_b_small padding_r_small">
+							<input type="radio" name="radio_inline" id="radio_inline_03" value="ラジオボタン3">
+							<label for="radio_inline_03">ラジオボタン3</label>
+						</p>
+						<p class="inline_block padding_b_small padding_r_small">
+							<input type="radio" name="radio_inline" id="radio_inline_04" value="ラジオボタン4">
+							<label for="radio_inline_04">ラジオボタン4</label>
+						</p>
+					</td>
+				</tr>
+				<tr>
+					<th class="responsive_table_block_cell">
+						二者択一のラジオボタン
+						<span class="icon_option">任意</span>
+					</th>
+					<td class="responsive_table_block_cell form-group">
+						<div class="radio_group">
+							<p class="radio_group_inner">
+								<input type="radio" name="Alternatively2" id="Alternatively1" class="" value="1" checked="checked">
+								<label for="Alternatively1">文字<br class="visible-xs">サイズに</label>
+							</p>
+							<p class="radio_group_inner">
+								<input type="radio" name="Alternatively2" id="Alternatively2" class="" value="2">
+								<label for="Alternatively2">合わせて<br class="visible-xs">可変します</label>
+							</p>
+						</div>
+					</td>
+				</tr>
+				<tr>
+					<th class="responsive_table_block_cell">
+						テキストエリア
+						<span class="icon_option">任意</span>
+					</th>
+					<td class="responsive_table_block_cell form-group">
+						<textarea name="data[other]" id="other" rows="10" class="form-control"></textarea>
+					</td>
+				</tr>
+			</table>
+			<p class="margin_v_large text-center">
+				<input id="submit" name="submit" class="btn btn-default" type="submit" value="確認画面に進む">
+			</p>
+		</form>
+
+	</div>
+
+	<script type="text/javascript" src="../src/js/jquery-3.1.1.min.js"></script>
+	<script type="text/javascript" src="../src/js/jquery.matchHeight-min.js"></script>
+	<script type="text/javascript" src="../src/js/jquery.common.js?20181105"></script>
+</body>
+</html>

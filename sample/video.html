@@ -1,0 +1,409 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, minimum-scale=1.0, maximum-scale=1.0, initial-scale=1.0, user-scalable=no, minimal-ui"/>
+<title>レスポンシブフレームワーク【RFW】のサンプルページ</title>
+<link rel="stylesheet" type="text/css" href="../src/css/style.css?20181105">
+</head>
+
+<body>
+
+	<header class="head_main clearfix">
+		<div class="container">
+			<div class="head_main_logo">
+				<p class="head_logo">
+					<a href="index.html">
+						<img src="http://placehold.it/200x70/666/fff">
+					</a>
+				</p>
+				<div class="head_tel">
+					<a href="tel:0120-000-000" class="font_small">
+						<p>
+							<span class="label label-info">通話無料</span>
+							<i class="material-icons">&#xE0CD;</i>
+							<span>0120-000-000</span>
+						</p>
+						受付時間 10:00～19:00 （水曜日休診）
+					</a>
+				</div>
+			</div>
+			<div class="head_main_navi">
+				<a href="javascript:void(0)" class="head_btn_menu" data-js-menu="close"><span>MENU</span></a>
+				<ul class="head_menu head_menu_main">
+					<li class="head_sp">
+						<a href="tel:0120-000-000">
+							<i class="material-icons v_align_middle">&#xE0CD;</i>
+							<span class="label label-info">通話無料</span>
+							<span class="v_align_middle">0120-000-000</span>
+						</a>
+					</li>
+					<li class="head_sp">
+						<a href="form.html" class="btn_counseling">
+							<i class="material-icons v_align_middle">&#xE0E1;</i>
+							カウンセリング予約
+						</a>
+					</li>
+					<li class="head_sp">
+						<a href="form.html" class="btn_mail">
+							<i class="material-icons v_align_middle">&#xE0E1;</i>
+							無料メール相談
+						</a>
+					</li>
+					<li>
+						<a href="btn.html">ボタンサンプル</a>
+					</li>
+					<li>
+						<a href="material_icons.html">マテリアルアイコン一覧</a>
+					</li>
+					<li>
+						<a href="video.html">ビデオ直接埋め込み</a>
+					</li>
+					<li>
+						<a href="" class="menu_accordion" data-js-menu-sub="close">
+							メニュー3
+							<i class="material-icons head_menu_icon_close">&#xE145;</i>
+							<i class="material-icons head_menu_icon_open">&#xE5CD;</i>
+						</a>
+						<ul class="head_menu_sub">
+							<li>
+								<a href="">
+									サブメニュー3-1
+									<i class="material-icons">&#xE315;</i>
+								</a>
+							</li>
+							<li>
+								<a href="">
+									サブメニュー3-2
+									<i class="material-icons">&#xE315;</i>
+								</a>
+							</li>
+						</ul>
+					</li>
+					<li>
+						<a href="">メニュー5</a>
+					</li>
+					<li class="head_counseling">
+						<a href="form.html">無料カウンセリング予約</a>
+					</li>
+					<li class="head_mail">
+						<a href="form.html">無料メール相談</a>
+					</li>
+				</ul>
+			</div>
+			<a href="form.html" class="head_sp_counseling">
+				<i class="material-icons">&#xE0E1;</i><br>
+				カウンセリング予約
+			</a>
+		</div>
+	</header>
+
+	<nav class="container breadcrumbs">
+		<ul class="">
+			<li><a href="index.html">HOME</a></li>
+			<li>動画の直接埋め込みのサンプルです</li>
+		</ul>
+	</nav>
+
+	<section class="padding_v_large">
+		<h2 class="headline">動画の直接埋め込み</h2>
+		<div class="container">
+			<video controls preload="metadata" poster="http://placehold.it/1280x720?text=Thmbnail" controlslist="nodownload" disablePictureInPicture class="fit">
+				<source src="../src/movie/sample.mp4" type="video/mp4">
+				<source src="../src/movie/sample_end.webm" type="video/webm">
+				<source src="../src/movie/sample_end.ogg" type="video/ogg">
+				※現在の環境は動画再生に対応していません
+			</video>
+			<p class="margin_t_small">
+				推奨記述。<br>
+				controls属性あり、preload属性はmetadata、poster属性（サムネ画像）あり、ダウンロード禁止、複数フォーマット対応
+			</p>
+			<pre class="pre_code margin_t_small">
+				<span class="pre_lang">HTML</span>
+				<code>
+&lt;video controls preload="metadata" poster="http://placehold.it/1280x720?text=Thmbnail"&gt;
+	&lt;source src="../src/movie/sample.mp4" type="video/mp4"&gt;
+	&lt;source src="../src/movie/sample_end.webm" type="video/webm"&gt;
+	&lt;source src="../src/movie/sample_end.ogg" type="video/ogg"&gt;
+	※現在の環境は動画再生に対応していません
+&lt;/video&gt;
+				</code>
+			</pre>
+
+			<hr class="border_main_b_1 margin_v_medium">
+
+			<h3 class="headline" id="basic">基本的な記述</h3>
+			<div class="row">
+				<div class="col-xs-12 col-sm-6">
+					<pre class="pre_code">
+						<span class="pre_lang">HTML</span>
+						<code>
+&lt;video src="[ファイルパス]"&gt;&lt;/video&gt;
+						</code>
+					</pre>
+					<ul class="list_check margin_v_small">
+						<li>video要素の中は空に（video要素非対応だとそのまま表示される）</li>
+						<li>デフォルトではコントロールパネルは非表示（表示させないとブラウザによっては再生できない）</li>
+						<li>ブラウザによっては、コントロールパネルを表示させないと動画自体表示されない（iPhone Safariなど）</li>
+						<li>要素の特性は基本的にimg要素と似ているので、動画サイズがコンテンツ幅より大きい場合ははみ出す（サンプルはmax-width: 100%;が付与されています）</li>
+					</ul>
+				</div>
+				<div class="col-xs-12 col-sm-6">
+					<video src="../src/movie/sample.mp4" class="fit"></video>
+				</div>
+			</div>
+
+			<hr class="border_main_b_1 margin_v_medium">
+
+			<h3 class="headline" id="controls">コントロールパネルの表示</h3>
+			<div class="row">
+				<div class="col-xs-12 col-sm-6">
+					<pre class="pre_code">
+						<span class="pre_lang">HTML</span>
+						<code>
+&lt;video controls src="[ファイルパス]"&gt;&lt;/video&gt;
+						</code>
+					</pre>
+					<ul class="list_check margin_v_small">
+						<li>controls属性を追加（値は不要）</li>
+						<li>コントロールパネルのデザインは、ブラウザや再生メディア（動画・音のみ）によって変わる場合がある</li>
+						<li>右クリックで制御の上書き可能（ブラウザによるかも）</li>
+					</ul>
+				</div>
+				<div class="col-xs-12 col-sm-6">
+					<video controls src="../src/movie/sample.mp4" class="fit"></video>
+				</div>
+			</div>
+
+			<hr class="border_main_b_1 margin_v_medium">
+
+			<h3 class="headline" id="controls_view">コントロールパネルの表示内容を制御</h3>
+			<div class="row">
+				<div class="col-xs-12 col-sm-6 margin_b_small">
+					<pre class="pre_code">
+						<span class="pre_lang">HTML</span>
+						<code>
+&lt;video controls controlslist="nodownload nofullscreen noremoteplayback"&gt;&lt;/video&gt;
+						</code>
+					</pre>
+				</div>
+				<div class="col-xs-12 col-sm-6">
+					<ul class="padding_xsmall bg_color_main_light border_radius">
+						<li>controlslist="nodownload"：ダウンロードボタン非表示</li>
+						<li>controlslist="nofullscreen"：フルスクリーン非表示</li>
+						<li>controlslist="noremoteplayback"：リモート再生機能禁止？？</li>
+					</ul>
+				</div>
+			</div>
+			<ul class="list_check margin_t_small">
+				<li>この方法でも右クリックからの命令は禁止できない（ただコントロールパネルから消えるだけ）</li>
+			</ul>
+			<div class="row">
+				<div class="col-xs-12 col-sm-4 margin_t_small">
+					<h4 class="headline">nodownload</h4>
+					<video controls controlslist="nodownload" src="../src/movie/sample.mp4" class="fit"></video>
+				</div>
+				<div class="col-xs-12 col-sm-4 margin_t_small">
+					<h4 class="headline">nofullscreen</h4>
+					<video controls controlslist="nofullscreen" src="../src/movie/sample.mp4" class="fit"></video>
+				</div>
+				<div class="col-xs-12 col-sm-4 margin_t_small">
+					<h4 class="headline">nodownload + nofullscreen</h4>
+					<video controls controlslist="nodownload nofullscreen" src="../src/movie/sample.mp4" class="fit"></video>
+				</div>
+			</div>
+
+			<hr class="border_main_b_1 margin_v_medium">
+
+			<h3 class="headline" id="loop">ループ再生</h3>
+			<div class="row">
+				<div class="col-xs-12 col-sm-6">
+					<pre class="pre_code">
+						<span class="pre_lang">HTML</span>
+						<code>
+&lt;video controls loop src="[ファイルパス]"&gt;&lt;/video&gt;
+						</code>
+					</pre>
+					<ul class="list_check margin_v_small">
+						<li>loop属性を追加（値は不要）</li>
+						<li>右クリックで制御の上書き可能（ブラウザによるかも）</li>
+					</ul>
+				</div>
+				<div class="col-xs-12 col-sm-6">
+					<video controls loop src="../src/movie/sample.mp4" class="fit"></video>
+				</div>
+			</div>
+
+			<hr class="border_main_b_1 margin_v_medium">
+
+			<h3 class="headline" id="muted">ミュート（消音）</h3>
+			<div class="row">
+				<div class="col-xs-12 col-sm-6">
+					<pre class="pre_code">
+						<span class="pre_lang">HTML</span>
+						<code>
+&lt;video controls muted src="[ファイルパス]"&gt;&lt;/video&gt;
+						</code>
+					</pre>
+					<ul class="list_check margin_v_small">
+						<li>muted属性を追加（値は不要）</li>
+						<li>コントロールパネルの音量ボタンで変更可能</li>
+					</ul>
+				</div>
+				<div class="col-xs-12 col-sm-6">
+					<video controls muted src="../src/movie/sample.mp4" class="fit"></video>
+				</div>
+			</div>
+
+			<hr class="border_main_b_1 margin_v_medium">
+
+			<h3 class="headline" id="autoplay">自動再生</h3>
+			<div class="row">
+				<div class="col-xs-12 col-sm-6">
+					<pre class="pre_code">
+						<span class="pre_lang">HTML</span>
+						<code>
+&lt;video controls muted autoplay src="[ファイルパス]"&gt;&lt;/video&gt;
+						</code>
+					</pre>
+					<ul class="list_check margin_v_small">
+						<li>loop属性を追加（値は不要）</li>
+						<li>一部ブラウザでは、ミュート（muted属性）を同時に付与しないと自動再生されない（UX観点と思われる）</li>
+						<li>ブラウザによっては、ミュート指定してても自動再生しない場合もある（？）</li>
+					</ul>
+				</div>
+				<div class="col-xs-12 col-sm-6">
+					<video controls muted autoplay src="../src/movie/sample.mp4" class="fit"></video>
+				</div>
+			</div>
+
+			<hr class="border_main_b_1 margin_v_medium">
+
+			<h3 class="headline" id="poster">サムネイル設定</h3>
+			<div class="row">
+				<div class="col-xs-12 col-sm-6">
+					<pre class="pre_code">
+						<span class="pre_lang">HTML</span>
+						<code>
+&lt;video controls src="[ファイルパス]" poster="[サムネ画像パス]"&gt;&lt;/video&gt;
+						</code>
+					</pre>
+					<ul class="list_check margin_v_small">
+						<li>poster属性にファイルパスを記述</li>
+						<li>サムネ画像を設定しないと、動画の0秒が表示、もしくは何も表示されないので、設定推奨。</li>
+					</ul>
+				</div>
+				<div class="col-xs-12 col-sm-6">
+					<video controls src="../src/movie/sample.mp4" poster="http://placehold.it/1280x720?text=Thmbnail" class="fit"></video>
+				</div>
+			</div>
+
+			<hr class="border_main_b_1 margin_v_medium">
+
+			<h3 class="headline" id="preload">動画の事前読み込み</h3>
+			<div class="row">
+				<div class="col-xs-12 col-sm-6 margin_b_small">
+					<pre class="pre_code">
+						<span class="pre_lang">HTML</span>
+						<code>
+&lt;video controls preload="metadata" src="[ファイルパス]"&gt;&lt;/video&gt;
+						</code>
+					</pre>
+				</div>
+				<div class="col-xs-12 col-sm-6">
+					<ul class="padding_xsmall bg_color_main_light border_radius">
+						<li>preload="none"：ファイルを事前に読み込まない</li>
+						<li>preload="auto"：ファイルを事前に読み込む</li>
+						<li>preload="metadata"：ファイルのメタデータ（長さなど）だけ事前に読み込む</li>
+					</ul>
+				</div>
+			</div>
+			<ul class="list_check margin_t_small">
+				<li>loop属性を追加（値は不要）</li>
+				<li>一部ブラウザでは、ミュート（muted属性）を同時に付与しないと自動再生されない（UX観点と思われる）</li>
+				<li>ブラウザによっては、ミュート指定してても自動再生しない場合もある（？）</li>
+			</ul>
+			<div class="row">
+				<div class="col-xs-12 col-sm-4 margin_t_small">
+					<h4 class="headline">none</h4>
+					<video controls preload="none" src="../src/movie/sample_long.mp4" class="fit"></video>
+				</div>
+				<div class="col-xs-12 col-sm-4 margin_t_small">
+					<h4 class="headline">auto</h4>
+					<video controls preload="auto" src="../src/movie/sample_long.mp4" class="fit"></video>
+				</div>
+				<div class="col-xs-12 col-sm-4 margin_t_small">
+					<h4 class="headline">metadata</h4>
+					<video controls preload="metadata" src="../src/movie/sample_long.mp4" class="fit"></video>
+				</div>
+			</div>
+
+			<hr class="border_main_b_1 margin_v_medium">
+
+			<h3 class="headline" id="disablePictureInPicture">ピクチャーインピクチャー禁止</h3>
+			<p class="margin_b_small">
+				「ピクチャーインピクチャー」とは、動画再生意中にスクロールなどで動画が消えても、画面端に動画が表示され続ける、ブラウザの機能。
+			</p>
+			<div class="row">
+				<div class="col-xs-12 col-sm-6">
+					<pre class="pre_code">
+						<span class="pre_lang">HTML</span>
+						<code>
+&lt;video controls disablePictureInPicture&gt;&lt;/video&gt;
+						</code>
+					</pre>
+					<ul class="list_check margin_v_small">
+						<li>disablePictureInPicture属性を記述（値は不要）</li>
+						<li>コントロールパネルから消えるだけで完全な禁止ではない（？）</li>
+					</ul>
+				</div>
+				<div class="col-xs-12 col-sm-6">
+					<video controls disablePictureInPicture src="../src/movie/sample.mp4" class="fit"></video>
+				</div>
+			</div>
+
+			<hr class="border_main_b_1 margin_v_medium">
+
+			<h3 class="headline" id="multi">複数のファイルを用意する</h3>
+			<p class="margin_b_small">
+				複数のファイルを連続で再生・・・ということではなく、古い一部のブラウザでは【mp4】に対応していない場合があり、その代替ファイルを複数用意する場合の記述。<br>
+				上から順に優先され、1番目が非対応なら2番目・・・と優先される。<br>
+				video要素そのものが対応していない場合は、video要素内の記述がそのまま表示される。
+			</p>
+			<div class="row">
+				<div class="col-xs-12 col-sm-6">
+					<pre class="pre_code">
+						<span class="pre_lang">HTML</span>
+						<code>
+&lt;video controls&gt;
+	&lt;source src="[ファイルパス]" type="[ファイルタイプ]"&gt;
+	&lt;source src="[ファイルパス]" type="[ファイルタイプ]"&gt;
+	&lt;source src="[ファイルパス]" type="[ファイルタイプ]"&gt;
+	※現在の環境は動画再生に対応していません
+&lt;/video&gt;
+						</code>
+					</pre>
+					<ul class="list_check margin_v_small">
+						<li>source要素のtype属性を指定しないとファイルが読み込まれない可能性あり</li>
+						<li>type属性の記述は「video/拡張子」（mp4なら「type="video/mp4"」）</li>
+						<li>source要素は先（上）優先で読み込まれる</li>
+						<li>video要素の中は、video要素対応ブラウザでは動画以外表示されず、非対応の場合はそのままの内容が表示される</li>
+					</ul>
+				</div>
+				<div class="col-xs-12 col-sm-6">
+					<video controls class="fit">
+						<source src="../src/movie/sample.mp4" type="video/mp4">
+						<source src="../src/movie/sample_end.webm" type="video/webm">
+						<source src="../src/movie/sample_end.ogg" type="video/ogg">
+						※現在の環境は動画再生に対応していません
+					</video>
+				</div>
+			</div>
+		</div>
+	</section>
+
+	<script type="text/javascript" src="../src/js/jquery-3.1.1.min.js"></script>
+	<script type="text/javascript" src="../src/js/jquery.matchHeight-min.js"></script>
+	<script type="text/javascript" src="../src/js/jquery.common.js?20181105"></script>
+</body>
+</html>
