@@ -1,0 +1,129 @@
+@charset "utf-8";
+// SCSS Document
+
+//////////// ミックスイン設定 ////////////
+
+// 〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓
+//
+//								◆◆　コーディング上の注意事項　◆◆
+//
+//	デフォルトで記述されているMixinは削除しないでください。ほぼ確実にGulpでエラーが出ます。
+//	使っていないものが記述されていても、コンパイルされるCSSのファイルサイズには影響ありません。
+//
+// 〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓
+
+
+//// ベンダープレフィックス自動付与
+$set-prefix: '' , -moz- , -webkit- , -o- , -ms-;
+@mixin PropertySetPrefix($name, $value) { // ベンダープレフィックスを自動で付与する
+	@each $prefix in $set-prefix {
+		#{$prefix}#{$name}: $value;
+	}
+}
+@mixin ValueSetPrefix($name, $value) { // 値にプレフィックスを付与
+	@each $prefix in $set-prefix {
+		#{$name}: #{$prefix}#{$value};
+	}
+}
+
+
+//// Bootstrapガターの上書き設定
+@mixin boostrapGutterOverwrite($i: 1, $list: ".col-xs-#{$i}, .col-sm-#{$i}, .col-md-#{$i}, .col-lg-#{$i}") {
+	@for $i from (1 + 1) through $grid-columns {
+		$list: "#{$list}, .col-xs-#{$i}, .col-sm-#{$i}, .col-md-#{$i}, .col-lg-#{$i}";
+	}
+	#{$list} {
+		padding-left: $bootstrapGutter / 2;
+		padding-right: $bootstrapGutter / 2;
+	}
+}
+
+@mixin boostrapColumnSide($name) {
+	.col#{$name}_left {
+		padding-left: ceil(($grid-gutter-width / 2));
+		padding-right: ceil($grid-gutter-width);
+	}
+	.col#{$name}_right {
+		padding-left: ceil($grid-gutter-width);
+		padding-right: ceil(($grid-gutter-width / 2));
+	}
+	.col#{$name}_gutter {
+		padding-left: ceil(($grid-gutter-width / 2));
+		padding-right: ceil(($grid-gutter-width / 2));
+	}
+}
+
+
+//// containerリセット設定
+@mixin containerResetSetting {
+	margin-left: $grid-gutter-width / 2 * -1;
+	margin-right: $grid-gutter-width / 2 * -1;
+}
+@mixin containerReset($name) {
+	.container_reset#{$name} {
+		@include containerResetSetting;
+	}
+}
+
+
+//// グリッドシステム
+@mixin gridFunction($name) { // 値にプレフィックスを付与
+	.grid#{$name}_auto {
+		width: auto !important;
+		//flex-basis: auto !important;
+	}
+	.grid#{$name}_1_1 {
+		width: 100% !important;
+		//flex-basis: 100% !important;
+		//max-width: 100% !important; //IE対策（絶対に消さないで！）
+	}
+	@for $value from 1 through 12 {
+		@for $value2 from 1 through $value {
+			@if($value2 < $value) {
+				.grid#{$name}_#{$value2}_#{$value} {
+					width: ($value2 / $value) * 100% !important;
+					//flex-basis: ($value2 / $value) * 100% !important;
+					//max-width: ($value2 / $value) * 100% !important; //IE対策（絶対に消さないで！）
+				}
+			}
+		}
+	}
+}
+@mixin gridGutterSetting($name) {
+	@if $name == 'PC' {
+		padding-left: $gridGutterPc/2;
+		padding-right: $gridGutterPc/2;
+	}
+	@else {
+		padding-left: $gridGutter/2;
+		padding-right: $gridGutter/2;
+		padding-left: autoViewportSize($gridGutter/2);
+		padding-right: autoViewportSize($gridGutter/2);
+	}
+}
+@mixin gridOrder { // 値にプレフィックスを付与
+	@for $value from 1 through 12 {
+		.flex_order_#{$value} {
+			order: #{$value};
+		}
+	}
+}
+
+
+//// アニメーション
+@mixin animationOn {
+	@include PropertySetPrefix(transition, 0.35s); //ベンダープレフィックス自動付与
+}
+@mixin animationOff {
+	@include PropertySetPrefix(transition, 0s); //ベンダープレフィックス自動付与
+}
+
+/// マテリアルアイコン
+@mixin materialIcons {
+	position: absolute;
+	font-family: 'Material Icons';
+	font-size: 1.5rem;
+	line-height: 1;
+	white-space: nowrap;
+}
+

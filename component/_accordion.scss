@@ -1,0 +1,86 @@
+@charset "utf-8";
+// SCSS Document
+
+
+.accordion_trigger {
+	text-decoration: none;
+	cursor: pointer;
+	>a {
+		text-decoration: none;
+	}
+}
+.accordion_trigger_arrow {
+	position: relative;
+	z-index: 1;
+	cursor: pointer;
+	padding-right: 2em;
+	text-decoration: none;
+	&::after {
+		@include materialIcons;
+		top: 50%;
+		right: 10px;
+		transform: translateY(-50%);
+		content: "\E316";
+	}
+	.accordion_close & {
+		&::after {
+			content: "\E313";
+		}
+	}
+}
+.accordion_close{
+	.accordion_body {
+		display: none;
+	}
+}
+.accordion_toggle_show {
+	display: auto;
+}
+.accordion_toggle_hide {
+	display: none;
+}
+
+
+@media only screen and (max-width: $screen-xs-max) { // SPサイズ（横）以下
+	.accordion_close_xs {
+		.accordion_body {
+			display: none;
+		}
+		.accordion_trigger_arrow::after {
+			transform: translateY(-50%) rotate(180deg);
+		}
+	}
+}
+
+@media print, screen and (min-width: $screen-sm-min) and (max-width: $screen-sm-max) { // タブレットサイズのみ
+	.accordion_close_sm {
+		.accordion_body {
+			display: none;
+		}
+		.accordion_trigger_arrow::after {
+			transform: translateY(-50%) rotate(180deg);
+		}
+	}
+}
+
+@media print, screen and (min-width: $screen-md-min) and (max-width: $screen-lg-min) { // PCサイズ（小）のみ
+	.accordion_close_md {
+		.accordion_body {
+			display: none;
+		}
+		.accordion_trigger_arrow::after {
+			transform: translateY(-50%) rotate(180deg);
+		}
+	}
+}
+
+@media print, screen and (min-width: $screen-lg-min) { // PCサイズ（大）以上
+	.accordion_close_lg {
+		.accordion_body {
+			display: none;
+		}
+		.accordion_trigger_arrow::after {
+			transform: translateY(-50%) rotate(180deg);
+		}
+	}
+}

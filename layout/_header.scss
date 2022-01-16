@@ -1,0 +1,348 @@
+@charset "utf-8";
+// SCSS Document
+
+//////////// ヘッダー設定 ////////////
+
+$headFixedHeight: 50px;
+$headPadding: 10px;
+
+$headFixedHeightPc: 63px;
+$headPaddingPc: 10px;
+
+$spMenuHeight: 50px;
+
+//// SPメニュー用
+@mixin headBtnMenu {
+	position: absolute;
+	display: inline-block;
+	width: $spMenuHeight;
+	height: $spMenuHeight;
+	top: ($headFixedHeight - $spMenuHeight)/2;
+	right: 0;
+	margin: 0;
+	padding: $headPadding/2;
+	font-size: 11px;
+	text-align: center;
+}
+@mixin headBtnMenuIcon {
+	position: absolute;
+	content: " ";
+	width: 28px;
+	height: 3px;
+	left: 11px;
+	background: $colorAccentPale;
+	border-radius: 6px;
+	transition: 0.35s;
+}
+
+
+body { padding-top: $headFixedHeight;}
+
+// ヘッダ
+//--------------------------------------------------------------- //
+.head_main {
+	position: fixed;
+	z-index: 10000;
+	top: 0;
+	left: 0;
+	right: 0;
+	width: 100%;
+	background: $colorMonoLight;
+	box-shadow: $colorTransShadow;
+	.container {
+		position: relative;
+		background-color: inherit;
+	}
+	.head_main_logo {
+		@extend .clearfix;
+	}
+	.head_logo {
+		float: left;
+		padding: $headPadding;
+		line-height: 1;
+		img {
+			height: $headFixedHeight - ($headPadding*2);
+		}
+	}
+	.head_tel {
+		float: right;
+		padding: $headPadding 0;
+		a {
+			display: block;
+			padding: $spaceXSmall $spaceSmall;
+			text-align: center;
+			text-decoration: none;
+			color: $colorFontBase;
+			background: $colorMainLight;
+			p {
+				@extend .font_medium;
+				color: $colorAccentDeep;
+			}
+			* {
+				vertical-align: middle;
+			}
+		}
+	}
+	li {
+		a {
+			text-decoration: none;
+		}
+		&.head_sp {
+			display: none;
+		}
+	}
+}
+.head_sp_counseling {
+	position: absolute;
+	top: 0;
+	bottom: 0;
+	right: 50px;
+	font-size: 11px;
+	text-align: center;
+	padding: $headPadding/2;
+	color: $colorMonoLight;
+	background-color: $colorMainDeep;
+	background-image: linear-gradient(to top, rgba($colorMonoLight,0) 30%, rgba($colorMonoLight,.5));
+}
+.head_menu_hider {
+	cursor: pointer;
+	position: fixed;
+	z-index: 9999;
+	top: 0;
+	bottom: 0;
+	left: 0;
+	right: 0;
+	background: $colorTransDark;
+}
+
+
+@media only screen and (max-width: $screen-sm-max) { // タブレットサイズ以下
+
+	.head_btn_menu {
+		@include headBtnMenu;
+
+		+ .head_menu {
+			-webkit-overflow-scrolling: touch;
+			position: fixed;
+			top: $headFixedHeight;
+			bottom: 100%;
+			left: 0;
+			width: 100%;
+			padding: 20px 20px 0;
+			overflow: scroll;
+			background: $colorTransLight;
+			transition: 0.35s;
+			>li {
+				display: block;
+				border-top: 1px solid $colorAccentDeep;
+				a {
+					position: relative;
+					display: block;
+					padding: 20px 0;
+					color: $colorFontBase;
+				}
+				>a {
+					&::after {
+						@include materialIcons;
+						top: 50%;
+						right: 0;
+						margin-top: -0.5em;
+						content: "\E5CC";
+						color: $colorFontBase;
+					}
+				}
+				a.bg_accent {
+					background: none;
+				}
+			}
+			.head_sp {
+				border: none;
+				a {
+					margin-bottom: 20px;
+					padding: 10px 0;
+					border: 2px solid $colorMainDeep;
+					color: $colorAccentDeep;
+					text-align: center;
+					background: $colorMonoLight;
+					border-radius: 6px;
+					&[class^="btn_"] {
+						border: none;
+					}
+					&::after {
+						content: none;
+					}
+				}
+			}
+			.head_entry {
+				display: none;
+			}
+		}
+
+		&::before {
+			@include headBtnMenuIcon;
+			top: 8px;
+		}
+		&::after {
+			@include headBtnMenuIcon;
+			top: 24px;
+		}
+
+		span {
+			display: inline-block;
+			padding: 25px 0 0;
+			color: $colorAccentPale;
+			&::after {
+				@include headBtnMenuIcon;
+				top: 16px;
+			}
+		}
+	}
+
+	.head_btn_menu {
+		@include headBtnMenu;
+
+		+ .head_menu {
+			bottom: 100%;
+			left: 0;
+			width: 100%;
+			padding: 20px 20px 0;
+		}
+	}
+	.head_btn_menu_open {
+		@include headBtnMenu;
+
+		+ .head_menu {
+			display: block;
+		}
+
+		&::before {
+			@include headBtnMenuIcon;
+			top: 4px;
+			margin-top: 20px;
+			transform: rotate(45deg);
+			transform-origin: 50% 50%;
+		}
+		&::after {
+			@include headBtnMenuIcon;
+			top: 24px;
+			transform: rotate(-45deg);
+		}
+
+		span {
+			opacity: 0;
+			&::after {
+				@include headBtnMenuIcon;
+				top: 12px;
+			}
+		}
+	}
+	.head_main {
+		.head_tel {
+			display: none;
+		}
+	}
+}
+
+@media print, screen and (min-width: $screen-sm-min) and (max-width: $screen-sm-max) { // タブレットサイズのみ
+	.head_btn_menu {
+		top: ($headFixedHeightPc + ($headPaddingPc*2) - $headFixedHeight)/2;
+		right: 20px;
+
+		+ .head_menu {
+			top: $headFixedHeightPc + ($headPaddingPc*2);
+		}
+	}
+	.head_btn_menu_open {
+		top: ($headFixedHeightPc + ($headPaddingPc*2) - $headFixedHeight)/2;
+		right: 20px;
+	}
+	.head_sp_counseling {
+		right: 90px;
+		padding: 20px;
+		font-size: $fontSmallPc;
+	}
+}
+
+
+@media print, screen and (min-width: $screen-sm-min) { // タブレットサイズ以上
+	body { padding-top: $headFixedHeightPc + ($headPaddingPc*2);}
+
+	.head_main {
+		.head_logo {
+			padding: $headPaddingPc 0;
+			img {
+				height: 100%;
+			}
+		}
+	}
+	.head_menu_hider {
+		background: rgba(0,0,0,.35);
+	}
+}
+
+@media print, screen and (min-width: $screen-md-min) { // PCサイズ（小）以上
+	body { padding-top: 138px;}
+
+	.head_menu {
+		display: table;
+		width: 100%;
+		text-align: center;
+
+		> li {
+			display: table-cell;
+			> a {
+				position: relative;
+				display: block;
+				padding: 15px 0;
+				border: 1px solid transparent;
+				font-size: $fontBasePc;
+				line-height: 1;
+				color: $colorAccentDeep;
+				&::before {
+					position: absolute;
+					content: " ";
+					top: -1px;
+					bottom: -1px;
+					left: -1px;
+					width: 1px;
+					background-image: linear-gradient(to top, rgba($colorMonoLight,1) 5%, rgba($colorMonoClear,1) 25%, rgba($colorMonoClear,1) 75%, rgba($colorMonoLight,1) 95%);
+					background-color: $colorMonoLight;
+				}
+				&:hover {
+					color: $colorMonoLight;
+					background-color: $colorMainPale;
+				}
+			}
+		}
+
+		.head_counseling {
+			a {
+				&::before {
+					content: none;
+				}
+			}
+		}
+		.head_mail {
+			a {
+				&::before {
+					content: none;
+				}
+			}
+		}
+	}
+	.head_btn_menu,
+	.head_btn_menu_open,
+	.head_sp_counseling{
+		display: none;
+	}
+}
+
+
+@media print, screen and (min-width: $screen-lg-min) { // PCサイズ（大）以上
+	.head_menu {
+		li {
+			a {
+			}
+		}
+	}
+}

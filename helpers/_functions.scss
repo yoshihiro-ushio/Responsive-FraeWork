@@ -1,0 +1,41 @@
+@charset "utf-8";
+// SCSS Document
+
+//////////// 関数定義 ////////////
+
+// 〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓
+//
+//								◆◆　コーディング上の注意事項　◆◆
+//
+//	デフォルトで記述されている関数は削除しないでください。ほぼ確実にGulpでエラーが出ます。
+//	使っていないものが記述されていても、コンパイルされるCSSのファイルサイズには影響ありません。
+//
+// 〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓
+
+/// 数値から単位をなくす
+@function nounit($value) {
+	$_nounit_divisor: (floor($value) * 2) % 2 + 1;
+	@return ($value / $_nounit_divisor);
+}
+
+/// rem自動計算
+@function remSize($remFontSize, $remBaseSize) {
+	@if unit($remFontSize) == 'px' {
+		@return ($remFontSize / $remBaseSize) * 1rem;
+	}
+}
+
+/// ビューポートサイズ自動計算
+@function autoViewportSize($fontSize) {
+	$autoViewportSizeWidth: 375;
+	$autoViewportSizeUnit: vw;
+	@if unit($fontSize) == 'px' {
+		@return (nounit($fontSize) / $autoViewportSizeWidth) * 100vw;
+	}
+	@else if unitless($fontSize) {
+		@return ($fontSize / $autoViewportSizeWidth) * 100vw;
+	}
+	@else {
+		@return $fontSize;
+	}
+}

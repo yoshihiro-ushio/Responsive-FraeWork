@@ -1,0 +1,40 @@
+@charset "utf-8";
+// SCSS Document
+
+//////////// パンくず設定 ////////////
+
+.breadcrumbs {
+	overflow: auto;
+	ul {
+		display: table;
+		overflow: visible;
+		li {
+			display: table-cell;
+			padding: $spaceSmall $spaceSmall $spaceSmall 0;
+			line-height: 1;
+			white-space: nowrap;
+			vertical-align: middle;
+			font-size: $fontBase;
+			a {
+				vertical-align: middle;
+			}
+			&::before {
+				margin: 0 $spaceSmall/2 0 $spaceSmall/2*-1;
+				font-family: 'Material Icons';
+				font-size: 20px;
+				line-height: 1;
+				white-space: nowrap;
+				content: "\E5CC";
+				vertical-align: middle;
+			}
+			&:first-of-type {
+				&::before {
+					margin: 0 $spaceSmall/2 0 0;
+					color: $colorMainPale;
+					content: "\E88A";
+				}
+			}
+		}
+	}
+}
+

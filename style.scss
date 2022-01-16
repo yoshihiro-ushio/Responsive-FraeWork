@@ -1,0 +1,83 @@
+@charset "utf-8";
+
+// ****************************************
+//  Qwintet Responsive FrameWork Ver:1.5.2
+// ****************************************
+//
+// Directory Structure
+// sass/
+// |
+// |-helpers/					# 定義
+// |	|-_variables.scss			# 変数定義 ○
+// | 	|-_functions.scss			# 関数定義 ○
+// | 	|-_mixins.scss				# スタイル定義 ○
+// |
+// |-vendors/					# 外部フレームワーク
+// | 	|-_bootstrap.scss			# Bootstrap ×
+// |
+// |-module/					# フレームワーク追加設定
+// | 	|-_material_icons.scss		# マテリアルアイコン ×
+// | 	|-_spacer.scss				# 余白 △
+// | 	|-_responsive.scss			# レスポンシブ強化パーツ △
+// |
+// |-base/						# ベース設定
+// | 	|-_reset.scss				# リセット設定 ×
+// | 	|-_skin.scss				# スキン・書式設定 ○
+// |
+// |-layout/					# 構成パーツ
+// | 	|-_header.scss				# Header ☆
+// | 	|-_footer.scss				# Footer ☆
+// | 	|-_sidebar.scss				# Sidebar ☆
+// | 	|-_forms.scss				# Forms ☆
+// |
+// |-component/					# 拡張機能 △
+// | 	|-_accordion.scss				# アコーディオン
+// | 	|-_breadcrumbs_scroll.scss	# パンくずリスト（SP時に横スクロール）
+// | 	|-_header_menu_sub.scss		# グローバルナビ・メニュー表示
+// | 	|-_sp_menu_side.scss			# スマホ用メニュー
+// |
+// |-pages/						# 独自設定 ☆
+// | 	|-_main.scss				# サイト独自設定（RFW基本セット含む）
+// |
+// |
+// `-style.scss					# primary Sass file `
+
+// Bootstrap - 変数定義
+@import "vendors/bootstrap/variables";
+
+// 定義
+@import 'helpers/functions';
+@import 'helpers/variables';
+@import 'helpers/mixins';
+
+// Bootstrap
+@import 'vendors/bootstrap';
+@import 'module/bootstrap_gutter';
+
+// 追加設定
+@import 'module/material_icons';
+@import 'module/spacer';
+@import 'module/grid_flexbox';
+@import 'module/responsive';
+
+// ベース設定
+@import 'base/reset';
+@import 'base/skin';
+
+// 構成パーツ
+@import 'layout/header';
+@import 'layout/footer';
+@import 'layout/sidebar';
+@import 'layout/forms';
+
+// 拡張機能
+@import 'component/accordion';
+@import 'component/breadcrumbs_scroll';
+@import 'component/header_menu_sub';
+@import 'component/sp_menu';
+
+// 独自設定
+@import 'pages/main';
+
+// 印刷設定
+@import 'module/print';

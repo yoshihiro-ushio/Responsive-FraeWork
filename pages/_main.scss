@@ -1,0 +1,1493 @@
+@charset "utf-8";
+// SCSS Document
+
+// 〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓
+//
+//								◆◆　コーディング上の注意事項　◆◆
+//
+//	◯margin、padding、font-sizeのサイズ指定
+//		個別にスペース系とフォントサイズ系のサイズを指定する場合は、@extendを使って記述してください。
+//		例）.hogehoge { @extend .margin_b_medium; @extend .padding_small; @extend .font_medium;}
+//		また、スペース系とフォントサイズ系の基本設定のPC⇔SPのサイズ指定を変える場合は、
+//		それぞれのメディアクエリに変数で値を指定してください。
+//		SP時のスペース系、フォントサイズ系の値は「vw」になっているので、タブレットやPCサイズの指定も忘れないように。
+//
+//	◯SP時のfont-size指定
+//		個別にフォントサイズを指定する場合は、
+//		font-size: autoViewportSize(hogehoge);
+//		と記述し、「hogehoge」の中に値か変数（$fontLargeなど）を記述してください。
+//
+// 〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓
+
+
+
+
+//////////// ページ内設定 ////////////
+.prefix {
+	@include PropertySetPrefix(background-size, cover); //ベンダープレフィックス自動付与
+	background: -webkit-gradient(linear, left top, left bottom, color-stop(0, rgba(0,0,0,0)), color-stop(1.0, rgba(0,0,0,0.6)));
+	@include ValueSetPrefix(background, linear-gradient(to top, rgba(0,0,0,0), rgba(0,0,0,0.6))); //ベンダープレフィックス自動付与
+}
+
+
+
+/* ▼▼▼▼▼ ここから下に独自設定を記述 ▼▼▼▼▼ */
+
+
+
+// sliderProをカスタマイズ
+//--------------------------------------------------------------- //
+.sp-next-arrow,.sp-next-arrow,.sp-previous-arrow,.sp-previous-arrow {
+	&::before,
+	&::after {
+		background-color: blue;
+	}
+}
+.sp-button {
+	border-color: red;
+}
+.sp-selected-button {
+	background-color: pink;
+}
+
+
+// 見出し系
+//--------------------------------------------------------------- //
+.headline_large,
+h2.headline {
+	@extend .margin_b_medium;
+	font-size: $fontXLarge;
+	text-align: center;
+}
+.headline_medium,
+h3.headline {
+	@extend .margin_b_small;
+	font-size: $fontLarge;
+}
+.headline_small,
+h4.headline {
+	@extend .margin_b_xsmall;
+	font-size: $fontMedium;
+}
+
+
+// カード系
+//--------------------------------------------------------------- //
+.card_link {
+	//$gridGutter: $spaceSmall; //　←グリッド系と余白を変える場合は先頭のコメントアウトを外して値を指定
+	$cardLinkPadding: 1em; //　←ボタンのパッディングの一括指定用変数
+
+	// ▼▼▼ スキンを変える場合は、以下を更新してください ▼▼▼
+	@mixin cardLinkIcon { //　←アイコンの設定
+		content: "\E315";
+		right: .3em;
+		color: $colorMain;
+	}
+	@mixin cardLinkSkin { //　←スキンの設定
+		padding: $cardLinkPadding 2em $cardLinkPadding $cardLinkPadding;
+		text-align: center;
+		color: $colorMain;
+		&::before { // ←ボタンの見た目
+			//border: 1px solid $colorMain;
+			border-radius: $borderRadius;
+			background: $colorMainLight;
+			box-shadow: $colorTransShadow;
+		}
+	}
+	@mixin cardLinkHover { //　←ホバー時の設定
+		color: $colorMonoLight;
+		&::before { // ←ボタンの見た目
+			background: $colorMain;
+		}
+		&::after { // ←アイコン
+			color: $colorMonoLight;
+		}
+	}
+	// ▲▲▲ スキンを変える場合は、以上を更新してください ▲▲▲
+
+	@extend .row_grid;
+	li {
+		position: relative;
+		z-index: 2;
+		display: flex;
+		margin-top: autoViewportSize($gridGutter/2);
+		margin-bottom: autoViewportSize($gridGutter/2);
+		a,>span,>p,>div {
+			width: 100%;
+			align-self: center;
+			text-decoration: none;
+			@include cardLinkSkin;
+			&::before { // ←ボタンの見た目
+				content: " ";
+				position: absolute;
+				z-index: -1;
+				top: 0;
+				bottom: 0;
+				left: autoViewportSize($gridGutter/2);
+				right: autoViewportSize($gridGutter/2);
+				@include animationOn;
+			}
+		}
+		>span,>p,>div {
+			padding: $cardLinkPadding;
+			//color: $colorFontBase;
+			&::before {
+				//background: $colorMonoLight;
+			}
+		}
+		a {
+			&::after {
+				@include materialIcons;
+				z-index: 2;
+				top: 50%;
+				transform: translateY(-50%);
+				margin-right: $gridGutter/2;
+				margin-left: $gridGutter/2;
+				@include cardLinkIcon;
+				@include animationOn;
+			}
+			&[target="_blank"] {
+				&::after {
+					content: "\E89E";
+				}
+			}
+			&:hover,&:focus {
+				@include cardLinkHover;
+			}
+			&[href^="#"] {
+				&::before {
+				}
+				&::after {
+					transform: rotate(90deg) translateX(-50%);
+				}
+				&:hover,&:focus {
+					&::before {
+					}
+				}
+			}
+			>[class*="grid_"] {
+				&:first-of-type {
+					padding-left: 0 !important;
+				}
+				>img { margin-bottom: 0;}
+			}
+		}
+	}
+}
+
+.card_thumb {
+	//$gridGutter: $spaceSmall; //　←グリッド系と余白を変える場合は先頭のコメントアウトを外して値を指定
+
+	// ▼▼▼ スキンを変える場合は、以下を更新してください ▼▼▼
+	@mixin cardThumbIcon { //　←アイコンの設定
+		content: "\E315";
+		padding: .3em;
+		color: $colorMain;
+	}
+	@mixin cardThumbSkin { //　←スキンの設定
+		border: 1px solid $colorMonoPale;
+		color: $colorFontBase;
+		background: $colorMonoLight;
+		border-radius: $borderRadius;
+		box-shadow: $colorTransShadow;
+	}
+	@mixin cardThumbHover { //　←ホバー時の設定
+		color: $colorAccentDeep;
+		background: $colorMainLight;
+		&::after { // ←アイコン
+			color: $colorAccentDeep;
+		}
+	}
+	@mixin cardThumbImage { //　←サムネ画像のスキン設定
+		order: 0; //　←値を1以上にするとサムネが右側に付きます
+		padding: 1px;
+		border-right: 1px solid $colorMain;
+	}
+	@mixin cardThumbText { //　←テキストのスキン設定
+		text-align: left;
+		padding: 1em 0 1em 1em;
+	}
+	// ▲▲▲ スキンを変える場合は、以上を更新してください ▲▲▲
+
+	@extend .row_grid;
+	margin-left: autoViewportSize($gridGutter/2*-1);
+	margin-right: autoViewportSize($gridGutter/2*-1);
+	li {
+		display: flex;
+		margin-top: autoViewportSize($gridGutter/2);
+		margin-bottom: autoViewportSize($gridGutter/2);
+		padding-left: autoViewportSize($gridGutter/2);
+		padding-right: autoViewportSize($gridGutter/2);
+		a {
+			&::after {
+				@include materialIcons;
+				@include cardThumbIcon;
+				position: relative;
+				align-self: center;
+			}
+			&:hover,&:focus {
+				@include cardThumbHover;
+			}
+			&[href^="#"] {
+				&::after {
+					transform: rotate(90deg);
+				}
+			}
+			&[target="_blank"] {
+				&::after {
+					content: "\E89E";
+				}
+			}
+			&.card_tri {
+				&::after {
+					content: "";
+					position: absolute;
+					bottom: autoViewportSize(5px);
+					right: autoViewportSize(5px);
+					padding: 0;
+					border: autoViewportSize(8px) solid transparent;
+					border-right-color: $colorMain;
+					border-bottom-color: $colorMain;
+				}
+				.card_link_text {
+					padding-right: 1em;
+				}
+			}
+		}
+		a,>span,>div {
+			@include cardThumbSkin;
+			overflow: hidden;
+			position: relative;
+			width: 100%;
+			display: flex;
+			text-decoration: none;
+			.card_link_image {
+				display: flex;
+				align-items: center;
+				@include cardThumbImage;
+				flex-shrink: 0;
+				>img {
+					width: 100%;
+					margin-bottom: 0;
+				}
+			}
+			.card_link_text {
+				@include cardThumbText;
+				width: 100%;
+				align-self: center;
+			}
+		}
+	}
+}
+
+.card_box {
+	//$gridGutter: $spaceSmall; //　←グリッド系と余白を変える場合は先頭のコメントアウトを外して値を指定
+	$cardBoxPadding: 1em; //　←ボタンのパッディングの一括指定用変数
+
+	// ▼▼▼ スキンを変える場合は、以下を更新してください ▼▼▼
+	@mixin cardLinkIcon { //　←アイコンの設定
+		content: "\E315";
+		right: .3em;
+		color: $colorMain;
+	}
+	@mixin cardLinkSkin { //　←スキンの設定
+		padding: $cardBoxPadding 2em $cardBoxPadding $cardBoxPadding;
+		color: $colorFontBase;
+		&::before { // ←ボタンの見た目
+			border: 1px solid $colorMain;
+			border-radius: $borderRadius;
+			background: $colorMonoLight;
+			box-shadow: $colorTransShadow;
+		}
+	}
+	@mixin cardLinkHover { //　←ホバー時の設定
+		color: $colorAccentDeep;
+		&::before { // ←ボタンの見た目
+			background: $colorMainLight;
+		}
+		&::after { // ←アイコン
+			color: $colorAccentDeep;
+		}
+	}
+	// ▲▲▲ スキンを変える場合は、以上を更新してください ▲▲▲
+
+	@extend .row_grid;
+	li {
+		position: relative;
+		z-index: 2;
+		display: flex;
+		margin-top: autoViewportSize($gridGutter/2);
+		margin-bottom: autoViewportSize($gridGutter/2);
+		a,>span,>p,>div {
+			width: 100%;
+			text-decoration: none;
+			@include cardLinkSkin;
+			&::before { // ←ボタンの見た目
+				content: " ";
+				position: absolute;
+				z-index: -1;
+				top: 0;
+				bottom: 0;
+				left: autoViewportSize($gridGutter/2);
+				right: autoViewportSize($gridGutter/2);
+				@include animationOn;
+			}
+		}
+		a {
+			&::after {
+				@include materialIcons;
+				z-index: 2;
+				top: 50%;
+				transform: translateY(-50%);
+				margin-right: $gridGutter/2;
+				margin-left: $gridGutter/2;
+				@include cardLinkIcon;
+				@include animationOn;
+			}
+			&[target="_blank"] {
+				&::after {
+					content: "\E89E";
+				}
+			}
+			&:hover,&:focus {
+				@include cardLinkHover;
+			}
+			&[href^="#"] {
+				&::before {
+				}
+				&::after {
+					transform: rotate(90deg) translateX(-50%);
+				}
+				&:hover,&:focus {
+					&::before {
+					}
+				}
+			}
+			&.card_tri {
+				&::after {
+					content: "";
+					position: absolute;
+					top: auto;
+					bottom: autoViewportSize(5px);
+					right: autoViewportSize(5px);
+					padding: 0;
+					border: autoViewportSize(8px) solid transparent;
+					border-right-color: $colorMain;
+					border-bottom-color: $colorMain;
+					transform: none;
+				}
+			}
+		}
+		>span,>p,>div {
+			padding: $cardBoxPadding;
+			//color: $colorFontBase;
+			&::before {
+				//background: $colorMonoLight;
+			}
+		}
+	}
+}
+
+
+// もくじ系
+//--------------------------------------------------------------- //
+$listIndexBorder: 1px solid $colorMain; //罫線の設定
+$listIndexIconColor: $colorMain; //アイコンカラーの設定
+.list_index {
+	border: $listIndexBorder;
+	@extend .padding_medium;
+	.index_list_title {
+		@extend .font_medium;
+		font-weight: bold;
+		color: $colorAccentPale;
+		span {
+			@extend .font_base;
+			font-weight: normal;
+			color: $colorAccentPale;
+		}
+	}
+	.list_index_body {
+		li {
+			margin-top: 5px;
+			line-height: 1.8;
+			a,span {
+				position: relative;
+				display: inline-block;
+				padding-left: 1.25em;
+				&::before {
+					position: absolute;
+					top: 0;
+					left: 0;
+					color: $listIndexIconColor;
+					content: "・";
+				}
+			}
+			a {
+				text-decoration: underline;
+			}
+			ol {
+				margin-left: 20px;
+				list-style-type: none;
+				margin-bottom: 0;
+				li {
+					a {
+						padding-left: 1.5em;
+						&::before {
+							@include materialIcons;
+							top: .125em;
+							content: "\E315";
+						}
+					}
+				}
+			}
+		}
+	}
+}
+
+
+// リスト系
+//--------------------------------------------------------------- //
+// アイコン付きリスト（Material Icon使用）
+%list_setting_mi {
+	$listIconSize: 1.5em;
+	@extend .row_grid;
+	margin-left: 0;
+	margin-right: 0;
+	>li {
+		overflow: hidden;
+		position: relative;
+		width: 100%;
+		margin-bottom: .25em;
+		padding-left: 1.75em;
+		&:last-of-type {
+			margin-bottom: 0;
+		}
+		&::before {
+			@include materialIcons;
+			top: 0;
+			font-size: $listIconSize;
+			line-height: ($lineHeight / nounit($listIconSize));
+			left: 0;
+			color: $colorMain;
+		}
+		&[class*="font_color_"] {
+			&::before {
+				color: inherit;
+			}
+		}
+		&[class*="grid_"] {
+			padding-left: 1.75em;
+		}
+	}
+	&[class*="font_color_"] {
+		>li {
+			&::before {
+				color: inherit;
+			}
+		}
+	}
+}
+.list_link {
+	@extend %list_setting_mi;
+	>li {
+		&::before {
+			content: "\E315";
+		}
+	}
+}
+.list_check {
+	@extend %list_setting_mi;
+	>li {
+		&::before {
+			content: "\E5CA";
+		}
+	}
+}
+.list_check_circle {
+	@extend %list_setting_mi;
+	>li {
+		&::before {
+			content: "\E86C";
+		}
+	}
+}
+
+// アイコン付きリスト（通常フォント使用）
+%list_setting_font {
+	@extend .row_grid;
+	margin-left: 0;
+	margin-right: 0;
+	>li {
+		overflow: hidden;
+		position: relative;
+		width: 100%;
+		margin-bottom: .25em;
+		padding-left: 1.25em;
+		&:last-of-type {
+			margin-bottom: 0;
+		}
+		&::before {
+			@include materialIcons;
+			top: 0;
+			left: 0;
+			font-size: inherit;
+			font-family: inherit;
+			line-height: inherit;
+		}
+		&[class*="grid_"] {
+			padding-left: 1.25em;
+		}
+	}
+}
+.list_comment {
+	@extend %list_setting_font;
+	>li {
+		&::before {
+			content: "※";
+		}
+	}
+}
+
+// ドットアイコン付きリスト
+.list_dotted {
+	@extend .row_grid;
+	margin-left: 0;
+	margin-right: 0;
+	>li {
+		overflow: hidden;
+		position: relative;
+		width: 100%;
+		margin-bottom: .25em;
+		padding-left: 1.25em;
+		&:last-of-type {
+			margin-bottom: 0;
+		}
+		&::before {
+			position: absolute;
+			content: " ";
+			top: 0;
+			left: -.5em;
+			height: $lineHeight * 1em;
+			width: $lineHeight * 1em;
+			background: radial-gradient($colorFontBase 10%, transparent 13%);
+			background-position: left center;
+		}
+		&[class*="grid_"] {
+			padding-left: 1.25em;
+		}
+	}
+}
+
+
+// ボックス系
+//--------------------------------------------------------------- //
+
+// よくある質問ボックス
+$BoxQABorder: 1px dotted $colorAccentDeep; //罫線の設定
+$BoxQAIconSize: 2em; // アイコンのサイズ設定。単位はem、数値は2em以上を推奨。
+$BoxQAIconRadius: 1000px; // アイコンの角丸設定。デフォルトは真円。
+.box_qa {
+	.box_qa_icon {
+		display: table-cell;
+		@extend .padding_r_small;
+		span {
+			display: inline-block;
+			width: $BoxQAIconSize;
+			height: $BoxQAIconSize;
+			padding: .5em;
+			line-height: 1;
+			text-align: center;
+			@extend .font_large;
+			@extend .font_family_min;
+			border-radius: $BoxQAIconRadius;
+		}
+	}
+	.box_qa_body {
+		display: table-cell;
+		width: 100%;
+		vertical-align: middle;
+	}
+	.box_qa_q {
+		width: 100%;
+		@extend .margin_t_small;
+		@extend .padding_small;
+		border-top: $BoxQABorder;
+		@extend .font_medium;
+		font-weight: normal;
+		background: $colorMainClear;
+		.box_qa_icon {
+			span {
+				color: $colorMonoLight;
+				background: $colorAccentDeep;
+			}
+		}
+		&::after {
+			display: table-cell;
+			position: relative;
+			vertical-align: middle;
+			right: auto;
+			transform: none;
+		}
+	}
+	.box_qa_a {
+		width: 100%;
+		margin-top: 0;
+		@extend .padding_small;
+		border-bottom: $BoxQABorder;
+		background: $colorMonoLight;
+		.box_qa_icon {
+			span {
+				color: $colorMonoLight;
+				background: $colorMain;
+			}
+		}
+	}
+}
+
+// 流れボックス
+$BoxFlowBorder: 1px dotted $colorMain; //罫線の設定
+$BoxFlowIconSize: 100%; // アイコン（フォント）のサイズ設定。ベースのフォントサイズを基準としたパーセンテージで設定。
+$BoxFlowIconSpace: 1.5; //アイコンサイズ（フォント）に対する余白の比率。正の値を設定。
+.box_flow {
+	.box_flow_inner {
+		position: relative;
+		@extend .margin_b_large;
+		@extend .padding_b_large;
+		border-bottom: $BoxFlowBorder;
+		&::after {
+			position: absolute;
+			content: "▼";
+			left: 50%;
+			bottom: ($BoxFlowIconSpace+1em)/2*-1;
+			width: $BoxFlowIconSpace+1em;
+			height: $BoxFlowIconSpace+1em;
+			margin-left: ($BoxFlowIconSpace+1em)/2*-1;
+			padding: ($BoxFlowIconSpace/2)+.05em ($BoxFlowIconSpace/2)*1em ($BoxFlowIconSpace/2)-.05em;
+			font-size: $BoxFlowIconSize;
+			line-height: 1;
+			color: $colorMonoLight;
+			background: $colorMain;
+			border-radius: 1000px;
+		}
+		&:last-of-type {
+			border: none;
+			margin-bottom: 0 !important;
+			padding-bottom: 0 !important;
+			&::after {
+				content: none;
+			}
+		}
+	}
+}
+
+// BeforeAfterボックス
+.box_ba_horizon,
+.box_ba_vertical {
+	//$gridGutter: $spaceSmall; //　←グリッド系と余白を変える場合は先頭のコメントアウトを外して値を指定
+	margin-left: $gridGutter / 2 * -1;
+	margin-right: $gridGutter / 2 * -1;
+	text-align: center;
+	.box_ba_inner {
+		position: relative;
+		padding-left: $gridGutter / 2;
+		padding-right: $gridGutter / 2;
+		&::after {
+			@include materialIcons;
+			z-index: 2;
+			content: "\E037";
+			color: $colorAccentDeep;
+		}
+		&:last-of-type {
+			&::after {
+				content: none;
+			}
+		}
+	}
+}
+.box_ba_horizon {
+	display: flex;
+	.box_ba_inner {
+		width: 100%;
+		&::after {
+			top: 50%;
+			right: 0;
+			transform: translate(50%,-50%);
+		}
+	}
+}
+
+
+// ボタン系
+//--------------------------------------------------------------- //
+.btn_hexagon {
+	position: relative;
+	z-index: 2;
+	display: inline-block;
+	margin-left: 3em;
+	margin-right: 3em;
+	padding: .75em 1em;
+	color: black;
+	line-height: 1.1;
+	border-top: 2px solid transparent;
+	border-bottom: 2px solid transparent;
+	background: lightblue;
+	&::before {
+		content: " ";
+		position: absolute;
+		z-index: -1;
+		top: -2px;
+		bottom: 49%;
+		left: -3em;
+		right: 20%;
+		@include PropertySetPrefix(transform-origin, bottom left); //ベンダープレフィックス自動付与
+		@include PropertySetPrefix(transform, skewX(-40deg)); //ベンダープレフィックス自動付与
+		border-left: 2px solid blue;
+		border-top: 2px solid blue;
+		background: lightblue;
+	}
+	&::after {
+		content: " ";
+		position: absolute;
+		z-index: -1;
+		top: 49%;
+		bottom: -2px;
+		left: -3em;
+		right: 20%;
+		@include PropertySetPrefix(transform-origin, top left); //ベンダープレフィックス自動付与
+		@include PropertySetPrefix(transform, skewX(40deg)); //ベンダープレフィックス自動付与
+		border-left: 2px solid blue;
+		border-bottom: 2px solid blue;
+		background: lightblue;
+	}
+	span {
+		&::before {
+			content: " ";
+			position: absolute;
+			z-index: -1;
+			top: -2px;
+			bottom: 49%;
+			right: -3em;
+			left: 20%;
+			@include PropertySetPrefix(transform-origin, bottom right); //ベンダープレフィックス自動付与
+			@include PropertySetPrefix(transform, skewX(40deg)); //ベンダープレフィックス自動付与
+			border-right: 2px solid blue;
+			border-top: 2px solid blue;
+			background: lightblue;
+		}
+		&::after {
+			content: " ";
+			position: absolute;
+			z-index: -1;
+			top: 49%;
+			bottom: -2px;
+			right: -3em;
+			left: 20%;
+			@include PropertySetPrefix(transform-origin, top right); //ベンダープレフィックス自動付与
+			@include PropertySetPrefix(transform, skewX(-40deg)); //ベンダープレフィックス自動付与
+			border-right: 2px solid blue;
+			border-bottom: 2px solid blue;
+			background: lightblue;
+		}
+	}
+	&:hover,&:active {
+		color: white;
+		text-decoration: none;
+		background: blue;
+		&::before,
+		&::after,
+		span::before,
+		span::after {
+			background: blue;
+		}
+	}
+}
+
+.btn_octagonal {
+	position: relative;
+	z-index: 2;
+	display: inline-block;
+	margin-top: 1.1em;
+	margin-bottom: 1.1em;
+	padding: 0 2em;
+	color: black;
+	line-height: 1.1;
+	border-top: 2px solid transparent;
+	border-bottom: 2px solid transparent;
+	border-left: 2px solid blue;
+	border-right: 2px solid blue;
+	background: lightblue;
+	border-radius: 3px;
+	&::before {
+		content: " ";
+		position: absolute;
+		z-index: -1;
+		height: 1.1em;
+		top: -1.1em;
+		left: -2px;
+		right: 20%;
+		@include PropertySetPrefix(transform-origin, bottom left); //ベンダープレフィックス自動付与
+		@include PropertySetPrefix(transform, skewX(-40deg)); //ベンダープレフィックス自動付与
+		border-left: 2px solid blue;
+		border-top: 2px solid blue;
+		background: lightblue;
+	}
+	&::after {
+		content: " ";
+		position: absolute;
+		z-index: -1;
+		height: 1.1em;
+		bottom: -1.1em;
+		left: -2px;
+		right: 20%;
+		@include PropertySetPrefix(transform-origin, top left); //ベンダープレフィックス自動付与
+		@include PropertySetPrefix(transform, skewX(40deg)); //ベンダープレフィックス自動付与
+		border-left: 2px solid blue;
+		border-bottom: 2px solid blue;
+		background: lightblue;
+	}
+	span {
+		&::before {
+			content: " ";
+			position: absolute;
+			z-index: -1;
+			height: 1.1em;
+			top: -1.1em;
+			right: -2px;
+			left: 20%;
+			@include PropertySetPrefix(transform-origin, bottom right); //ベンダープレフィックス自動付与
+			@include PropertySetPrefix(transform, skewX(40deg)); //ベンダープレフィックス自動付与
+			border-right: 2px solid blue;
+			border-top: 2px solid blue;
+			background: lightblue;
+		}
+		&::after {
+			content: " ";
+			position: absolute;
+			z-index: -1;
+			height: 1.1em;
+			bottom: -1.1em;
+			right: -2px;
+			left: 20%;
+			@include PropertySetPrefix(transform-origin, top right); //ベンダープレフィックス自動付与
+			@include PropertySetPrefix(transform, skewX(-40deg)); //ベンダープレフィックス自動付与
+			border-right: 2px solid blue;
+			border-bottom: 2px solid blue;
+			background: lightblue;
+		}
+	}
+	&:hover,&:active {
+		color: white;
+		text-decoration: none;
+		background: blue;
+		&::before,
+		&::after,
+		span::before,
+		span::after {
+			background: blue;
+		}
+	}
+}
+
+.btn_ribbon {
+	position: relative;
+	z-index: 2;
+	display: inline-block;
+	margin-left: 3em;
+	margin-right: 3em;
+	padding: .75em 1em;
+	color: black;
+	line-height: 1.1;
+	border-top: 2px solid transparent;
+	border-bottom: 2px solid transparent;
+	background: lightblue;
+	&::before {
+		content: " ";
+		position: absolute;
+		z-index: -1;
+		top: -2px;
+		bottom: 49%;
+		left: -3em;
+		right: 20%;
+		@include PropertySetPrefix(transform-origin, top left); //ベンダープレフィックス自動付与
+		@include PropertySetPrefix(transform, skewX(30deg)); //ベンダープレフィックス自動付与
+		border-left: 2px solid blue;
+		border-top: 2px solid blue;
+		background: lightblue;
+	}
+	&::after {
+		content: " ";
+		position: absolute;
+		z-index: -1;
+		top: 49%;
+		bottom: -2px;
+		left: -3em;
+		right: 20%;
+		@include PropertySetPrefix(transform-origin, bottom left); //ベンダープレフィックス自動付与
+		@include PropertySetPrefix(transform, skewX(-30deg)); //ベンダープレフィックス自動付与
+		border-left: 2px solid blue;
+		border-bottom: 2px solid blue;
+		background: lightblue;
+	}
+	span {
+		&::before {
+			content: " ";
+			position: absolute;
+			z-index: -1;
+			top: -2px;
+			bottom: 49%;
+			right: -3em;
+			left: 20%;
+			@include PropertySetPrefix(transform-origin, top right); //ベンダープレフィックス自動付与
+			@include PropertySetPrefix(transform, skewX(-30deg)); //ベンダープレフィックス自動付与
+			border-right: 2px solid blue;
+			border-top: 2px solid blue;
+			background: lightblue;
+		}
+		&::after {
+			content: " ";
+			position: absolute;
+			z-index: -1;
+			top: 49%;
+			bottom: -2px;
+			right: -3em;
+			left: 20%;
+			@include PropertySetPrefix(transform-origin, bottom right); //ベンダープレフィックス自動付与
+			@include PropertySetPrefix(transform, skewX(30deg)); //ベンダープレフィックス自動付与
+			border-right: 2px solid blue;
+			border-bottom: 2px solid blue;
+			background: lightblue;
+		}
+	}
+	&:hover,&:active {
+		color: white;
+		text-decoration: none;
+		background: blue;
+		&::before,
+		&::after,
+		span::before,
+		span::after {
+			background: blue;
+		}
+	}
+}
+
+.btn_triangle_line {
+	position: relative;
+	z-index: 2;
+	display: inline-block;
+	margin-left: 3em;
+	margin-right: 3em;
+	padding: .75em 1em;
+	color: black;
+	line-height: 1.1;
+	border-top: 2px solid transparent;
+	border-bottom: 2px solid transparent;
+	background: lightblue;
+	&::before,
+	&::after {
+		content: " ";
+		position: absolute;
+		z-index: -1;
+		top: -2px;
+		bottom: -2px;
+		left: -3em;
+		right: 20%;
+		@include PropertySetPrefix(transform-origin, bottom left); //ベンダープレフィックス自動付与
+		@include PropertySetPrefix(transform, skewX(-30deg)); //ベンダープレフィックス自動付与
+		border-left: 2px solid blue;
+		border-top: 2px solid blue;
+		border-bottom: 2px solid blue;
+		background: blue;
+	}
+	&::after {
+		@include PropertySetPrefix(transform, skewX(-40deg)); //ベンダープレフィックス自動付与
+		background: lightblue;
+	}
+	span {
+		&::before,
+		&::after {
+			content: " ";
+			position: absolute;
+			z-index: -1;
+			top: -2px;
+			bottom: -2px;
+			right: -3em;
+			left: 20%;
+			@include PropertySetPrefix(transform-origin, top right); //ベンダープレフィックス自動付与
+			@include PropertySetPrefix(transform, skewX(-30deg)); //ベンダープレフィックス自動付与
+			border-right: 2px solid blue;
+			border-top: 2px solid blue;
+			border-bottom: 2px solid blue;
+			background: blue;
+		}
+		&::after {
+			@include PropertySetPrefix(transform, skewX(-40deg)); //ベンダープレフィックス自動付与
+			background: lightblue;
+		}
+	}
+	&:hover,&:active {
+		color: white;
+		text-decoration: none;
+		background: blue;
+		&::before,
+		span::before {
+			background: lightblue;
+			border-color: lightblue;
+		}
+		&::after,
+		span::after {
+			background: blue;
+		}
+	}
+}
+
+.btn_ribbon_duel {
+	position: relative;
+	z-index: 2;
+	display: inline-block;
+	margin-left: 3em;
+	margin-right: 3em;
+	padding: .75em 1em;
+	color: black;
+	line-height: 1.1;
+	border-top: 2px solid transparent;
+	border-bottom: 2px solid transparent;
+	background: lightblue;
+	&::before {
+		content: " ";
+		position: absolute;
+		z-index: -2;
+		top: -2px;
+		bottom: -2px;
+		left: -3em;
+		right: 20%;
+		@include PropertySetPrefix(transform-origin, top left); //ベンダープレフィックス自動付与
+		@include PropertySetPrefix(transform, skewX(30deg)); //ベンダープレフィックス自動付与
+		border-left: 2px solid blue;
+		border-top: 2px solid blue;
+		border-bottom: 2px solid blue;
+		background: blue;
+		border-radius: 10px 0 0 0;
+	}
+	&::after {
+		content: " ";
+		position: absolute;
+		z-index: -1;
+		top: -2px;
+		bottom: -2px;
+		left: -3em;
+		right: 20%;
+		@include PropertySetPrefix(transform-origin, bottom left); //ベンダープレフィックス自動付与
+		@include PropertySetPrefix(transform, skewX(-30deg)); //ベンダープレフィックス自動付与
+		border-left: 2px solid blue;
+		border-top: 2px solid blue;
+		border-bottom: 2px solid blue;
+		background: lightblue;
+		border-radius: 0 0 0 10px;
+	}
+	span {
+		&::before {
+			content: " ";
+			position: absolute;
+			z-index: -1;
+			top: -2px;
+			bottom: -2px;
+			right: -3em;
+			left: 20%;
+			@include PropertySetPrefix(transform-origin, top right); //ベンダープレフィックス自動付与
+			@include PropertySetPrefix(transform, skewX(-30deg)); //ベンダープレフィックス自動付与
+			border-right: 2px solid blue;
+			border-top: 2px solid blue;
+			border-bottom: 2px solid blue;
+			background: lightblue;
+			border-radius: 0 10px 0 0;
+		}
+		&::after {
+			content: " ";
+			position: absolute;
+			z-index: -2;
+			top: -2px;
+			bottom: -2px;
+			right: -3em;
+			left: 20%;
+			@include PropertySetPrefix(transform-origin, bottom right); //ベンダープレフィックス自動付与
+			@include PropertySetPrefix(transform, skewX(30deg)); //ベンダープレフィックス自動付与
+			border-right: 2px solid blue;
+			border-top: 2px solid blue;
+			border-bottom: 2px solid blue;
+			background: blue;
+			border-radius: 0 0 10px 0;
+		}
+	}
+	&:hover,&:active {
+		color: white;
+		text-decoration: none;
+		background: blue;
+		&::before,
+		span::after {
+			background: lightblue;
+		}
+		&::after,
+		span::before {
+			background: blue;
+		}
+	}
+}
+
+.btn_hexagon_inn {
+	position: relative;
+	z-index: 2;
+	display: inline-block;
+	padding: .75em 4em;
+	border-top: 2px solid transparent;
+	border-bottom: 2px solid transparent;
+	color: black;
+	line-height: 1.1;
+	background: blue;
+	span {
+	}
+	&::before {
+		content: " ";
+		position: absolute;
+		z-index: -1;
+		top: -2px;
+		bottom: 49%;
+		left: 0;
+		right: 20%;
+		border-top: 2px solid blue;
+		@include PropertySetPrefix(transform-origin, bottom left); //ベンダープレフィックス自動付与
+		@include PropertySetPrefix(transform, skewX(-30deg)); //ベンダープレフィックス自動付与
+		background: lightblue;
+	}
+	&::after {
+		content: " ";
+		position: absolute;
+		z-index: -1;
+		top: 49%;
+		bottom: -2px;
+		left: 0;
+		right: 20%;
+		border-bottom: 2px solid blue;
+		@include PropertySetPrefix(transform-origin, top left); //ベンダープレフィックス自動付与
+		@include PropertySetPrefix(transform, skewX(30deg)); //ベンダープレフィックス自動付与
+		background: lightblue;
+	}
+	span {
+		&::before {
+			content: " ";
+			position: absolute;
+			z-index: -1;
+			top: -2px;
+			bottom: 49%;
+			right: 0;
+			left: 20%;
+			border-top: 2px solid blue;
+			@include PropertySetPrefix(transform-origin, bottom right); //ベンダープレフィックス自動付与
+			@include PropertySetPrefix(transform, skewX(30deg)); //ベンダープレフィックス自動付与
+			background: lightblue;
+		}
+		&::after {
+			content: " ";
+			position: absolute;
+			z-index: -1;
+			top: 49%;
+			bottom: -2px;
+			right: 0;
+			left: 20%;
+			border-bottom: 2px solid blue;
+			@include PropertySetPrefix(transform-origin, top right); //ベンダープレフィックス自動付与
+			@include PropertySetPrefix(transform, skewX(-30deg)); //ベンダープレフィックス自動付与
+			background: lightblue;
+		}
+	}
+	&:hover,&:active {
+		color: white;
+		text-decoration: none;
+		background: lightblue;
+		&::before,
+		&::after,
+		span::before,
+		span::after {
+			background: blue;
+		}
+	}
+}
+
+.btn_ribbon_inn {
+	position: relative;
+	z-index: 2;
+	display: inline-block;
+	padding: .75em 4em;
+	border-top: 2px solid transparent;
+	border-bottom: 2px solid transparent;
+	color: black;
+	line-height: 1.1;
+	background: blue;
+	span {
+	}
+	&::before {
+		content: " ";
+		position: absolute;
+		z-index: -1;
+		top: -2px;
+		bottom: 49%;
+		left: 0;
+		right: 20%;
+		border-top: 2px solid blue;
+		@include PropertySetPrefix(transform-origin, top left); //ベンダープレフィックス自動付与
+		@include PropertySetPrefix(transform, skewX(30deg)); //ベンダープレフィックス自動付与
+		background: lightblue;
+	}
+	&::after {
+		content: " ";
+		position: absolute;
+		z-index: -1;
+		top: 49%;
+		bottom: -2px;
+		left: 0;
+		right: 20%;
+		border-bottom: 2px solid blue;
+		@include PropertySetPrefix(transform-origin, bottom left); //ベンダープレフィックス自動付与
+		@include PropertySetPrefix(transform, skewX(-30deg)); //ベンダープレフィックス自動付与
+		background: lightblue;
+	}
+	span {
+		&::before {
+			content: " ";
+			position: absolute;
+			z-index: -1;
+			top: -2px;
+			bottom: 49%;
+			right: 0;
+			left: 20%;
+			border-top: 2px solid blue;
+			@include PropertySetPrefix(transform-origin, top right); //ベンダープレフィックス自動付与
+			@include PropertySetPrefix(transform, skewX(-30deg)); //ベンダープレフィックス自動付与
+			background: lightblue;
+		}
+		&::after {
+			content: " ";
+			position: absolute;
+			z-index: -1;
+			top: 49%;
+			bottom: -2px;
+			right: 0;
+			left: 20%;
+			border-bottom: 2px solid blue;
+			@include PropertySetPrefix(transform-origin, bottom right); //ベンダープレフィックス自動付与
+			@include PropertySetPrefix(transform, skewX(30deg)); //ベンダープレフィックス自動付与
+			background: lightblue;
+		}
+	}
+	&:hover,&:active {
+		color: white;
+		text-decoration: none;
+		background: lightblue;
+		&::before,
+		&::after,
+		span::before,
+		span::after {
+			background: blue;
+		}
+	}
+}
+
+/* ▲▲▲▲▲ ここから上に独自設定を記述 ▲▲▲▲▲ */
+
+
+@media only screen and (max-width: $screen-xs-max) { // SPサイズ（横）以下
+	.box_ba_vertical {
+		.box_ba_inner {
+			margin-bottom: $gridGutter;
+			&::after {
+				bottom: $gridGutter / 2 * -1;
+				left: 50%;
+				transform: translate(-50%,50%) rotate(90deg);
+			}
+			&:last-of-type {
+				margin-bottom: 0;
+				&::after {
+					content: none;
+				}
+			}
+		}
+	}
+}
+
+@media only screen and (max-width: $screen-sm-max) { // タブレットサイズ以下
+}
+
+@media (max-width: $screen-md-max) { // PCサイズ（小）以下
+}
+
+
+@media print, screen and (min-width: $screen-sm-min) and (max-width: $screen-sm-max) { // タブレットサイズのみ
+}
+
+
+@media (min-width: $screen-xs-min) { // SPサイズ（横）以上
+}
+
+@media print, screen and (min-width: $screen-sm-min) { // タブレットサイズ以上
+
+	// 見出し系
+	//--------------------------------------------------------------- //
+	.headline_large {
+		letter-spacing: .1em;
+		.font_accent {
+		}
+	}
+	.headline_flex {
+		display: block;
+		margin-bottom: $spaceSmall;
+		.headline_flex_no,
+		.headline_flex_tx {
+			display: block;
+			text-align: center;
+		}
+		.headline_flex_no {
+			padding-bottom: 10px;
+			&::after {
+				width: 50px;
+				margin-left: -25px;
+			}
+		}
+	}
+	.headline_flex_reverse {
+		display: table;
+		.headline_flex_no,
+		.headline_flex_tx {
+			display: table-cell;
+		}
+		.headline_flex_tx {
+			text-align: left;
+		}
+	}
+
+	// カード系
+	//--------------------------------------------------------------- //
+	.card_link {
+		$gridGutterPc: $grid-gutter-width; //　←グリッド系と余白を変える場合は先頭のコメントアウトを外して値を指定
+		li {
+			margin-top: $gridGutterPc/2;
+			margin-bottom: $gridGutterPc/2;
+			>span,p,a {
+				//padding: $spaceSmall*1.25 2em $spaceSmall*1.25 $spaceSmall*1.25;
+				&::before {
+					left: $gridGutterPc/2;
+					right: $gridGutterPc/2;
+				}
+			}
+			>span,p {
+				//padding: $spaceSmall*1.25;
+			}
+			a {
+				&::after {
+					margin-left: $gridGutterPc/2;
+					margin-right: $gridGutterPc/2;
+				}
+				>[class*="grid_"] {
+					&:first-of-type {
+						padding-right: 0 !important;
+					}
+				}
+			}
+		}
+	}
+	.card_thumb {
+		//$gridGutterPc: $grid-gutter-width; //　←グリッド系と余白を変える場合は先頭のコメントアウトを外して値を指定
+
+		// ▼▼▼ スキンを変える場合は、以下を更新してください ▼▼▼
+		@mixin cardThumbImage { //　←サムネ画像のスキン設定
+			padding: 5px;
+		}
+		@mixin cardThumbText { //　←テキストのスキン設定
+			padding: $spaceXSmall*1.25 0 $spaceXSmall*1.25 $spaceXSmall*1.25;
+		}
+		// ▲▲▲ スキンを変える場合は、以上を更新してください ▲▲▲
+
+		margin-left: $gridGutterPc/2*-1;
+		margin-right: $gridGutterPc/2*-1;
+		li {
+			margin-top: $gridGutterPc/2;
+			margin-bottom: $gridGutterPc/2;
+			padding-left: $gridGutterPc/2;
+			padding-right: $gridGutterPc/2;
+			a {
+				&.card_tri {
+					&::after {
+						bottom: 5px;
+						right: 5px;
+						border-width: 8px;
+					}
+				}
+			}
+			a,>span,>div {
+				.card_link_image {
+					@include cardThumbImage;
+				}
+				.card_link_text {
+					@include cardThumbText;
+				}
+			}
+		}
+	}
+	.card_box {
+		//$gridGutterPc: $grid-gutter-width; //　←グリッド系と余白を変える場合は先頭のコメントアウトを外して値を指定
+		margin-left: $gridGutterPc/2*-1;
+		margin-right: $gridGutterPc/2*-1;
+		li {
+			margin-top: $gridGutterPc/2;
+			margin-bottom: $gridGutterPc/2;
+			padding-left: $gridGutterPc/2;
+			padding-right: $gridGutterPc/2;
+			a,>span,>p,>div {
+				&::before {
+					left: $gridGutterPc/2;
+					right: $gridGutterPc/2;
+				}
+			}
+			a {
+				&::after {
+					margin-left: $gridGutterPc/2;
+					margin-right: $gridGutterPc/2;
+				}
+				&.card_tri {
+					&::after {
+						bottom: 5px;
+						right: 5px;
+						border-width: 8px;
+					}
+				}
+			}
+		}
+	}
+
+	// ボックス系
+	//--------------------------------------------------------------- //
+	.box_ba_horizon,
+	.box_ba_vertical {
+		//$gridGutterPc: $grid-gutter-width; //　←グリッド系と余白を変える場合は先頭のコメントアウトを外して値を指定
+		display: flex;
+		margin-left: $gridGutterPc / 2 * -1;
+		margin-right: $gridGutterPc / 2 * -1;
+		.box_ba_inner {
+			width: 100%;
+			position: relative;
+			padding-left: $gridGutterPc / 2;
+			padding-right: $gridGutterPc / 2;
+			&::after {
+				top: 50%;
+				right: 0;
+				transform: translate(50%,-50%);
+			}
+		}
+	}
+}
+
+@media print, screen and (min-width: $screen-md-min) { // PCサイズ（小）以上
+}
+
+@media print, screen and (min-width: $screen-lg-min) { // PCサイズ（大）以上
+}
+

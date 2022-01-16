@@ -1,0 +1,36 @@
+@charset "utf-8";
+// SCSS Document
+
+@media only screen and (max-width: $screen-sm-max) { // タブレットサイズ以下
+
+	// 横展開パターン
+	$spMenuWidth: 80%;
+	.head_btn_menu {
+		+ .head_menu {
+			bottom: 0;
+			left: 100%;
+			width: $spMenuWidth;
+		}
+	}
+	.head_btn_menu_open {
+		+ .head_menu {
+			left: 100% - $spMenuWidth;
+		}
+	}
+
+	// 縦展開パターン
+	/*
+	.head_btn_menu {
+		+ .head_menu {
+			bottom: 100%;
+			left: 0;
+			width: 100%;
+		}
+	}
+	.head_btn_menu_open {
+		+ .head_menu {
+			bottom: 0;
+		}
+	}
+	*/
+}

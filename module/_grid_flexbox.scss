@@ -1,0 +1,123 @@
+@charset "utf-8";
+// SCSS Document
+
+//////////// Flexboxを用いたGrid設定 ////////////
+.display_flex {
+	display: flex;
+	>[class*="col-"] { float: none;}
+}
+//flex-direction（子要素の並ぶ向き）
+.flex_row { flex-direction: row !important;}
+.flex_reverse { flex-direction: row-reverse !important;}
+.flex_column { flex-direction: column !important;}
+.flex_column_reverse { flex-direction: column-reverse !important;}
+
+//flex-wrap（子要素の折返し）
+.flex_wrap { flex-wrap: wrap !important;}
+.flex_nowrap { flex-wrap: nowrap !important;}
+
+//justify-content（水平方向の揃え）
+.justify_start { justify-content: flex-start!important;}
+.justify_end { justify-content: flex-end !important;}
+.justify_center { justify-content: center !important;}
+.justify_between { justify-content: space-between !important;}
+.justify_around { justify-content: space-around !important;}
+
+//align-items（垂直方向の揃え）
+.item_stretch { align-items: stretch !important;}
+.item_center { align-items: center !important;}
+.item_start { align-items: flex-start !important;}
+.item_end { align-items: flex-end !important;}
+.item_baseline { align-items: baseline !important;}
+
+//align-items（垂直方向の揃え）
+.flex_grow { flex-grow: 1;}
+.align_self_stretch { align-self: stretch !important;}
+.align_self_center { align-self: center !important;}
+.align_self_start { align-self: flex-start !important;}
+.align_self_end { align-self: flex-end !important;}
+
+.flex_basis_full {
+	width: 100% !important;
+	.flex_column &,
+	.flex_column_reverse & {
+		height: 100%;
+	}
+}
+.flex_shrink_none { flex-shrink: 0 !important;;}
+
+.row_grid {
+	@extend .display_flex;
+	flex-wrap: wrap;
+	margin-left: -$gridGutter/2;
+	margin-right: -$gridGutter/2;
+	margin-left: autoViewportSize(($gridGutter/2 * -1));
+	margin-right: autoViewportSize(($gridGutter/2 * -1));
+	&.row_stack_grid {
+		margin-top: autoViewportSize($gridGutter * -1);
+		>[class*="grid_"] {
+			margin-top: autoViewportSize($gridGutter);
+		}
+	}
+}
+[class*="grid_"],%grid_base {
+	@include gridGutterSetting(SP);
+	width: 100%;
+	//flex-shrink: 0;
+	//flex-basis: 100% !important;
+}
+.grid_auto {
+	//flex-basis: auto !important;
+	width: auto;
+}
+@include gridFunction(null);
+@include gridFunction(_xs);
+
+
+@media only screen and (max-width: $screen-xs-max) { // SPサイズ（横）以下
+	[class*="grid_"]>img {
+		margin-bottom: $spaceSmall;
+		margin-bottom: autoViewportSize($spaceSmall);
+	}
+}
+
+@media print, screen and (min-width: $screen-sm-min) { // タブレットサイズ以上
+	.row_grid {
+		margin-left: -$gridGutterPc/2;
+		margin-right: -$gridGutterPc/2;
+		&.row_stack_grid {
+			margin-top: -$gridGutterPc;
+			>[class*="grid_"] {
+				margin-top: $gridGutterPc;
+			}
+		}
+	}
+	[class*="grid_"],%grid_base {
+		@include gridGutterSetting(PC);
+	}
+	@include gridFunction(_sm);
+	@include gridOrder;
+}
+
+@media print, screen and (min-width: $screen-md-min) { // PCサイズ（小）以上
+	@include gridFunction(_md);
+}
+
+@media print, screen and (min-width: $screen-lg-min) { // PCサイズ（大）以上
+	@include gridFunction(_lg);
+}
+
+@media all and (-ms-high-contrast:none) { // IE11対策
+	*::-ms-backdrop, :root [class*="grid_"].display_flex>* {
+		width: 100%;
+	}
+	*::-ms-backdrop, :root .row_grid>* {
+		width: auto;
+	}
+	*::-ms-backdrop, :root .flex_column>* {
+		width: auto;
+	}
+	*::-ms-backdrop, :root .flex_column_reverse>* {
+		width: auto;
+	}
+}

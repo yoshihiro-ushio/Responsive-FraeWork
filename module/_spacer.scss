@@ -1,0 +1,152 @@
+@charset "utf-8";
+// SCSS Document
+
+//////////// 余白設定 ////////////
+
+.border_spacer {
+	border: none;
+	border-bottom: 1px dashed $colorMonoPale;
+}
+
+$safeareaType: margin, padding;
+$safeareaSizeList: (
+	small: 1.25,
+	medium: 1.75,
+	large: 2.5
+);
+@each $Type in $safeareaType {
+	@each $SizeName, $SizeValue in $safeareaSizeList {
+		.#{$Type}_safearea_#{$SizeName} {
+			#{$Type}-bottom: calc(constant(safe-area-inset-bottom) * #{$SizeValue}) !important;
+			#{$Type}-bottom: calc(env(safe-area-inset-bottom) * #{$SizeValue}) !important;
+		}
+	}
+}
+
+$spaceXSmallSp: autoViewportSize($spaceXSmall);
+$spaceSmallSp: autoViewportSize($spaceSmall);
+$spaceMediumSp: autoViewportSize($spaceMedium);
+$spaceLargeSp: autoViewportSize($spaceLarge);
+$spaceXLargeSp: autoViewportSize($spaceXLarge);
+
+$spaceType: margin, padding;
+$spaceDirectList: (
+	null: null,
+	_t: -top,
+	_b: -bottom,
+	_l: -left,
+	_r: -right,
+	_v: -top -bottom,
+	_s: -left -right
+);
+$spacerSizeListSp: (
+	none: 0,
+	xsmall: $spaceXSmallSp,
+	small: $spaceSmallSp,
+	medium: $spaceMediumSp,
+	large: $spaceLargeSp,
+	xlarge: $spaceXLargeSp
+);
+$spacerSizeListSpNegativeb: (
+	none: 0,
+	xsmall: -$spaceXSmallSp,
+	small: -$spaceSmallSp,
+	medium: -$spaceMediumSp,
+	large: -$spaceLargeSp,
+	xlarge: -$spaceXLargeSp
+);
+$spacerSizeList: (
+	none: 0,
+	xsmall: -$spaceXSmall,
+	small: -$spaceSmall,
+	medium: -$spaceMedium,
+	large: -$spaceLarge,
+	xlarge: -$spaceXLarge
+);
+.margin_auto { margin: auto;}
+@for $value from 1 through 2 {
+	@each $Type in $spaceType {
+		@each $DirectName, $DirectValue in $spaceDirectList {
+			@each $SizeName, $SizeValue in $spacerSizeListSp {
+				@if $DirectName != "_v" and $DirectName != "_s" {
+					.#{$Type}#{$DirectName}_#{$SizeName} {
+						#{$Type}#{$DirectValue}: $SizeValue !important;
+					}
+				}
+				@else {
+					$DirectValue1: nth($DirectValue, 1);
+					$DirectValue2: nth($DirectValue, 2);
+					.#{$Type}#{$DirectName}_#{$SizeName} {
+						#{$Type}#{$DirectValue1}: $SizeValue !important;
+						#{$Type}#{$DirectValue2}: $SizeValue !important;
+					}
+				}
+			}
+		}
+	}
+	@each $Type in $spaceType {
+		@each $DirectName, $DirectValue in $spaceDirectList {
+			@each $SizeName, $SizeValue in $spacerSizeListSpNegativeb {
+				@if $SizeValue != 0 {
+					@if $DirectName != "_v" and $DirectName != "_s" {
+						.n_#{$Type}#{$DirectName}_#{$SizeName} {
+							#{$Type}#{$DirectValue}: $SizeValue !important;
+						}
+					}
+					@else {
+						$DirectValue1: nth($DirectValue, 1);
+						$DirectValue2: nth($DirectValue, 2);
+						.n_#{$Type}#{$DirectName}_#{$SizeName} {
+							#{$Type}#{$DirectValue1}: $SizeValue !important;
+							#{$Type}#{$DirectValue2}: $SizeValue !important;
+						}
+					}
+				}
+			}
+		}
+	}
+}
+
+
+@media print, screen and (min-width: $screen-sm-min) { // タブレットサイズ以上
+	.margin_auto { margin: auto;}
+	@for $value from 1 through 2 {
+		@each $Type in $spaceType {
+			@each $DirectName, $DirectValue in $spaceDirectList {
+				@each $SizeName, $SizeValue in $spacerSizeList {
+					@if $value==1 {
+						@if $DirectName != "_v" and $DirectName != "_s" {
+							.#{$Type}#{$DirectName}_#{$SizeName} {
+								#{$Type}#{$DirectValue}: round(abs($SizeValue)*1.25) !important;
+							}
+						}
+						@else {
+							$DirectValue1: nth($DirectValue, 1);
+							$DirectValue2: nth($DirectValue, 2);
+							.#{$Type}#{$DirectName}_#{$SizeName} {
+								#{$Type}#{$DirectValue1}: round(abs($SizeValue)*1.25) !important;
+								#{$Type}#{$DirectValue2}: round(abs($SizeValue)*1.25) !important;
+							}
+						}
+					} @else {
+						@if $SizeValue != 0 {
+							@if $DirectName != "_v" and $DirectName != "_s" {
+								.n_#{$Type}#{$DirectName}_#{$SizeName} {
+									#{$Type}#{$DirectValue}: round($SizeValue*1.25) !important;
+								}
+							}
+							@else {
+								$DirectValue1: nth($DirectValue, 1);
+								$DirectValue2: nth($DirectValue, 2);
+								.n_#{$Type}#{$DirectName}_#{$SizeName} {
+									#{$Type}#{$DirectValue1}: round($SizeValue*1.25) !important;
+									#{$Type}#{$DirectValue2}: round($SizeValue*1.25) !important;
+								}
+							}
+						}
+					}
+				}
+			}
+		}
+	}
+}

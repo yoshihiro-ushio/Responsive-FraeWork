@@ -1,0 +1,91 @@
+@charset "utf-8";
+// SCSS Document
+
+// 〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓
+//
+//								◆◆　コーディング上の注意事項　◆◆
+//
+//	デフォルトで記述されているMixinは削除しないでください。ほぼ確実にGulpでエラーが出ます。
+//	使っていないものが記述されていても、コンパイルされるCSSのファイルサイズには影響ありません。
+//
+// 〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓
+
+
+// フォントファミリー
+$fontFamilyBase: "ヒラギノ角ゴ Pro W3", "Hiragino Kaku Gothic Pro", "メイリオ", Meiryo, Osaka, "ＭＳ Ｐゴシック", "MS PGothic", sans-serif;
+$fontFamilyMin: "游明朝", YuMincho, "ヒラギノ明朝 ProN W3", "Hiragino Mincho ProN","HG明朝E","ＭＳ Ｐ明朝","ＭＳ 明朝",serif;
+
+// 行間
+$lineHeightLarge: 2;
+$lineHeight: 1.7;
+$lineHeightMin: 1.2;
+
+// カラー
+$colorMonoDark: #000000;
+$colorMonoDeep: #555;
+$colorMonoPale: #afb4b9;
+$colorMonoClear: #f6f6f6;
+$colorMonoLight: #fff;
+
+$colorMain: #948664;
+$colorMainDark: #554D36; //暗い
+$colorMainDeep: #6e6347; //やや暗い
+$colorMainPale: #A08F68; //やや明るい
+$colorMainClear: #f3ebdf; //明るい
+$colorMainLight: #f7f4ee; //かなり明るい
+
+$colorAccent: #e44e5e;
+$colorAccentDark: darken($colorAccent, 30%); //暗い
+$colorAccentDeep: darken($colorAccent, 15%); //やや暗い
+$colorAccentPale: lighten($colorAccent, 15%); //やや明るい
+$colorAccentClear: #f6e6e7; //明るい
+$colorAccentLight: #fff6f7; //かなり明るい
+
+$colorFontBase: #333;
+
+$colorCaution: red;
+
+$colorTransLight: rgba(255,255,255,.75);
+$colorTransDark: rgba(0,0,0,.75);
+$colorTransShadow: 0 1px 5px rgba(0,0,0,.15);
+
+
+// スペース
+$spaceXSmall: 8px;
+$spaceSmall: 15px;
+$spaceMedium: 30px;
+$spaceLarge: 45px;
+$spaceXLarge: 60px;
+
+// Bootstrap - ガター（Col系の間隔の設定）
+// $grid-gutter-width: 0; // グリッドシステムの余白設定
+$bootstrapGutter: $spaceSmall;
+
+// RFWグリッド - ガター（RFWグリッド系の間隔の設定）
+$gridGutter: $spaceSmall;
+$gridGutterPc: $grid-gutter-width;
+
+
+// フォントサイズ
+$fontDefault: 14px;
+$fontULarge: remSize(36px, $fontDefault);
+$fontXLarge: remSize(28px, $fontDefault);
+$fontLarge: remSize(23px, $fontDefault);
+$fontMedium: remSize(18px, $fontDefault);
+$fontBase: remSize($fontDefault, $fontDefault);
+$fontSmall: remSize(12px, $fontDefault);
+$fontNotice: remSize(11px, $fontDefault);
+
+$fontDefaultPc: 16px;
+$fontULargePc: remSize(40px, $fontDefaultPc);
+$fontXLargePc: remSize(32px, $fontDefaultPc);
+$fontLargePc: remSize(26px, $fontDefaultPc);
+$fontMediumPc: remSize(20px, $fontDefaultPc);
+$fontBasePc: remSize($fontDefaultPc, $fontDefaultPc);
+$fontSmallPc: remSize(14px, $fontDefaultPc);
+$fontNoticePc: remSize(12px, $fontDefaultPc);
+
+
+// スキン要素
+$borderRadius: .3rem;
+

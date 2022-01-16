@@ -1,0 +1,362 @@
+@charset "utf-8";
+// SCSS Document
+
+//////////// 文字・フォント関連設定 ////////////
+body {
+	@extend .font_base;
+}
+.container_min {
+	@extend .container;
+	max-width: 970px;
+}
+@include containerReset(null);
+
+h1,h2,h3,h4,h5,h6 {
+	line-height: $lineHeightMin;
+	font-family: $fontFamilyMin;
+	* {
+		font-family: $fontFamilyMin;
+	}
+}
+a {
+	color: $colorMainPale;
+	text-decoration: underline;
+	@include animationOn;
+	&:hover,
+	&:focus {
+		color: $colorAccent;
+	}
+	&:not([href]){
+		color: inherit;
+		text-decoration: none;
+		&:hover,
+		&:focus {
+			color: inherit;
+		}
+	}
+	&[class*="btn"] {
+		text-decoration: none;
+	}
+	>img {
+		backface-visibility: hidden;
+		@include animationOn;
+	}
+	&:hover,
+	&:focus {
+		>img {
+			opacity: .8;
+		}
+	}
+}
+pre.pre_code {
+	overflow: hidden;
+	white-space: normal;
+	color: $colorMonoLight;
+	background: #333;
+	border-radius: $borderRadius;
+	.pre_lang {
+		display: inline-block;
+		padding: .5em 1em;
+		@extend .font_small;
+		line-height: 1;
+		background: $colorMain;
+	}
+	code {
+		display: block;
+		@extend .padding_s_small;
+		white-space: pre;
+		overflow: auto;
+	}
+}
+
+
+// 字形
+//--------------------------------------------------------------- //
+.font_family_base {
+	font-family: $fontFamilyBase;
+	* {
+		font-family: $fontFamilyBase;
+	}
+}
+.font_family_min {
+	font-family: $fontFamilyMin;
+	* {
+		font-family: $fontFamilyMin;
+	}
+}
+.font_feature_palt { // プロポーショナルメトリクス（すべて字詰あり）
+	font-feature-settings: "palt";
+}
+.font_feature_pkna { // プロポーショナルかな（約物以外は字詰あり）
+	font-feature-settings: "pkna";
+}
+.font_feature_pwid { // プロポーショナル字形
+	font-feature-settings: "pwid";
+}
+
+.font_weight_normal { font-weight: normal !important;}
+.font_weight_bold { font-weight: bold !important;}
+
+
+// 文字位置
+//--------------------------------------------------------------- //
+.v_align_baseline {
+	vertical-align: baseline !important;
+	* {
+		vertical-align: baseline !important;
+	}
+}
+.v_align_middle {
+	vertical-align: middle !important;
+	* {
+		vertical-align: middle !important;
+	}
+}
+.v_align_top {
+	vertical-align: top !important;
+	* {
+		vertical-align: top !important;
+	}
+}
+.v_align_bottom {
+	vertical-align: bottom !important;
+	* {
+		vertical-align: bottom !important;
+	}
+}
+
+.text_nowrap { white-space: nowrap;}
+.text_indent {
+	display: block;
+	padding-left: 1em;
+	text-indent: -1em;
+}
+.text-left           { text-align: left !important;}
+.text-right          { text-align: right !important;}
+.text-center         { text-align: center !important;}
+.text-justify        { text-align: justify !important;}
+
+
+// 文字組
+//--------------------------------------------------------------- //
+.line_height_min {
+	line-height: $lineHeightMin;
+}
+.line_height_large {
+	line-height: $lineHeightLarge;
+}
+
+.ruby {
+	position: relative;
+	display: inline-flex;
+	flex-direction: column-reverse;
+	text-align: center;
+	.ruby_kana {
+		margin-top: .2em;
+		margin-bottom: -5px;
+		padding-left: .4em;
+		text-align: center;
+		letter-spacing: .4em;
+		font-size: 50%;
+		line-height: 1.1;
+	}
+}
+
+
+
+// 文字サイズ
+//--------------------------------------------------------------- //
+.font_scale_large { font-size: 150% !important;}
+.font_scale_medium { font-size: 125% !important;}
+.font_scale_small { font-size: 85% !important;}
+.font_scale_xsmall { font-size: 60% !important; }
+
+.font_ularge {
+	font-size: $fontULarge !important;
+}
+.font_xlarge {
+	font-size: $fontXLarge !important;
+}
+.font_large {
+	font-size: $fontLarge !important;
+}
+.font_medium {
+	font-size: $fontMedium !important;
+}
+.font_base {
+	font-size: $fontBase !important;
+}
+.font_small {
+	font-size: $fontSmall !important;
+}
+.font_notice {
+	font-size: $fontNotice !important;
+}
+
+
+// 文字色
+//--------------------------------------------------------------- //
+.font_color_base { color: $colorFontBase !important;}
+
+.font_color_mono_dark { color: $colorMonoDark !important;}
+.font_color_mono_deep { color: $colorMonoDeep !important;}
+.font_color_mono_pale { color: $colorMonoPale !important;}
+.font_color_mono_clear { color: $colorMonoClear !important;}
+.font_color_mono_light { color: $colorMonoLight !important;}
+
+.font_color_main { color: $colorMain !important;}
+.font_color_main_dark { color: $colorMainDark !important;}
+.font_color_main_deep { color: $colorMainDeep !important;}
+.font_color_main_pale { color: $colorMainPale !important;}
+.font_color_main_clear { color: $colorMainClear !important;}
+.font_color_main_light { color: $colorMainLight !important;}
+
+.font_color_accent { color: $colorAccent !important;}
+.font_color_accent_dark { color: $colorAccentDark !important;}
+.font_color_accent_deep { color: $colorAccentDeep !important;}
+.font_color_accent_pale { color: $colorAccentPale !important;}
+.font_color_accent_clear { color: $colorAccentClear !important;}
+.font_color_accent_light { color: $colorAccentLight !important;}
+
+.error-message,
+.font_color_caution { color: $colorCaution !important;}
+
+.marker_main {
+	margin-left: .1em;
+	margin-right: .1em;
+	background: linear-gradient(transparent 70%, rgba($colorMainPale, .6) 30%);
+}
+.marker_accent {
+	margin-left: .1em;
+	margin-right: .1em;
+	background: linear-gradient(transparent 70%, rgba($colorAccent, .6) 30%);
+}
+
+
+
+//////////// 色関係 ////////////
+
+// 背景色
+//--------------------------------------------------------------- //
+.bg_color_mono_dark { background-color: $colorMonoDark !important;}
+.bg_color_mono_deep { background-color: $colorMonoDeep !important;}
+.bg_color_mono_pale { background-color: $colorMonoPale !important;}
+.bg_color_mono_clear { background-color: $colorMonoClear !important;}
+.bg_color_mono_light { background-color: $colorMonoLight !important;}
+
+.bg_color_main { background-color: $colorMain !important;}
+.bg_color_main_dark { background-color: $colorMainDark !important;}
+.bg_color_main_deep { background-color: $colorMainDeep !important;}
+.bg_color_main_pale { background-color: $colorMainPale !important;}
+.bg_color_main_clear { background-color: $colorMainClear !important;}
+.bg_color_main_light { background-color: $colorMainLight !important;}
+
+.bg_color_accent { background-color: $colorAccent !important;}
+.bg_color_accent_dark { background-color: $colorAccentDark !important;}
+.bg_color_accent_deep { background-color: $colorAccentDeep !important;}
+.bg_color_accent_pale { background-color: $colorAccentPale !important;}
+.bg_color_accent_clear { background-color: $colorAccentClear !important;}
+.bg_color_accent_light { background-color: $colorAccentLight !important;}
+
+.bg_stripe_light {
+	$stripeLight: $colorMonoLight; // ストライプの薄い方
+	$stripePale: $colorMonoClear; // ストライプの濃い方
+	$stripeSpace: 10px; // ストライプの間隔
+	background: repeating-linear-gradient(
+		-45deg,
+		$stripePale 0,
+		$stripePale $stripeSpace,
+		$stripeLight $stripeSpace,
+		$stripeLight $stripeSpace*2
+	);
+}
+
+.bg_stripe_main {
+	$stripeLight: $colorMonoLight; // ストライプの薄い方
+	$stripePale: $colorMainLight; // ストライプの濃い方
+	$stripeSpace: 10px; // ストライプの間隔
+	background: repeating-linear-gradient(
+		-45deg,
+		$stripePale 0,
+		$stripePale $stripeSpace,
+		$stripeLight $stripeSpace,
+		$stripeLight $stripeSpace*2
+	);
+}
+
+
+// 罫線
+//--------------------------------------------------------------- //
+hr {
+	border: none;
+	border-bottom: 1px solid transparent;
+}
+.border_none { border: none; border-bottom: 1px solid transparent;}
+.border_main_1 { border: 1px solid $colorMain;}
+.border_main_clear_1 { border: 1px solid $colorMainClear;}
+.border_main_b_1 { border-bottom: 1px solid $colorMain;}
+.border_mono_b_1 { border-bottom: 1px solid $colorMonoPale;}
+
+
+//display
+//--------------------------------------------------------------- //
+.display_block { display: block;}
+.inline_block { display: inline-block;}
+.full { width: 100%;}
+.fit { max-width: 100%;}
+
+
+//images
+//--------------------------------------------------------------- //
+img[class*="pull-"] {
+	max-width: 45%;
+	@extend .margin_b_xsmall;
+}
+img.pull-left {
+	@extend .margin_r_small;
+}
+img.pull-right {
+	@extend .margin_l_small;
+}
+
+
+@media only screen and (max-width: $screen-xs-max) { // SPサイズ（横）以下
+	@include containerReset(_xs);
+}
+
+@media print, screen and (min-width: $screen-sm-min) and (max-width: $screen-sm-max) { // タブレットサイズのみ
+	@include containerReset(_sm);
+}
+
+@media print, screen and (min-width: $screen-sm-min) { // タブレットサイズ以上
+	
+	// 文字サイズ
+	//--------------------------------------------------------------- //
+	.font_ularge { font-size: $fontULargePc !important;}
+	.font_xlarge { font-size: $fontXLargePc !important;}
+	.font_large { font-size: $fontLargePc !important;}
+	.font_medium { font-size: $fontMediumPc !important;}
+	.font_base { font-size: $fontBasePc !important;}
+	.font_small { font-size: $fontSmallPc !important;}
+	.font_notice { font-size: $fontNoticePc !important;}
+
+	a {
+		&[href^="tel:"] {
+			color: inherit;
+			text-decoration: none;
+		}
+	}
+}
+
+@media print, screen and (min-width: $screen-md-min) { // PCサイズ（小）以上
+	@include gridFunction(_md);
+}
+
+@media print, screen and (min-width: $screen-md-min) and (max-width: $screen-md-max) { // PCサイズ（小）のみ
+	@include containerReset(_md);
+}
+
+@media print, screen and (min-width: $screen-lg-min) { // PCサイズ（大）以上
+	@include containerReset(_lg);
+	@include gridFunction(_lg);
+}

@@ -1,0 +1,67 @@
+@charset "utf-8";
+// SCSS Document
+
+//////////// レスポンシブ用 拡張設定 ////////////
+$ResponsiveTableBlockSpace: $spaceSmall;
+
+
+// responsive_table_week
+//--------------------------------------------------------------- //
+$weekSetRows: 3; // ※SP時は列数、PC時には行数になります。
+$weekSetCount: 8; // 週の数（デフォルトでは7日分＋見出しで8行分に設定） ※SP時は行数、PC時には列数になります。
+$weekBorderSize: 1px;
+$weekBorderStyle: solid;
+$weekBorderColor: $colorMain;
+.rfw_week {
+	display: flex;
+	flex-wrap: wrap;
+	border-top: $weekBorderSize $weekBorderStyle $weekBorderColor;
+	border-left: $weekBorderSize $weekBorderStyle $weekBorderColor;
+	text-align: center;
+	[class^="rfw_week_order_"] {
+		@extend .padding_xsmall;
+		width: (1/$weekSetRows * 100%);
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		border-right: $weekBorderSize $weekBorderStyle $weekBorderColor;
+		border-bottom: $weekBorderSize $weekBorderStyle $weekBorderColor;
+	}
+	.rfw_week_order_1 {
+		background: $colorMainClear;
+	}
+}
+
+@media only screen and (max-width: $screen-xs-max) { // SPサイズ（横）以下
+}
+
+@media only screen and (max-width: $screen-sm-max) { // タブレットサイズ以下
+}
+
+@media (max-width: $screen-md-max) { // PCサイズ（小）以下
+}
+
+
+@media print, screen and (min-width: $screen-sm-min) and (max-width: $screen-sm-max) { // タブレットサイズのみ
+}
+
+
+@media (min-width: $screen-xs-min) { // SPサイズ（横）以上
+}
+
+@media print, screen and (min-width: $screen-sm-min) { // タブレットサイズ以上
+	.rfw_week {
+		[class^="rfw_week_order_"] {
+			width: (1/$weekSetCount * 100%);
+		}
+		@for $value from 1 through $weekSetRows {
+			.rfw_week_order_#{$value} { order: $value;}
+		}
+	}
+}
+
+@media print, screen and (min-width: $screen-md-min) { // PCサイズ（小）以上
+}
+
+@media print, screen and (min-width: $screen-lg-min) { // PCサイズ（大）以上
+}

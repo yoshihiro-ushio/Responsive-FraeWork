@@ -1,0 +1,131 @@
+@charset "utf-8";
+// SCSS Document
+
+//////////// サブメニュー設定 ////////////
+
+
+@media only screen and (max-width: $screen-sm-max) { // タブレットサイズ以下
+	.head_btn_menu {
+		+ .head_menu {
+			>li {
+				>a {
+					overflow: hidden;
+					&.menu_accordion {
+						padding-right: 20px;
+						i {
+							position: absolute;
+							right: 0;
+							top: 50%;
+							padding: 3px;
+							border: 1px solid $colorMonoDark;
+							color: $colorMonoDark;
+							transform: translateY(-50%);
+							background: $colorMonoLight;
+							&::after {
+								position: absolute;
+								z-index: -1;
+								content: " ";
+								right: $spaceSmall * -1;
+								left: $spaceSmall * -1;
+								top: -100%;
+								bottom: -100%;
+							}
+						}
+						.head_menu_icon_open {
+							display: none;
+						}
+						&::after {
+							content: none;
+						}
+					}
+					&.head_menu_sub_open {
+						.head_menu_icon_close {
+							display: none;
+						}
+						.head_menu_icon_open {
+							display: block;
+						}
+					}
+				}
+				.head_menu_sub {
+					display: none;
+					li {
+						border-top: 1px solid $colorMonoPale;
+						a {
+							padding: 10px 10px 10px 2em;
+							font-size: $fontSmall;
+							i {
+								position: absolute;
+								top: 50%;
+								right: 0;
+								margin-top: -0.5em;
+								line-height: 1;
+								font-size: 1.5em;
+							}
+						}
+					}
+				}
+			}
+		}
+	}
+}
+
+
+@media print, screen and (min-width: $screen-md-min) { // PCサイズ（小）以上
+	.head_menu {
+		>li {
+			>a {
+				&.menu_accordion {
+					i {
+						display: none;
+					}
+					&::after {
+						@include materialIcons;
+						left: 50%;
+						bottom: -3px;
+						margin-left: -0.5em;
+						content: "\E313";
+						color: $colorMonoDeep;
+						font-size: $fontMediumPc;
+					}
+				}
+				&.head_menu_sub_open {
+					position: relative;
+					+ .head_menu_sub {
+						opacity: 1;
+						bottom: 0;
+						transform: translateY(100%);
+					}
+				}
+
+			}
+			.head_menu_sub {
+				display: block !important;
+				opacity: 0;
+				z-index: -1;
+				@include animationOn;
+				position: absolute;
+				bottom: 0;
+				left: 0;
+				right: 0;
+				white-space: nowrap;
+				background: rgba($colorAccentLight, .9);
+				box-shadow: $colorTransShadow;
+				transition-delay: .2s;
+				li {
+					width: 33.3333%;
+					float: left;
+					a {
+						display: block;
+						padding: 15px 30px;
+						font-size: $fontSmallPc;
+						color: $colorFontBase;
+						&:hover {
+							background: $colorMainClear;
+						}
+					}
+				}
+			}
+		}
+	}
+}

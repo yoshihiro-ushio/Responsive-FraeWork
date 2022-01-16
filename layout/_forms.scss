@@ -1,0 +1,113 @@
+@charset "utf-8";
+// SCSS Document
+
+//////////// フォームパーツ設定 ////////////
+
+form [type="submit"] {
+	-webkit-appearance: none;
+}
+
+.form-group {
+	label {
+		font-weight: normal;
+	}
+}
+.form-control {
+	margin-bottom: $spaceSmall;
+	&:focus {
+		background-color: $colorMainLight;
+	}
+}
+
+.form_container {
+	max-width: $container-desktop;
+}
+.form_table {
+	width: 100%;
+	.responsive_table_block_cell {
+		margin: 0;
+		padding: 0 0 $spaceXSmall;
+		vertical-align: top;
+	}
+}
+
+.form_birth {
+	width: auto;
+	display: inline-block;
+}
+.form_tel {
+	.form-control {
+		width: ($font-size-base * 5) + ($padding-base-horizontal * 2);
+		display: inline-block;
+	}
+}
+
+.radio_group {
+	position: relative;
+	display: table;
+	table-layout: fixed;
+	border-collapse: separate;
+	color: $colorMonoPale;
+	border-radius: 100px;
+	border: 1px solid $input-border;
+	background: $colorMonoLight;
+
+	.radio_group_inner {
+		display: table-cell;
+		width: 50%;
+	}
+
+	input[type="radio"] {
+		position: absolute;
+		z-index: -1;
+		opacity: 0;
+		+ label {
+			display: block;
+			padding: 8px 1em;
+			font-weight: normal;
+			text-align: center;
+			cursor: pointer;
+			border-radius: 100px;
+			&:after {
+				content: "";
+			}
+		}
+		&:checked {
+			+ label {
+				color: $colorMonoLight;
+				background: $colorMonoDeep;
+				&:after {
+					content: "";
+				}
+			}
+		}
+	}
+}
+
+
+// フォーム用アイコン
+//--------------------------------------------------------------- //
+.icon_required {
+	display: inline-block;
+	margin: 0 5px;
+	padding: 3px 0.5em;
+	color: $colorMonoLight;
+	font-size: $fontNotice;
+	vertical-align: middle;
+	background: $colorAccent;
+	border-radius: 4px;
+}
+.icon_option {
+	@extend .icon_required;
+	background: $colorMain;
+}
+
+
+@media print, screen and (min-width: $screen-sm-min) { // タブレットサイズ以上
+	.form_table {
+		.responsive_table_block_cell {
+			padding: $spaceXSmall;
+			vertical-align: top;
+		}
+	}
+}
